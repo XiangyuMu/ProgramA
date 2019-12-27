@@ -2,154 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/DrawTree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/LearnSomething$ExpressVisitor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/LearnSomething.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/VariableStructure.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$CreateRelatedWordListVisitor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/Element.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/ElemwntList.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/FirstN.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/IndexValuePair_1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/IndexValuePair_2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/MaxRow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/SingleItem_1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/SingleItem_2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/reduceExample/StrConcat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example01.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example02.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example03.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example04.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example05.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example06.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example07.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example08.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example09.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example10.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example11.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example12.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example13.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example14.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example15.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example16.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example17.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example18.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example19.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example20.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example21.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example22.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example23.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example24.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example25.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example26$PassWritable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example26.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example27.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example28.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example29.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example30.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example31.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example32.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example33.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example34.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35$Mycounter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35$People.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example36.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example37.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example38.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example39$DoubleString.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example39.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/TwoTuple.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/resources/main/javaparser-core-3.15.7-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/DrawTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/LearnSomething.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/VariableStructure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/ToolBox.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/Element.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/ElemwntList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/FirstN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/IndexValuePair_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/IndexValuePair_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/MaxRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/SingleItem_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/SingleItem_2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/StrConcat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example05.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example06.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example07.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example08.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example09.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example16.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example17.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example19.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example20.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example21.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example22.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example23.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example24.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example26.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example28.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example29.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example30.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example31.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example32.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example33.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example34.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example35.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example36.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example37.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example38.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example39.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/TwoTuple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/resources/javaparser-core-3.15.7-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
       <change beforePath="$MAVEN_REPOSITORY$" beforeDir="false" afterPath="$MAVEN_REPOSITORY$" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -259,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577353129697</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first">
+      <created>1577427016092</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577427016092</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -279,10 +138,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577343825674" />
-    <state x="505" y="113" key="CommitChangelistDialog2" timestamp="1577353123588">
+    <state x="505" y="113" key="CommitChangelistDialog2" timestamp="1577427013970">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="505" y="113" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577353123588" />
+    <state x="505" y="113" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577427013970" />
     <state x="740" y="260" key="FileChooserDialogImpl" timestamp="1577353085511">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -319,6 +178,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577352857214" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577427237393">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577427237393" />
     <state x="334" y="120" key="new project wizard" timestamp="1576990988625">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
