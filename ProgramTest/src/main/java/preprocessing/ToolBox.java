@@ -264,26 +264,158 @@ public class ToolBox {
                             }
                         }
                     }
+                }
+            }
+
+            boolean flag1 = false;
+            boolean flag2 = false;
+            String str = "";
+            for(int a = 0;a<atomWords.size();a++){
+                for(int b = 0;b<arg.size();b++){
+                    if(flag1==false&&atomWords.get(a).equals(arg.get(b))){
+                        flag1 = true;
+                        str = atomWords.get(a);
+                    }else if(flag1==true&&atomWords.get(a).equals(arg.get(b))&&flag2==false&&str!=atomWords.get(a)){
+                        flag2 = true;
+                    }else if(flag1 == true&&flag2 == true){
+                        break;
+                    }
+                }
+                if(flag1 == true&&flag2 == true){
+                    System.out.println("VariableDeclarationExpr2: "+n);
+                    flag = true;
+                }
+            }
+        }
+
+        @Override
+        public void visit(AssignExpr n, List<String> arg) {
+            super.visit(n, arg);
+            List<String> atomWords = new ArrayList<>();
+            Expression right = n.getValue();
+            Stack<Node> stack = new Stack<>();
+            for(int i = 0;i<right.getChildNodes().size();i++){
+                stack.add(right.getChildNodes().get(i));
+            }
+            while(!stack.isEmpty()){
+                Node node = stack.pop();
+                if(node.getChildNodes().size()==0){
+                    if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
+                        atomWords.add(node.toString());
+                    }
+                }else{
+                    for(int j = 0;j<node.getChildNodes().size();j++){
+                        stack.add(node.getChildNodes().get(j));
+                    }
+                }
+            }
+            boolean flag1 = false;
+            boolean flag2 = false;
+            String str = "";
+            for(int a = 0;a<atomWords.size();a++){
+                for(int b = 0;b<arg.size();b++){
+                    if(flag1==false&&atomWords.get(a).equals(arg.get(b))){
+                        flag1 = true;
+                        str = atomWords.get(a);
+                    }else if(flag1==true&&atomWords.get(a).equals(arg.get(b))&&flag2==false&&str!=atomWords.get(a)){
+                        flag2 = true;
+                    }else if(flag1 == true&&flag2 == true){
+                        break;
+                    }
+                }
+                if(flag1 == true&&flag2 == true){
+                    System.out.println("AssignExpr2: "+n);
+                    flag = true;
+                }
+            }
+        }
+
+        @Override
+        public void visit(MethodCallExpr n, List<String> arg) {
+            super.visit(n, arg);
+            List<String> atomWords = new ArrayList<>();
+            MethodCallExpr e = n;
+            while(true){
+                for(int i = 0;i<e.getArguments().size();i++){
+                    atomWords.add(e.getArgument(i).toString());
+                }
+                if(!e.getScope().toString().equals("Optional.empty")){
+                    if(e.getScope().get().isMethodCallExpr()){
+                        e = e.getScope().get().asMethodCallExpr();
+                    }else{
+                        break;
+                    }
+                }else{
+                    break;
+                }
+            }
 
 
+            boolean flag1 = false;
+            boolean flag2 = false;
+            String str = "";
+            for(int a = 0;a<atomWords.size();a++){
+                for(int b = 0;b<arg.size();b++){
+                    if(flag1==false&&atomWords.get(a).equals(arg.get(b))){
+                        flag1 = true;
+                        str = atomWords.get(a);
+                    }else if(flag1==true&&atomWords.get(a).equals(arg.get(b))&&flag2==false&&str!=atomWords.get(a)){
+                        flag2 = true;
+                    }else if(flag1 == true&&flag2 == true){
+                        break;
+                    }
+                }
+                if(flag1 == true&&flag2 == true){
+                    System.out.println("MethodCallExpr2: "+n);
+                    flag = true;
                 }
             }
 
         }
 
         @Override
-        public void visit(AssignExpr n, List<String> arg) {
-            super.visit(n, arg);
-        }
-
-        @Override
-        public void visit(MethodCallExpr n, List<String> arg) {
-            super.visit(n, arg);
-        }
-
-        @Override
         public void visit(FieldDeclaration n, List<String> arg) {
             super.visit(n, arg);
+            List<String> atomWords = new ArrayList<>();
+            Stack<Node> stack = new Stack<>();
+            for(int i = 0;i<n.getVariables().size();i++){
+                if(n.getVariable(i).getChildNodes().size()!=0){
+                    for(int j = 0;j<n.getVariable(i).getChildNodes().size();j++){
+                        stack.add(n.getVariable(i).getChildNodes().get(j));
+                    }
+                    while(!stack.isEmpty()){
+                        Node node = stack.pop();
+                        if(node.getChildNodes().size()==0){
+                            if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
+                                atomWords.add(node.toString());
+                            }
+                        }else{
+                            for(int j = 0;j<node.getChildNodes().size();j++){
+                                stack.add(node.getChildNodes().get(j));
+                            }
+                        }
+                    }
+                }
+            }
+            boolean flag1 = false;
+            boolean flag2 = false;
+            String str = "";
+            for(int a = 0;a<atomWords.size();a++){
+                for(int b = 0;b<arg.size();b++){
+                    if(flag1==false&&atomWords.get(a).equals(arg.get(b))){
+                        flag1 = true;
+                        str = atomWords.get(a);
+                    }else if(flag1==true&&atomWords.get(a).equals(arg.get(b))&&flag2==false&&str!=atomWords.get(a)){
+                        flag2 = true;
+                    }else if(flag1 == true&&flag2 == true){
+                        break;
+                    }
+                }
+                if(flag1 == true&&flag2 == true){
+                    System.out.println("FieldDeclaration2: "+n);
+                    flag = true;
+                }
+            }
         }
     }
 }

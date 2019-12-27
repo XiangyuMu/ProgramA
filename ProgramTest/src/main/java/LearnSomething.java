@@ -36,6 +36,10 @@ public class LearnSomething {
             CurrentNum = relatedWordList.size();
         }
         System.out.println(relatedWordList);
+        ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
+        cu.accept(rfs,relatedWordList);
+        System.out.println("IsSecondClass: "+rfs.isFlag());
+
   }
     public static void BroadFirstSearch(Node nodeHead){
         if(nodeHead==null) {
