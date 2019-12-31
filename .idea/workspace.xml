@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$ReduceFunctionSorter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/BytemanTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/TestCase1.btm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -11,8 +12,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/LearnSomething.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/LearnSomething.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$CreateRelatedWordListVisitor.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$CreateRelatedWordListVisitor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$ReduceFunctionSorter.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/preprocessing/ToolBox$ReduceFunctionSorter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35$Mycounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35$People.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/build/classes/java/main/searchOnInternet/Example35.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/LearnSomething.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/LearnSomething.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/ToolBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/ToolBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example03.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example35.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +35,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,6 +86,10 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\eclipse-workspace\ProgramA\ProgramTest\src\main\java\byteman" />
+      <recent name="E:\eclipse-workspace\ProgramA\ProgramTest\src\main\java\searchOnInternet" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\eclipse-workspace\ProgramA\ProgramTest\src\main\resources" />
       <recent name="E:\eclipse-workspace\ProgramA\ProgramTest\src\main\java" />
@@ -142,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577434145338</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="firstChange">
+      <created>1577439373028</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1577439373028</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -163,6 +195,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576996416584" />
+    <state x="681" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577761952546">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="681" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577761952546" />
     <state x="765" y="203" key="#com.intellij.ide.util.MemberChooser" timestamp="1577343825674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -171,10 +207,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="254" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577439045266" />
-    <state x="711" y="147" key="CommitChangelistDialog2" timestamp="1577438921973">
+    <state x="409" y="101" key="CommitChangelistDialog2" timestamp="1577439371378">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="711" y="147" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438921973" />
+    <state x="409" y="101" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577439371378" />
     <state x="142" y="93" key="DiffContextDialog" timestamp="1577438912590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -191,22 +227,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="637" y="224" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577353167615" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1577438376177">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1577771002965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438376177" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1577438376177">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577771002965" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1577771002965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438376177" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1577438376177">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577771002965" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1577771002965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438376177" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1577438376177">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577771002965" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1577771002965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438376177" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577771002965" />
     <state x="627" y="230" key="RollbackChangesDialog" timestamp="1577352290697">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -215,10 +251,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="161" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577439302505" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577438590530">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1577439378228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577438590530" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577439378228" />
     <state x="891" y="287" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1577438322097">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -227,9 +263,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="334" y="120" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1576990988625" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577436524640">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577771806640">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577436524640" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1577771806640" />
   </component>
 </project>

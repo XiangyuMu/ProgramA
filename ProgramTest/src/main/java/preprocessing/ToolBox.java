@@ -25,6 +25,26 @@ public class ToolBox {
 
     }
     public static class CreateRelatedWordListVisitor extends VoidVisitorAdapter<List<String>>{
+
+        public void pre_createAtomWords(Expression e,List<String> atomWords){
+            Stack<Node> stack = new Stack<>();
+            for(int i = 0;i<e.getChildNodes().size();i++){
+                stack.add(e.getChildNodes().get(i));
+            }
+            while(!stack.isEmpty()){
+                Node node = stack.pop();
+                if(node.getChildNodes().size()==0){
+                    if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
+                        atomWords.add(node.toString());
+                    }
+                }else{
+                    for(int j = 0;j<node.getChildNodes().size();j++){
+                        stack.add(node.getChildNodes().get(j));
+                    }
+                }
+            }
+        }
+
         @Override
         public void visit(MethodCallExpr n, List<String> arg) {
             super.visit(n, arg);
@@ -35,7 +55,8 @@ public class ToolBox {
             Expression c = new MethodCallExpr();
             while(true){
                 for(int i = 0;i<e.getArguments().size();i++){
-                    atomWords.add(e.getArgument(i).toString());
+                    pre_createAtomWords(e,atomWords);
+                   // atomWords.add(e.getArgument(i).toString());
                 }
                 if(!e.getScope().toString().equals("Optional.empty")){
                     if(e.getScope().get().isMethodCallExpr()){
