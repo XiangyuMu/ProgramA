@@ -25,32 +25,91 @@ public class ToolBox {
 
     }
     public static class CreateRelatedWordListVisitor extends VoidVisitorAdapter<List<String>>{
+
+        public void pre_createAtomWords(Expression e,List<String> atomWords){
+            Stack<Node> stack = new Stack<>();
+            for(int i = 0;i<e.getChildNodes().size();i++){
+                stack.add(e.getChildNodes().get(i));
+            }
+            while(!stack.isEmpty()){
+                Node node = stack.pop();
+                if(node.getChildNodes().size()==0){
+                    if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
+                        atomWords.add(node.toString());
+                    }
+                }else{
+                    for(int j = 0;j<node.getChildNodes().size();j++){
+                        stack.add(node.getChildNodes().get(j));
+                    }
+                }
+            }
+        }
+
         @Override
         public void visit(MethodCallExpr n, List<String> arg) {
             super.visit(n, arg);
+            List<String> atomWords = new ArrayList<>();
             System.out.println("MethodCallExpr: "+n);
             boolean flag;
-            int ArgumentCount = n.getArguments().size();
-            if(ArgumentCount!=0){
-                for(int i = 0;i<ArgumentCount;i++){
+            MethodCallExpr e = n;
+            Expression c = new MethodCallExpr();
+            while(true){
+                for(int i = 0;i<e.getArguments().size();i++){
+                    pre_createAtomWords(e,atomWords);
+                   // atomWords.add(e.getArgument(i).toString());
+                }
+                if(!e.getScope().toString().equals("Optional.empty")){
+                    if(e.getScope().get().isMethodCallExpr()){
+                        e = e.getScope().get().asMethodCallExpr();
+                    }else{
+                        c = e.getScope().get();
+                        break;
+                    }
+                }else{
+                    break;
+                }
+            }
+            if(atomWords.size()!=0&&!c.isMethodCallExpr()){
+                System.out.println("atomWords: "+atomWords);
+                for(int m = 0;m<atomWords.size();m++){
                     flag = false;
-                    for(int j = 0;j<arg.size();j++){
-                        if(n.getArgument(i).toString().equals(arg.get(j))){
+                    for(int o = 0;o<arg.size();o++){
+                        if(atomWords.get(m).equals(arg.get(o))){
                             flag = true;
                             break;
                         }
                     }
-                    if(flag){
-                        MethodCallExpr e = n;
-                        if (!e.getScope().toString().equals("Optional.empty")){
-                            while(e.getScope().get().isMethodCallExpr()){
-                                e = e.getScope().get().asMethodCallExpr();
-                            }
-                            arg.add(e.getScope().get().toString());
-                        }
+                    if(flag&&!arg.contains(c.toString())){
+                        arg.add(c.toString());
                     }
                 }
             }
+
+
+
+
+
+//            int ArgumentCount = n.getArguments().size();
+//            if(ArgumentCount!=0){
+//                for(int i = 0;i<ArgumentCount;i++){
+//                    flag = false;
+//                    for(int j = 0;j<arg.size();j++){
+//                        if(n.getArgument(i).toString().equals(arg.get(j))){
+//                            flag = true;
+//                            break;
+//                        }
+//                    }
+//                    if(flag){
+//                        MethodCallExpr e = n;
+//                        if (!e.getScope().toString().equals("Optional.empty")){
+//                            while(e.getScope().get().isMethodCallExpr()){
+//                                e = e.getScope().get().asMethodCallExpr();
+//                            }
+//                            arg.add(e.getScope().get().toString());
+//                        }
+//                    }
+//                }
+//            }
             System.out.println("List: "+arg);
         }
         @Override
@@ -342,6 +401,7 @@ public class ToolBox {
                 if(!e.getScope().toString().equals("Optional.empty")){
                     if(e.getScope().get().isMethodCallExpr()){
                         e = e.getScope().get().asMethodCallExpr();
+                        //System.out.println("asMethodCallExpr: "+e);
                     }else{
                         break;
                     }
