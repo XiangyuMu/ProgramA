@@ -1,12 +1,14 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 
+//输入<String,int>(key,value)
+//输出值为平均值
+//可交换
 public class Example23 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";

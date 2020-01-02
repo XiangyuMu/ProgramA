@@ -1,16 +1,24 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/mapreduceProgram/DateSortAsc.java
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½ÖµÎªkeyï¿½ï¿½valueï¿½Ä»ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+//ÊäÈë<String,String>(key,value)
+//Êä³öÖµÎªkeyÓëvalueµÄ»¥»»
+//²»¿É½»»»£¨È·¶¨£©
 public class Example31 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
 	float gradesSum;
@@ -19,7 +27,7 @@ public class Example31 {
     	String key = (String)list.getList().get(0).getList().get(0);
 
     	for (Element value : list.getList()) {
-			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù´Îµßµï¿½k-vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªkey
+			// ÅÅÐòºóÔÙ´Îµßµ¹k-v£¬½«ÈÕÆÚ×÷Îªkey
 			System.out.println(value.getList().get(1).toString()+":"+key);
 			output.add(new TwoTuple(value.getList().get(1).toString(), key));
 		}

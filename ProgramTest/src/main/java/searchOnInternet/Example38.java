@@ -1,19 +1,21 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 //https://github.com/himank/Graph-Algorithm-MapReduce/blob/master/src/DijikstraAlgo.java
 
-
+//输入<String,String>(key,value)
+//输出值为key与value的互换
+//不可交换
 public class Example38 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
-	int maxVisit = 0;
-	int minVisit = Integer.MAX_VALUE;
-	String maxMinute = null;
+	int maxVisit = 0;					//默认最大值设为0
+	int minVisit = Integer.MAX_VALUE;	//默认最小值设为最大整数
+	String maxMinute = null;// 最大访问量的所在时间
 	String minMinute = null;
     public void reduce(ElemwntList list)  {
 

@@ -1,15 +1,23 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-//锟斤拷锟斤拷<String,String>(key,value)     (value锟角★拷Double Double锟斤拷锟斤拷式锟斤拷锟斤拷锟斤拷)
-//锟斤拷锟轿拷锟接ξ伙拷玫锟絭alue锟斤拷锟斤拷锟轿猭ey锟斤拷原锟斤拷锟斤拷key锟斤拷为value
-//锟缴斤拷锟斤拷
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//输入<String,String>(key,value)     (value是“Double Double”形式的类型)
+//输出为对应位置的value相加作为key，原本的key作为value
+//可交换（应该是可交换的，但是测试用例由于java的精度问题会测出不可交换）[(1.1400000000000001 3.12,1)]
 public class Example16 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
     public void reduce(ElemwntList list)  {

@@ -1,8 +1,5 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -10,7 +7,12 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 
+//输入<String,int>(key,value)
+//输出值为累加
+//可交换
 public class Example26 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";

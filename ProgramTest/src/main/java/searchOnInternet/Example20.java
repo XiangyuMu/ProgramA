@@ -1,14 +1,22 @@
 package searchOnInternet;
 
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½valueÎªï¿½ÕµÄ¼ï¿½Öµï¿½ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+import reduceExample.ElemwntList;
+
+//ÊäÈë<String,String>(key,value)
+//Êä³övalueÎª¿ÕµÄ¼üÖµ¶Ô
+//²»¿É½»»»
 public class Example20 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
     public void reduce(ElemwntList list)  {
@@ -16,9 +24,11 @@ public class Example20 {
     	String key = (String)list.getList().get(0).getList().get(0);
 
     	int i = 0;
-    	while (list.getList().get(i)!=null) {
+    	while (i<list.getList().size()) {
             String inputDoc = (String) list.getList().get(i).getList().get(1);
+            System.out.println(inputDoc);
             boolean keep = inputDoc.isEmpty();
+            i++;
             if (!keep) {
                 String incrCounter="BehemothReducer";
                 continue;

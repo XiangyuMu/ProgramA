@@ -1,0 +1,7 @@
+RULE VarList1
+CLASS testList.Demo
+METHOD main
+AT WRITE var2
+IF true
+DO traceln("list before: ")
+ENDRULE

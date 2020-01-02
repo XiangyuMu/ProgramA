@@ -1,16 +1,23 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½valueï¿½ï¿½ÎªStringï¿½ï¿½ï¿½ï¿½ï¿½Û¼ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//ÊäÈë<String,String>(key,value)
+//½«value×÷ÎªString½øÐÐÀÛ¼Ó
+//²»¿É½»»»(È·¶¨)
 public class Example10 {
 
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
 	
@@ -19,7 +26,7 @@ public class Example10 {
 	public void reduce(ElemwntList list) {
 		String key = (String)list.getList().get(0).getList().get(0);
 
-        //mapï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½keyÎª1,valueÎª101:5.0
+        //mapÊä³öµÄÊý¾ÝkeyÎª1,valueÎª101:5.0
         String itermPers = "";
         for (Element value : list.getList()) {
             itermPers += "," + value.getList().get(1).toString();

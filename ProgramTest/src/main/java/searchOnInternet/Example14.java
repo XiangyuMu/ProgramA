@@ -1,15 +1,23 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-//ï¿½ï¿½ï¿½ï¿½<int,int>(key,value)
-//ï¿½ï¿½valueÎª1Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½reputationï¿½ï¿½Öµ
-//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½reputationï¿½Ä»ï¿½Îªï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½É½ï¿½ï¿½ï¿½
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//ÊäÈë<int,int>(key,value)
+//ÇóvalueÎª1Ê±µÄÊýÁ¿ÒÔ¼°reputationµÄÖµ
+//Èô²»¿´reputationµÄ»°Îª¿É½»»»£¬·ñÔòÊÇ²»¿É½»»»(È·¶¨)
 public class Example14 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
     public void reduce(ElemwntList list)  {
@@ -21,7 +29,7 @@ public class Example14 {
 
         for (Element value : list.getList()) {
 
-            int intValue = (Integer) value.getList().get(1);
+            int intValue = Integer.parseInt((String) value.getList().get(1)) ;
             if (intValue == 1) {
                 postsNumber ++;
             }

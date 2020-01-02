@@ -5,12 +5,22 @@ import reduceExample.ElemwntList;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/mutualFriend/MergeFriendsReducer.java
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½ÖµÎªkeyï¿½ï¿½valueï¿½Ä»ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+//ÊäÈë<String,String>(key,value)
+//Êä³öÖµÎªkeyÓëvalueµÄ»¥»»
+//²»¿É½»»»£¨È·¶¨£©
 public class Example32 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
 	float gradesSum;

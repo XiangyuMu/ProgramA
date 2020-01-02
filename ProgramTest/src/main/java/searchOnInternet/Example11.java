@@ -1,18 +1,24 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-//????<String,String>(key,value)       (value???????Strng,Double??)
-//????<key,value>??
-//???????????????????
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+
 public class Example11 {
 
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
 	
@@ -27,6 +33,7 @@ public class Example11 {
             if (result.containsKey(str[0])) {
                 result.put(str[0], result.get(str[0]) + Double.parseDouble(str[1]));
             } else {
+            	System.out.println(str[1]);
                 result.put(str[0], Double.parseDouble(str[1]));
             }
         }

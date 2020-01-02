@@ -1,17 +1,35 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½valueï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//ÊäÈë<String,String>(key,value)
+//½«valueµÄÖµÁ¬½Ó
+//²»¿É½»»»£¨²»¿É½»»»£©
 public class Example05 {
 
+	
+	
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
+	
+	
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+
+
+
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+
+
+
 	public void reduce(ElemwntList list) {
 		String key = (String)list.getList().get(0).getList().get(0);
         StringBuilder totalStr = new StringBuilder();

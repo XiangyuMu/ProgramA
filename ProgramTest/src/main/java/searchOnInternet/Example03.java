@@ -1,20 +1,28 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-//锟斤拷锟斤拷<String,String>(key,value)
-//锟斤拷锟斤拷key锟斤拷应锟斤拷ip锟侥革拷锟斤拷
-//锟缴斤拷锟斤拷
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//输入<String,String>(key,value)
+//计算key对应的ip的个数
+//可交换（确定）
 public class Example03 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
-
+        //使用set集合记性独立ip统计
 		String key = (String)list.getList().get(0).getList().get(0);
         Set<String> ips = new HashSet<String>();
         for (Element ip : list.getList()) {
