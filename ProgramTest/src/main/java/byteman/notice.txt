@@ -1,0 +1,8 @@
+1、在对java文件进行编译时，要使用javac -g filepath 的命令！
+
+Example04存在没有正确分类的问题！
+Example05存在没有正确分类的问题！
+
+Example06对于数组处理有问题，无法填入相关list里
+
+Example08存在变量名重复问题StrArr

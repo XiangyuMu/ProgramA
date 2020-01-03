@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example03.java";
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example12.java";
 
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -75,17 +75,17 @@ public class LearnSomething {
         }
 
 
-        @Override
-        public void visit(FieldDeclaration e, Void arg) {
-            super.visit(e, arg);
-            System.out.println("FieldDeclaration: "+e.toString());
-            for(int i = 0;i<e.getVariables().size();i++){
-                System.out.println("Name: "+e.getVariable(i).getName());
-                System.out.println("Type: "+e.getVariable(i).getType());
-                System.out.println("Init: "+e.getVariable(i).getInitializer().get());
-
-            }
-        }
+//        @Override
+//        public void visit(FieldDeclaration e, Void arg) {
+//            super.visit(e, arg);
+//            System.out.println("FieldDeclaration: "+e.toString());
+//            for(int i = 0;i<e.getVariables().size();i++){
+//                System.out.println("Name: "+e.getVariable(i).getName());
+//                System.out.println("Type: "+e.getVariable(i).getType());
+//                System.out.println("Init: "+e.getVariable(i).getInitializer().get());
+//
+//            }
+//        }
 
         @Override
         public void visit(AssignExpr n, Void arg) {
@@ -146,7 +146,7 @@ public class LearnSomething {
                 }
             }
             for(int a = 0;a<n.getBody().getChildNodes().size();a++){
-                System.out.println("forBody: "+n.getBody().asBlockStmt().getStatement(0));
+                System.out.println("forBody: "+n.getBody().getChildNodes().get(a).getChildNodes().get(0).getMetaModel());
             }
 
 

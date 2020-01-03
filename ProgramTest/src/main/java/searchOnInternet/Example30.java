@@ -30,7 +30,7 @@ public class Example30 {
     	int sum = 0;
 		int grades = 0;
 		for (Element val : list.getList()) {
-			sum += 1;   
+			sum += 1;
 			grades += Integer.parseInt((String) val.getList().get(1));
 		}
 		System.out.println("Reduce----student is:"+key.toString()+",grades is:"+grades+",sum is:"+sum);

@@ -27,7 +27,6 @@ public class Example01 {
          Set<String> friends = new HashSet<String>();
          for (Element value : list.getList()) {
              friends.add(value.getList().get(1).toString());
-            
          }
          System.out.println(friends);
          if (friends.size() > 1) {

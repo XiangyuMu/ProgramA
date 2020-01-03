@@ -36,7 +36,7 @@ public class Example05 {
         for (Element value : list.getList()) {
             totalStr.append(value.getList().get(1).toString());
         }
-        String v =totalStr.toString();
+        String v = totalStr.toString();
         output.add(new TwoTuple(key, v));
     }
 

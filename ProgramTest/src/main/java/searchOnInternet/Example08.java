@@ -32,7 +32,7 @@ public class Example08 {
         for (Element value : list.getList()) {
             String valueStr = value.getList().get(1).toString();
             list_1.add(valueStr);
-            String[] strArr = valueStr.split("");
+            String[] strArr = valueStr.split(" ");
             totalPr += Float.parseFloat(strArr[1]);
             printStr.append(",").append(valueStr);
         }

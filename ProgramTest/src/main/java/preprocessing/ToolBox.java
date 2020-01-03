@@ -2,10 +2,7 @@ package preprocessing;
 
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.ast.body.FieldDeclaration;
-import com.github.javaparser.ast.expr.AssignExpr;
-import com.github.javaparser.ast.expr.Expression;
-import com.github.javaparser.ast.expr.MethodCallExpr;
-import com.github.javaparser.ast.expr.VariableDeclarationExpr;
+import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ForEachStmt;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import java.util.ArrayList;
@@ -26,7 +23,7 @@ public class ToolBox {
     }
     public static class CreateRelatedWordListVisitor extends VoidVisitorAdapter<List<String>>{
 
-        public void pre_createAtomWords(Expression e,List<String> atomWords){
+        public void pre_createAtomWords(Expression e,List<String> atomWords){              //Break down into nodes
             Stack<Node> stack = new Stack<>();
             for(int i = 0;i<e.getChildNodes().size();i++){
                 stack.add(e.getChildNodes().get(i));
@@ -35,7 +32,10 @@ public class ToolBox {
                 Node node = stack.pop();
                 if(node.getChildNodes().size()==0){
                     if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
-                        atomWords.add(node.toString());
+                        if(!(node.toString().equals("Float")||node.toString().equals("Integer")||node.toString().equals("String")||node.toString().equals("Char")||node.toString().equals("Boolean")||node.toString().equals("System.out"))){
+                            atomWords.add(node.toString());
+                        }
+
                     }
                 }else{
                     for(int j = 0;j<node.getChildNodes().size();j++){
@@ -46,7 +46,7 @@ public class ToolBox {
         }
 
         @Override
-        public void visit(MethodCallExpr n, List<String> arg) {
+        public void visit(MethodCallExpr n, List<String> arg) {                     //Add MethodCallExpr Expression note to list
             super.visit(n, arg);
             List<String> atomWords = new ArrayList<>();
             System.out.println("MethodCallExpr: "+n);
@@ -80,7 +80,10 @@ public class ToolBox {
                         }
                     }
                     if(flag&&!arg.contains(c.toString())){
-                        arg.add(c.toString());
+                        if(!(c.toString().equals("Float")||c.toString().equals("Integer")||c.toString().equals("String")||c.toString().equals("Char")||c.toString().equals("Boolean")||c.toString().equals("System.out"))){
+                            arg.add(c.toString());
+                        }
+
                     }
                 }
             }
@@ -113,7 +116,7 @@ public class ToolBox {
             System.out.println("List: "+arg);
         }
         @Override
-        public void visit(AssignExpr n, List<String> arg) {
+        public void visit(AssignExpr n, List<String> arg) {                  //Add AssignExpr Expression note to list
             super.visit(n, arg);
             System.out.println("Assign: "+n);
             boolean flag;
@@ -122,13 +125,18 @@ public class ToolBox {
             List<String> atomWords = new ArrayList<>();
             Stack<Node> stack = new Stack<>();
             for(int i = 0;i<right.getChildNodes().size();i++){
+
                 stack.add(right.getChildNodes().get(i));
+                System.out.println("Type: "+n.getOperator());
+                System.out.println("AssignNode: "+right.getChildNodes().get(i));
             }
             while(!stack.isEmpty()){
                 Node node = stack.pop();
                 if(node.getChildNodes().size()==0){
                     if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
-                        atomWords.add(node.toString());
+                        if(!(node.toString().equals("Float")||node.toString().equals("Integer")||node.toString().equals("String")||node.toString().equals("Char")||node.toString().equals("Boolean"))){
+                            atomWords.add(node.toString());
+                        }
                     }
                 }else{
                     for(int j = 0;j<node.getChildNodes().size();j++){
@@ -157,13 +165,17 @@ public class ToolBox {
         }
 
         @Override
-        public void visit(FieldDeclaration n, List<String> arg) {
+        public void visit(FieldDeclaration n, List<String> arg) {                   //Add FieldDeclaration Expression note to list
             super.visit(n, arg);
             List<String> atomWords = new ArrayList<>();
             boolean flag;
             System.out.println("Field: "+n);
             for(int i = 0;i<n.getVariables().size();i++){
                 Expression left = n.getVariable(i).getNameAsExpression();
+                System.out.println(n.getVariable(i).getInitializer().toString().equals("Optional.empty"));
+                if(n.getVariable(i).getInitializer().toString().equals("Optional.empty")){
+                    break;
+                }
                 Expression right = n.getVariable(i).getInitializer().get();
                 Stack<Node> stack = new Stack<>();
                 for(int j = 0;j<right.getChildNodes().size();j++){
@@ -173,7 +185,9 @@ public class ToolBox {
                     Node node = stack.pop();
                     if(node.getChildNodes().size()==0){
                         if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
-                            atomWords.add(node.toString());
+                            if(!(node.toString().equals("Float")||node.toString().equals("Integer")||node.toString().equals("String")||node.toString().equals("Char")||node.toString().equals("Boolean"))){
+                                atomWords.add(node.toString());
+                            }
                         }
                     }else{
                         for(int j = 0;j<node.getChildNodes().size();j++){
@@ -201,7 +215,7 @@ public class ToolBox {
         }
 
         @Override
-        public void visit(ForEachStmt n, List<String> arg) {
+        public void visit(ForEachStmt n, List<String> arg) {                  //Add ForEachStmt Expression note to list
             super.visit(n, arg);
             boolean flag ;
             System.out.println("ForEach: "+n);
@@ -215,7 +229,9 @@ public class ToolBox {
                 Node node = stack.pop();
                 if(node.getChildNodes().size()==0){
                     if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
-                        atomWords.add(node.toString());
+                        if(!(node.toString().equals("Float")||node.toString().equals("Integer")||node.toString().equals("String")||node.toString().equals("Char")||node.toString().equals("Boolean"))){
+                            atomWords.add(node.toString());
+                        }
                     }
                 }else{
                     for(int j = 0;j<node.getChildNodes().size();j++){
@@ -241,7 +257,7 @@ public class ToolBox {
         }
 
         @Override
-        public void visit(VariableDeclarationExpr n, List<String> arg) {
+        public void visit(VariableDeclarationExpr n, List<String> arg) {            ////Add VariableDeclarationExpr Expression note to list
             super.visit(n, arg);
             Expression right;
             Expression left;
@@ -260,7 +276,9 @@ public class ToolBox {
                         Node node = stack.pop();
                         if(node.getChildNodes().size()==0){
                             if(node.getMetaModel().toString().equals("NameExpr")||node.getMetaModel().toString().equals("SimpleName")){
-                                atomWords.add(node.toString());
+                                if(!(node.toString().equals("Float")||node.toString().equals("Integer")||node.toString().equals("String")||node.toString().equals("Char")||node.toString().equals("Boolean"))){
+                                    atomWords.add(node.toString());
+                                }
                             }
                         }else{
                             for(int j = 0;j<node.getChildNodes().size();j++){
@@ -291,7 +309,7 @@ public class ToolBox {
     }
 
     public static class ReduceFunctionSorter extends VoidVisitorAdapter<List<String>>{
-        private boolean flag = true;
+        private boolean flag = false;
 
         public boolean isFlag() {
             return flag;
@@ -353,6 +371,10 @@ public class ToolBox {
             List<String> atomWords = new ArrayList<>();
             Expression right = n.getValue();
             Stack<Node> stack = new Stack<>();
+            boolean isComplicated = false;
+            if(n.getOperator()== AssignExpr.Operator.PLUS||n.getOperator()== AssignExpr.Operator.MINUS||n.getOperator()== AssignExpr.Operator.MULTIPLY||n.getOperator()== AssignExpr.Operator.DIVIDE){
+                isComplicated = true;
+            }
             for(int i = 0;i<right.getChildNodes().size();i++){
                 stack.add(right.getChildNodes().get(i));
             }
@@ -373,6 +395,11 @@ public class ToolBox {
             String str = "";
             for(int a = 0;a<atomWords.size();a++){
                 for(int b = 0;b<arg.size();b++){
+                    if(isComplicated&&atomWords.get(a).equals(arg.get(b))){
+                        flag1 = true;
+                        flag2 = true;
+                        System.out.println("the judgement key is +=");
+                    }
                     if(flag1==false&&atomWords.get(a).equals(arg.get(b))){
                         flag1 = true;
                         str = atomWords.get(a);
