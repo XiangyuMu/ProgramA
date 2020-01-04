@@ -1,7 +1,7 @@
 RULE VarList
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
-AT WRITE list ALL
+AT WRITE $list
 IF true
-DO traceln("list before: "+list)
+DO traceln("list before: ")
 ENDRULE

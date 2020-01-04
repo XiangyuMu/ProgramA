@@ -1,16 +1,24 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/shuffleTest/TempSort.java
 
-//ï¿½ï¿½ï¿½ï¿½<String,int>(key,value)
-//ï¿½ï¿½ï¿½ÖµÎªvalueï¿½ï¿½ï¿½Û¼ï¿½
-//ï¿½É½ï¿½ï¿½ï¿½
+//ÊäÈë<String,int>(key,value)
+//Êä³öÖµÎªvalueµÄÀÛ¼Ó
+//¿É½»»»(¿É½»»»)
 public class Example34 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
 	float gradesSum;
@@ -20,9 +28,9 @@ public class Example34 {
 
     	int  maxTemp = Integer.MIN_VALUE;
 		for(Element value : list.getList()) {
-			System.out.println("ï¿½ê£º"+key+", ï¿½ï¿½ï¿½Â£ï¿½"+value);
-			if ((Integer)value.getList().get(1)>maxTemp) {
-				maxTemp = (Integer) value.getList().get(1);
+			System.out.println("Äê£º"+key+", ÆøÎÂ£º"+value);
+			if (Integer.parseInt((String) value.getList().get(1))>maxTemp) {
+				maxTemp = Integer.parseInt((String) value.getList().get(1));
 			}
 		}
 		System.out.println("Date:"+key+", MaxTemp:"+maxTemp);

@@ -1,12 +1,12 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 
 
 public class Example25 {

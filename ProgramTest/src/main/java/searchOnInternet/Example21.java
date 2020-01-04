@@ -1,12 +1,14 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 
+//输入<String,String>(key,value)
+//输出值经过复杂计算
+//不确定（但应该是不可交换）
 public class Example21 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";

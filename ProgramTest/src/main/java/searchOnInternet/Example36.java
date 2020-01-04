@@ -1,16 +1,16 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/ssdut/training/mapreduce/topten/TopTenReducer.java
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê®ï¿½ï¿½ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+//ÊäÈë<String,String>(key,value)
+//Êä³öÖµ½«×îºóµÄÊ®¸öÊä³ö
+//²»¿É½»»»
 public class Example36 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	private TreeMap<Integer, String> visittimesMap = new TreeMap<Integer, String>();
@@ -21,8 +21,8 @@ public class Example36 {
 
     	for (Element val : list.getList()) {
 			String[] strs = val.getList().get(1).toString().split(" ");
-			visittimesMap.put(Integer.parseInt(strs[1]), val.getList().get(1).toString());	//ï¿½ï¿½ï¿½ï¿½ï¿½Ê´ï¿½ï¿½ï¿½ï¿½ï¿½KEYï¿½ï¿½ï¿½ï¿½ï¿½Ğ¼ï¿½Â¼ï¿½ï¿½VALUEï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TreeMapï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½
-			if (visittimesMap.size() > 10) {		//ï¿½ï¿½ï¿½TreeMapï¿½ï¿½Ôªï¿½Ø³ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½KEYï¿½ï¿½Ğ¡ï¿½Ä£ï¿½Ôªï¿½ï¿½É¾ï¿½ï¿½
+			visittimesMap.put(Integer.parseInt(strs[1]), val.getList().get(1).toString());	//½«·ÃÎÊ´ÎÊı£¨KEY£©ºÍĞĞ¼ÇÂ¼£¨VALUE£©·ÅÈëTreeMapÖĞ×Ô¶¯ÅÅĞò
+			if (visittimesMap.size() > 10) {		//Èç¹ûTreeMapÖĞÔªËØ³¬¹ıN¸ö£¬½«µÚÒ»¸ö£¨KEY×îĞ¡µÄ£©ÔªËØÉ¾³ı
 				visittimesMap.remove(visittimesMap.firstKey());
 			}
 		}

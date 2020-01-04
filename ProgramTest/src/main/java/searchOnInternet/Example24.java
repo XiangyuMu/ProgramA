@@ -1,14 +1,15 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-//ï¿½ï¿½ï¿½ï¿½<String,int>(key,value)
-//ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½ï¿½Öµ
-//ï¿½É½ï¿½ï¿½ï¿½
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+
+//ÊäÈë<String,int>(key,value)
+//Êä³öÖµÎª×î´óÖµ
+//¿É½»»»
 public class Example24 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";

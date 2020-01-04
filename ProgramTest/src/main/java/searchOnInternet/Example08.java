@@ -1,16 +1,22 @@
 package searchOnInternet;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import reduceExample.Element;
 import reduceExample.ElemwntList;
-
-import java.util.ArrayList;
-import java.util.List;
-//?????<String,String>(key,value)     (value??String+?? ??+float???)
-//???????????????(key??value)??value???????е????
-//???????
+//输入为<String,String>(key,value)     (value由String+“”+float组成)
+//生成一串键值对，且(key，value)中value为在总和中的占比
+//不可交换（确定）
 
 public class Example08 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
 
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
@@ -26,7 +32,7 @@ public class Example08 {
         for (Element value : list.getList()) {
             String valueStr = value.getList().get(1).toString();
             list_1.add(valueStr);
-            String[] strArr = valueStr.split("");
+            String[] strArr = valueStr.split(" ");
             totalPr += Float.parseFloat(strArr[1]);
             printStr.append(",").append(valueStr);
         }

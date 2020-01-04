@@ -6,10 +6,18 @@ import reduceExample.ElemwntList;
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
 //https://github.com/matt-hicks/MapReduce-KNN/blob/master/KnnPattern.java
 
-
+//输入<String,DoubleString>(key,value)
+//输出值为复杂计算
+//不清楚
 public class Example39 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	TreeMap<Double, String> KnnMap = new TreeMap<Double, String>();

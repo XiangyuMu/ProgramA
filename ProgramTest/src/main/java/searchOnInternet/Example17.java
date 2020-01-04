@@ -1,16 +1,24 @@
 package searchOnInternet;
 
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½setï¿½ï¿½valueï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½
-//ï¿½É½ï¿½ï¿½ï¿½ï¿½ï¿½setÎªï¿½ï¿½Ë³ï¿½ï¿½
+import reduceExample.ElemwntList;
+
+//ÊäÈë<String,String>(key,value)
+//Êä³öset£¨value£©µÄ¼¯ºÏ
+//¿É½»»»£¨setÎªÎÞË³Ðò£©
 public class Example17 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
     public void reduce(ElemwntList list)  {
@@ -18,10 +26,13 @@ public class Example17 {
     	String key = (String)list.getList().get(0).getList().get(0);
     	Set<String> attackers = new TreeSet<String>();
     	int i = 0;
-        while (list.getList().get(i)!=null) {
+        while (i<list.getList().size()) {
           String valStr = list.getList().get(i).getList().get(1).toString();
           i = i+1;
           attackers.add(valStr);
+          if(i == 0) {
+        	  
+          }
         }
         output.add(new TwoTuple(key, attackers.toString()));
     }

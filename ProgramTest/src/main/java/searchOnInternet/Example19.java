@@ -1,13 +1,23 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 
+//输入<String,Double>(key,value) (value的第一位为1或2)
+//输出将第一个为1的进行累加，作为key，value为第一个字母为2的最后一个。
+//不可交换(确定)
 public class Example19 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
     public void reduce(ElemwntList list)  {
@@ -36,7 +46,7 @@ public class Example19 {
 		        name=record.substring(2);
 		    }
         }
-        if(name!=null&& String.valueOf(sum)!=null)
+        if(name!=null&&String.valueOf(sum)!=null)
         {
 		  a.add(String.valueOf(sum));
 		  b.add(","+name);

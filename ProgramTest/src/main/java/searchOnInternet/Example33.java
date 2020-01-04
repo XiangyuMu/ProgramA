@@ -1,16 +1,24 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/mutualFriend/DecomposeFriendsReducer.java
 
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)
-//ï¿½ï¿½ï¿½Öµvalueï¿½ï¿½ï¿½Û¼ï¿½String
-//ï¿½ï¿½ï¿½É½ï¿½ï¿½ï¿½
+//ÊäÈë<String,String>(key,value)
+//Êä³öÖµvalueµÄÀÛ¼ÓString
+//²»¿É½»»»£¨È·¶¨£©
 public class Example33 {
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v ="";
 	float gradesSum;
@@ -22,7 +30,7 @@ public class Example33 {
 		for (Element value : list.getList()) {
 			friendList += value.getList().get(1).toString()+",";
 		}
-		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ðºï¿½ï¿½Ñ£ï¿½A	I,K,C,B,G,F,H,O,D
+		// Êä³ö¸öÈËËùÓÐºÃÓÑ£¬A	I,K,C,B,G,F,H,O,D
 		output.add(new TwoTuple(key, friendList.substring(0,friendList.length()-1)));
     }
 

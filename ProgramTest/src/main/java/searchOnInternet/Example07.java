@@ -1,18 +1,26 @@
 package searchOnInternet;
 
-import reduceExample.Element;
-import reduceExample.ElemwntList;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-//ï¿½ï¿½ï¿½ï¿½<String,String>(key,value)     (valueÖµï¿½ï¿½ï¿½Ðµï¿½ï¿½Ô¡ï¿½prï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½ï¿½Ðµï¿½Ã»ï¿½ï¿½)
-//ï¿½ï¿½ï¿½ÓµÄ¼ï¿½ï¿½ï¿½
-//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½É½ï¿½ï¿½ï¿½
+
+import reduceExample.Element;
+import reduceExample.ElemwntList;
+//ÊäÈë<String,String>(key,value)     (valueÖµÖÐÓÐµÄÒÔ¡°pr¡±¿ªÍ·£¬ÓÐµÄÃ»ÓÐ)
+//¸´ÔÓµÄ¼ÆËã
+//²»Çå³þÊÇ·ñ¿É½»»»£¨¿É½»»»£©
 
 public class Example07 {
 
+	
+	public List<TwoTuple> getOutput() {
+		return output;
+	}
+	public void setOutput(List<TwoTuple> output) {
+		this.output = output;
+	}
+	
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
 	public void reduce(ElemwntList list) {
@@ -21,25 +29,28 @@ public class Example07 {
 
         System.out.println("CalcPeopleRankReducer input:");
         StringBuilder printStr = new StringBuilder();
-        //prÍ³ï¿½ï¿½
+        //prÍ³¼Æ
         float pr = 0f;
-        //ï¿½æ´¢prï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Öµ
+        //´æ´¢pr¾ØÕóÁÐµÄÖµ
         Map<Integer, Float> prMap = new HashMap<Integer, Float>();
-        //ï¿½æ´¢ï¿½Ú½Ó¾ï¿½ï¿½ï¿½ï¿½Ðµï¿½Öµ
+        //´æ´¢ÁÚ½Ó¾ØÕóÐÐµÄÖµ
         Map<Integer, Float> matrixMap = new HashMap<Integer, Float>();
-        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½mapï¿½ï¿½
+        //½«Á½¸ö¾ØÕó¶ÔÓ¦µÄÖµ´æÈë¶ÔÓ¦µÄmapÖÐ
         for (Element value : list.getList()) {
             String valueStr = value.getList().get(1).toString();
             String[] kv = valueStr.split(":");
+            if(pr==0.2) {
+            	
+            }
             if (valueStr.startsWith("pr")) {
-                prMap.put(Integer.parseInt(kv[0]), Float.valueOf(kv[1]));
+                prMap.put(Integer.parseInt(kv[1]), Float.valueOf(kv[2]));
             } else {
-                matrixMap.put(Integer.parseInt(kv[0]), Float.valueOf(kv[1]));
+                matrixMap.put(Integer.parseInt(kv[1]), Float.valueOf(kv[2]));
             }
             printStr.append(",").append(valueStr);
         }
         System.out.println(printStr.toString().replaceFirst(",", ""));
-        //ï¿½ï¿½ï¿½ï¿½mapï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½
+        //¸ù¾ÝmapÖÐµÄÊý¾Ý½øÐÐ¼ÆËã
         for (Map.Entry<Integer, Float> entry : matrixMap.entrySet()) {
             pr += entry.getValue() * prMap.get(entry.getKey());
         }
