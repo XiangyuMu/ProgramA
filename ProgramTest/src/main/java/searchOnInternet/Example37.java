@@ -33,11 +33,6 @@ public class Example37 {
 				minMinute = minute;
 			}
 		}
-		
-		
-		
-		
-		
 		String value = maxMinute + " " + maxVisit + "\t" + minMinute + " " + minVisit;
 		output.add(new TwoTuple(key, value));
 		

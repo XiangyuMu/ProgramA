@@ -8,7 +8,7 @@ import reduceExample.ElemwntList;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/shuffleTest/TempSort.java
 
 //输入<String,int>(key,value)
-//输出值为value的累加
+//value最大值
 //可交换(可交换)
 public class Example34 {
 	
