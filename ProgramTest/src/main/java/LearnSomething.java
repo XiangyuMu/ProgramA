@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example39.java";
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example06.java";
 
 
     public static void main(String[] args) throws FileNotFoundException {

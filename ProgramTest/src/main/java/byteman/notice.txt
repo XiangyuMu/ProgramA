@@ -3,9 +3,9 @@
 Example04存在没有正确分类的问题！
 Example05存在没有正确分类的问题！
 
-Example06对于数组处理有问题，无法填入相关list里
+Example06对于数组处理有问题，无法填入相关list里(解决)
 
-Example08存在变量名重复问题StrArr
+Example08存在变量名重复问题StrArr（主要问题在于变量的范围问题）
 
 Example13第二类分析错误，因为最终输出的结果和第二类无关，代码存在冗余信息
 

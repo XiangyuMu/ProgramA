@@ -46,6 +46,39 @@ public class ToolBox {
         }
 
         @Override
+        public void visit(ArrayAccessExpr n, List<String> arg) {
+            super.visit(n, arg);
+            System.out.println("ArrayAccessExpr: "+n);
+            List<String> atomWords = new ArrayList<>();
+
+            System.out.println("Node:"+n+" ParentNode: "+n.getParentNode().get());
+            Node node = n.getParentNode().get();
+            System.out.println(node.getParentNode().get().getParentNode().get().getParentNode().get().getParentNode().get().getParentNode().get().getBegin());
+            pre_createAtomWords(n.getIndex(),atomWords);
+
+            Expression left = n.getName();
+            boolean flag;
+            if(left.isNameExpr()){
+                System.out.println("atomWords: "+atomWords);
+                if(atomWords.size()!=0){
+                    for(int m = 0;m<atomWords.size();m++){
+                        flag = false;
+                        for(int o = 0;o<arg.size();o++){
+                            if(atomWords.get(m).equals(arg.get(o))){
+                                flag = true;
+                                break;
+                            }
+                        }
+                        if(flag&&!arg.contains(left.toString())){
+                            arg.add(left.toString());
+                        }
+                    }
+                }
+            }
+            System.out.println("List: "+arg);
+        }
+
+        @Override
         public void visit(MethodCallExpr n, List<String> arg) {                     //Add MethodCallExpr Expression note to list
             super.visit(n, arg);
             List<String> atomWords = new ArrayList<>();
