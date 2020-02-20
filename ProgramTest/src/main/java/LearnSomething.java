@@ -1,3 +1,4 @@
+import AnalysisProgress.ParserDemo;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
@@ -6,19 +7,22 @@ import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ExpressionStmt;
 import com.github.javaparser.ast.stmt.ForEachStmt;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import preprocessing.CreateBTMFile;
+import preprocessing.KeyWord;
 import preprocessing.ToolBox;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example06.java";
+    private static final String FilePath = "ProgramTest/src/main/java/reduceExample/IndexValuePair_2.java";
 
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         CompilationUnit cu = StaticJavaParser.parse(new File(FilePath));
         //BroadFirstSearch(cu);
 
@@ -26,9 +30,12 @@ public class LearnSomething {
         //dt.writeImage("JPG",new File("pic.jpg"),cu.getChildNodes(),"CompilationUnit");
 
 
-        //cu.accept(new ExpressVisitor(),null);
-        List<String> relatedWordList = new ArrayList<>();
-        relatedWordList.add("list");
+//        cu.accept(new ExpressVisitor(),null);
+        List<KeyWord> relatedWordList = new ArrayList<>();
+        List<KeyWord> relatedWordList1 = new ArrayList<>();
+        KeyWord list = new KeyWord("list","reduce");
+        list.setDataStructure("ElemwntList");
+        relatedWordList.add(list);
         int formerNum  = 0,CurrentNum = 1;
         while(formerNum!=CurrentNum){
             formerNum = relatedWordList.size();
@@ -36,10 +43,32 @@ public class LearnSomething {
             CurrentNum = relatedWordList.size();
         }
         System.out.println(relatedWordList);
-        ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
-        cu.accept(rfs,relatedWordList);
-        System.out.println("IsSecondClass: "+rfs.isFlag());
 
+
+        ParserDemo.CreateRelatedWordListVisitor pd = new ParserDemo.CreateRelatedWordListVisitor();
+        cu.accept(pd,relatedWordList1);
+        System.out.println("relatedWordList1: "+relatedWordList1);
+        LearnSomething ls = new LearnSomething();
+        ls.mergeTwoRelatedList(relatedWordList,relatedWordList1);
+        System.out.println("relatedWordList: "+relatedWordList);
+       // ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
+       // cu.accept(rfs,relatedWordList);
+       // System.out.println("IsSecondClass: "+rfs.isFlag());
+        CreateBTMFile cbf = new CreateBTMFile();
+        cbf.createBTMFile(relatedWordList,"IndexValuePair_2");
+
+
+  }
+
+  public void mergeTwoRelatedList(List<KeyWord> list1,List<KeyWord> list2){
+        for(int i = 0;i<list1.size();i++){
+            for(int j = 0;j<list2.size();j++){
+                if(list1.get(i).equals(list2.get(j))){
+                    list1.get(i).setDataStructure(list2.get(j).getDataStructure());
+                    break;
+                }
+            }
+        }
   }
     public static void BroadFirstSearch(Node nodeHead){
         if(nodeHead==null) {
@@ -109,7 +138,13 @@ public class LearnSomething {
         public void visit(MethodCallExpr n, Void arg) {
             super.visit(n, arg);
             System.out.println("MethodCallExpr: "+n);
-            System.out.println("Argument: "+n.getArguments());
+            if(n.getArguments().size()!=0){
+                for(int i = 0;i<n.getChildNodes().size();i++)
+                System.out.println(n.getChildNodes().get(i).getMetaModel());
+
+                System.out.println("Argument: "+n);
+            }
+
             System.out.println("Name: "+n.getName());
             System.out.println("Scope: "+n.getScope());
             if(n.getScope().toString().equals("Optional.empty")){
@@ -127,7 +162,7 @@ public class LearnSomething {
             super.visit(n, arg);
             System.out.println("ForEachStmt: "+n);
             System.out.println("getIterable: "+n.getIterable());
-            System.out.println("getVariable: "+n.getVariable());
+            System.out.println("getVariable: "+n.getVariable().getChildNodes());
             System.out.println("count: "+n.getVariable().getVariables().size());
             Stack<Node> stack = new Stack<>();
             Expression right = n.getIterable();
@@ -161,7 +196,7 @@ public class LearnSomething {
             super.visit(n, arg);
             System.out.println("VariableDeclarationExpr: "+n);
             for(int i = 0;i<n.getVariables().size();i++){
-                System.out.println("Va: "+n.getVariable(i).getInitializer());
+                    System.out.println("left: "+n.getVariable(i).getChildNodes().get(1).getParentNode().get().getParentNode().get().getParentNode().get().getParentNode());
             }
         }
     }

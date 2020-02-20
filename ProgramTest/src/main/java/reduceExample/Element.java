@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Element {
-	private List<Object> list = new ArrayList<Object>();
+	private List<Atom> list = new ArrayList<Atom>();
 
-	public List<Object> getList() {
+	public List<Atom> getList() {
 		return list;
 	}
 
-	public void setList(List<Object> list) {
+	public void setList(List<Atom> list) {
 		this.list = list;
 	}
 	

@@ -15,7 +15,7 @@ public class Example21 {
 	
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	 int massMessages = 0;
 
@@ -23,7 +23,7 @@ public class Example21 {
          float mass = Float.NEGATIVE_INFINITY;
          for (Element value : list.getList()) {
            // Accumulate PageRank mass contributions
-           mass = sumLogProbs(mass, (Float) value.getList().get(1));
+           mass = sumLogProbs(mass, (Float) value.getList().get(1).getAtom());
 
            massMessages++;
          }

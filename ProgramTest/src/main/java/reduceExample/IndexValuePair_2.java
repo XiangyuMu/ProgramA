@@ -12,6 +12,7 @@ public class IndexValuePair_2 {
 		Object y = null;
 		Element el = new Element();
 		Map mp = new HashMap();
+		int test1;
 		for(int i = 0;i<list.getList().size();i++) {
 			el = list.getList().get(i);
 			x = el.getList().get(1);

@@ -23,7 +23,7 @@ public class Example06 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0);
+		String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
         //初始化概率矩阵,概率矩阵只有一列,函数和总用户数相同
         //用户数

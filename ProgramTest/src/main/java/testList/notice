@@ -1,0 +1,2 @@
+TestInput的功能是读入txt文件中的数据并将其放入ElementList结构中
+createNewCase的功能是通过初始文件生成经过排列组合后的文件

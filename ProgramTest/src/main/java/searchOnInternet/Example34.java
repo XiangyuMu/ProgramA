@@ -24,13 +24,13 @@ public class Example34 {
 	float gradesSum;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	int  maxTemp = Integer.MIN_VALUE;
 		for(Element value : list.getList()) {
 			System.out.println("Äê£º"+key+", ÆøÎÂ£º"+value);
-			if (Integer.parseInt((String) value.getList().get(1))>maxTemp) {
-				maxTemp = Integer.parseInt((String) value.getList().get(1));
+			if (Integer.parseInt((String) value.getList().get(1).getAtom())>maxTemp) {
+				maxTemp = Integer.parseInt((String) value.getList().get(1).getAtom());
 			}
 		}
 		System.out.println("Date:"+key+", MaxTemp:"+maxTemp);

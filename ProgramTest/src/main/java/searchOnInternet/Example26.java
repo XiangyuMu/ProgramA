@@ -19,7 +19,7 @@ public class Example26 {
 	HashSet<Integer> seasons = new HashSet<Integer>();
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	seasons.clear();
 		
@@ -27,7 +27,7 @@ public class Example26 {
 		
 		for (Element value : list.getList()) {
 			total++;
-			seasons.add((Integer)value.getList().get(1));
+			seasons.add((Integer)value.getList().get(1).getAtom());
 		}
 		
 		output.add(new TwoTuple(key, new PassWritable(total, seasons.size()).toString()));

@@ -18,7 +18,7 @@ public class Example37 {
 	String minMinute = null;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	for (Element val : list.getList()) {
 			String[] strs = val.getList().get(1).toString().split("\t");

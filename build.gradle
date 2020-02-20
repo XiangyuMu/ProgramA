@@ -24,7 +24,8 @@ allprojects{
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
         // https://mvnrepository.com/artifact/org.jboss.byteman/byteman
-        testCompile group: 'org.jboss.byteman', name: 'byteman', version: '4.0.9'
+        testCompile group: 'org.jboss.byteman', name: 'byteman', version: '4.0.10'
+
 
         // https://mvnrepository.com/artifact/com.github.javaparser/javaparser-symbol-solver-core
         compile group: 'com.github.javaparser', name: 'javaparser-symbol-solver-core', version: '3.15.7'

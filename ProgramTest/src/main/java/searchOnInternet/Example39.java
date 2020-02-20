@@ -24,12 +24,12 @@ public class Example39 {
 	int K = 5;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
 
     	for (Element val1 : list.getList())
 		{
-    		DoubleString val = (DoubleString) val1.getList().get(1);
+    		DoubleString val = (DoubleString) val1.getList().get(1).getAtom();
 			String rModel = val.getModel();
 			double tDist = val.getDistance();
 			

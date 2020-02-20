@@ -23,7 +23,7 @@ public class Example17 {
 	String v ="";
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
     	Set<String> attackers = new TreeSet<String>();
     	int i = 0;
         while (i<list.getList().size()) {

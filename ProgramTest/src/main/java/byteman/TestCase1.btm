@@ -1,7 +1,27 @@
-RULE VarList
+RULE count1
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
-AT WRITE $list
+AT ENTRY
+HELPER byteman.LinkMapsHelper
+IF createLinkMap($0)
+DO traceln("got here!");
+   link($0,$1,$list);
+   printLinkMaps($0,$1);
+ENDRULE
+RULE list2
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT EXIT
 IF true
-DO traceln("list before: ")
+DO traceln("message321");
+   debug("throwing wrong state:");
+   traceln("message123");
+ENDRULE
+RULE list3
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT EXIT
+IF true
+DO trace("found the caller!\n");
+   traceAllStacks("method call: ",10);
 ENDRULE

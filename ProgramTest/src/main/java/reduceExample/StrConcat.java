@@ -10,7 +10,7 @@ public class StrConcat {
 	
 	public void reduce(ElemwntList list) {
 		for(Element el : list.getList()) {
-			names.add((String) el.getList().get(1));
+			names.add((String) el.getList().get(1).getAtom());
 		}
 		String s = String.join("|", names);
 		

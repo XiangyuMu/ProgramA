@@ -1,0 +1,36 @@
+RULE list1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT WRITE $list
+IF true
+DO traceln("listlist before write: "+$list)
+ENDRULE
+RULE key1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT WRITE $key
+IF true
+DO traceln("keylist before write: "+$key)
+ENDRULE
+RULE ip1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT WRITE $ip
+IF true
+DO traceln("iplist before write: "+$ip)
+ENDRULE
+RULE output1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT WRITE $output
+IF true
+DO traceln("outputlist before write: "+$output)
+ENDRULE
+RULE ips1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT WRITE $ips
+IF true
+DO traceln("ipslist before write: "+$ips)
+ENDRULE
+

@@ -22,14 +22,14 @@ public class Example14 {
 	String v ="";
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
         int postsNumber = 0;
         int reputation = 0;
         String authorId = key.toString();
 
         for (Element value : list.getList()) {
 
-            int intValue = Integer.parseInt((String) value.getList().get(1)) ;
+            int intValue = Integer.parseInt((String) value.getList().get(1).getAtom()) ;
             if (intValue == 1) {
                 postsNumber ++;
             }

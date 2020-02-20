@@ -16,7 +16,7 @@ public class Example24 {
 	
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	//Logger.println(context.getConfiguration(), "Reducing ts=" + timestamp);
 		output.add(new TwoTuple(key,MaxValue(list.getList().iterator())));
@@ -25,7 +25,7 @@ public class Example24 {
     public String MaxValue(Iterator<Element> value) {
     	int max = 0;
     	while(value.hasNext()) {
-    		int v = (Integer) value.next().getList().get(1);
+    		int v = (Integer) value.next().getList().get(1).getAtom();
     		if(v>max) {
     			max = v;
     		}

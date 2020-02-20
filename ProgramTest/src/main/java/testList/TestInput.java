@@ -1,5 +1,6 @@
 package testList;
 
+import reduceExample.Atom;
 import reduceExample.Element;
 import reduceExample.ElemwntList;
 
@@ -28,23 +29,31 @@ public class TestInput {
 		this.path = path;
 	}
 	
-	public ElemwntList createTestCase_Single(int CaseNum,String type1,String type2) {
-		String filepath = path+Integer.toString(CaseNum)+".txt";
+	public ElemwntList createTestCase_Single(String filepath,String type1,String type2) {
+
 		File file = new File(filepath);  
 		BufferedReader  reader = null;  
 		try {
 			reader = new BufferedReader(new FileReader(file));
 			String tempString = null;
 		//	int count = 0;
+			int row = 0;
+			int column = 0;
 			while ((tempString = reader.readLine()) != null) {
 				String str[] = tempString.split("# ");
 				System.out.println("str "+str.length);
 				Element el = new Element();
 				for(int i = 0;i<str.length;i++) {
-					el.getList().add(str[i]);
+					Atom atom = new Atom(str[i]);
+					atom.setColumn(row);
+					atom.setRow(column);
+					el.getList().add(atom);
+					row = row + 1;
 				}
+				row = 0;
+				column = column + 1;
 				ellist.getList().add(el);
-//				count = count + 1;
+//				count = count + 1;33
 //				System.out.println(count);
 			}
 		} catch (Exception e) {
@@ -61,17 +70,27 @@ public class TestInput {
 			reader = new BufferedReader(new FileReader(file));
 			String tempString = null;
 			int list_num = 0;
+			int row = 0;
+			int column = 0;
 			while ((tempString = reader.readLine()) != null) {
 				if(tempString.startsWith("$")) {
 					lel.add(new ElemwntList());
 					list_num = list_num + 1;
+					column = 0;
+					row = 0;
 				}else {
 					String str[] = tempString.split("# ");
 //					System.out.println("str "+str.length);
 					Element el = new Element();
 					for(int i = 0;i<str.length;i++) {
-						el.getList().add(str[i]);
+						Atom atom = new Atom(str[i]);
+						atom.setRow(row);
+						atom.setColumn(column);
+						el.getList().add(atom);
+						row = row + 1;
 					}
+					row = 0;
+					column = column + 1;
 					lel.get(list_num-1).getList().add(el);
 				}
 				

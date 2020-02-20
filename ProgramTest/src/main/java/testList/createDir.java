@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import reduceExample.Atom;
 import reduceExample.Element;
 import reduceExample.ElemwntList;
 
@@ -58,9 +59,9 @@ public class createDir {
 			String str = "";
 			for(int k =0;k<el.size();k++) {
 				
-				List<Object> ol = el.get(k).getList();
+				List<Atom> ol = el.get(k).getList();
 				for(int j = 0;j<ol.size();j++) {
-					str = str +ol.get(j).toString()+ "# ";
+					str = str +ol.get(j).getAtom().toString()+ "# ";
 				}
 				output.write(str);
 				output.write("\n");
@@ -81,9 +82,9 @@ public class createDir {
 			List<Element> el = list.get(i).getList();
 			String str = "";
 			for(int k =0;k<el.size();k++) {
-				List<Object> ol = el.get(k).getList();
+				List<Atom> ol = el.get(k).getList();
 				for(int j = 0;j<ol.size();j++) {
-					str = str +ol.get(j).toString()+ "# ";
+					str = str +ol.get(j).getAtom().toString()+ "# ";
 				}
 				output.write(str);
 				output.write("\n");

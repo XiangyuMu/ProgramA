@@ -1,0 +1,64 @@
+目标：对于一个reduce函数和一个初始测试用例，生成后继测试用例，并对后继测试用例进行缩减。
+
+背景：微软亚研院发现88%的不满足可交换性的reduce函数可以分为5大类：SingleItem，IndexValuePair，Max，FirstN，StrConcat。这五类分别具有以下特点：
+SingleItem：选取测试用例中的某一个元素（第一个或最后一个）。最终结果为测试用例中的单个元素。
+（A reducer with this pattern processes input rows in a loop, extracting some non-key column CSingle in the first or last row for later use to compute the output.）（拓展为任意位置n上）
+IndexValuePair：在set、map、list等集合元素中，若键值对的键相同，值不同的处理方式。最终结果可能为集合或个体，但造成原因与测试用例的单个元素有关。（可理解为单个或者多个）（需要特殊处理）
+（In this pattern, a reducer considers two non-key columnsCIndex andCValue as index-value pairs and stores them in an array or hash table with CIndex being indices/keys and CValue being values. The reducer’s output also depends on the final content of the  array or hash table.）
+Max：在测试用例n个元素中选取最大的元素相关的列，采用了覆盖或舍弃的办法，最终结果为测试用例的单个元素
+（Finding the maximum (or minimum) value in a column (CMax) is a common reducer operation. Although it is commutative by itself, user-defined reducers often emit other non-key columns COther in the row where a maximum value is found.）
+FirstN：对于测试用例中的前n个元素进行运算（此运算符合可交换律）。与测试用例中的多个元素有关。
+（. 37 reducers are non-commutative because they only return  the first N rows and discards the rest of their input）（拓展为指定n个位置上进行运算）
+StrConcat：在测试用例中对于所有元素中的某一项进行拼接，输出的结果与相加的顺序有关。与测试用例中的多个元素有关。
+（ The 43 reducers with this pattern emit concatenation of some string columns from all or a part of their input rows.）（拓展为String和有顺序的数据集合）
+
+故前三种SingleItem，IndexValuePair，Max造成不可交换性的原因是单个元素造成的，FirstN，StrConcat和多个元素造成的。
+前三种造成不可交换的原因都可以用看为是
+但是StrConcat造成的原因是元素运算的不可交换性或集合结构的有序，而firstN形成的原因是选取元素的个数小于测试用例中元素的个数。
+
+
+
+设计思路：
+1、确定对reduce函数造成影响的因素的个数。（一个或多个）（首先先对reduce函数的输出output使用向前切片技术去掉无关代码，然后通过解析语法树来查找与list相关的变量。然后通过插桩追中与list相关变量的改变来
+确定引起改变的元素在初始测试用例中的位置。（引起改变有三种方式：数值覆盖，部分数值覆盖，运算迭代）对于数值覆盖可以舍去，只留下最后一个，对于运算迭代。。需要全部留下，对于部分覆盖留下非覆盖的部分）
+数值覆盖：将新的变量的值完全覆盖在老的变量上，且变化与之前的变量无关。例如：x = list.get(i)
+部分数值覆盖：在一个集合中，对集合中的一些值进行数值覆盖，而其他值不变。
+运算迭代：变量发生改变且变化与之前的状态有关，如x = x +1;
+
+
+首先确定输出类型是否为（list或hash table等）
+
+如何确定相关：1、函数中是否存在循环
+                 是（对输入里的元素逐个进行操作）
+                 否（reduce函数对输入list进行整体性的操作或对明确位置上进行操作）（不属于五类中）
+             2、根据语法分析树找到与输入相关的变量
+             3、对循环中每次进行变量赋值或数组、哈希表里元素改变函数处进行插桩，监控此处运行时值是否改变以及若改变变化的值和与位于输入list中的位置
+             4、根据（数值覆盖、部分数值覆盖，运算迭代）来判断改变处是否舍去，从而判断输入中的多少元素对输出起到作用。
+
+
+1、确定reduce函数的的输出以输入list中相关的元素的个数（SingleItem,IndexValuePair,Max,FirstN,StrConcat）
+  1.1 一个(SingleItem,Max)(IndexValuePair虽然造成不可交换的原因和测试用例中的单个元素有关，但是由于输出为数组或hash table，则对输出造成影响的相关元素应为多个)
+  将定位的元素与自己下面的一个元素进行交换，形成新的测试用例，直到重复。
+  1.1、根据（数值覆盖、部分数值覆盖，运算迭代）未进行舍去前的与输出先关元素在测试用例中的位置进行判断
+  1.1.1 完全连续（SingleItem）
+  1.1.2 不完全连续，间隔较多（Max）
+  1.2 多个(FirstN,StrConcat,IndexValuePair)
+  1.2、确定造成影响的元素的个数是否等于测试用例中元素的个数
+    1.2.1 是(StrConcat)
+    对应为StrConcat（第一个移到最后，其他的都向上移一位）
+    1.2.2 否(FirstN,IndexValuePair)
+      1.2.2、输出变量是否为数组或哈希表
+      1.2.2.1 是（IndexValuePair）
+      1.2.2.2 否(FirstN)
+    对应为FirstN或FirstN和StrConcat的结合（只需要检测FirstN即可）
+
+测试用例置换：
+SingleItem：将其他的元素都与定位的元素进行置换，一共可生成n-1个新的测试用例。
+Max：对未舍去前的元素的位置进行内部交换。若n个元素，定位了N个相关未舍去前的元素，则共可生成N！-1个新的测试用例
+IndexValuePair：与Max类似，进行内部交换。
+FirstN：进行外部置换，即在n个元素中选择N个元素放入标记的N个位置中，共可以生成CNn-1个新的测试用例。
+StrConcat：将第一个元素放到最后，并其他每个元素都向前移一位。，共可生成n-1个新的测试用例。
+
+
+
+对于初始测试用例的置换多个元素相关时（n<N）可分为外置换和内置换外置换的复杂度为CNn，内置换为Ann，只检测FirstN时外置换即可。

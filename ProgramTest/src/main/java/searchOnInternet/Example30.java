@@ -25,13 +25,13 @@ public class Example30 {
 
     	
     	
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	int sum = 0;
 		int grades = 0;
 		for (Element val : list.getList()) {
 			sum += 1;
-			grades += Integer.parseInt((String) val.getList().get(1));
+			grades += Integer.parseInt((String) val.getList().get(1).getAtom());
 		}
 		System.out.println("Reduce----student is:"+key.toString()+",grades is:"+grades+",sum is:"+sum);
 		gradesSum=(float)grades/sum;

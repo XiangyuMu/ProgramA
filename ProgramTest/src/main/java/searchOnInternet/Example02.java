@@ -21,7 +21,7 @@ public class Example02 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
 
-		String key = (String)list.getList().get(0).getList().get(0);
+		String key = (String)list.getList().get(0).getList().get(0).getAtom();
         Integer sum = 0;
         for (Element i : list.getList()) {
         	System.out.println(i.getList().get(1));
