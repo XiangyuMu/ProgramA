@@ -1,27 +1,490 @@
-RULE count1
+RULE Line0
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
-AT ENTRY
+AT LINE 0
+IF true
+DO traceln("the line0");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 1
+IF true
+DO traceln("the line1");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line2
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 2
+IF true
+DO traceln("the line2");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line3
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 3
+IF true
+DO traceln("the line3");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line4
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 4
+IF true
+DO traceln("the line4");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line5
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 5
+IF true
+DO traceln("the line5");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line6
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 6
+IF true
+DO traceln("the line6");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line7
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 7
+IF true
+DO traceln("the line7");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line8
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 8
+IF true
+DO traceln("the line8");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line9
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 9
+IF true
+DO traceln("the line9");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line10
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 10
+IF true
+DO traceln("the line10");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line11
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 11
+IF true
+DO traceln("the line11");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line12
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 12
+IF true
+DO traceln("the line12");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line13
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 13
+IF true
+DO traceln("the line13");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line14
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 14
+IF true
+DO traceln("the line14");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line15
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 15
+IF true
+DO traceln("the line15");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line16
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 16
+IF true
+DO traceln("the line16");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line17
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 17
+IF true
+DO traceln("the line17");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line18
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 18
+IF true
+DO traceln("the line18");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line19
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 19
+IF true
+DO traceln("the line19");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line20
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 20
+IF true
+DO traceln("the line20");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line21
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 21
+IF true
+DO traceln("the line21");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line22
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 22
+IF true
+DO traceln("the line22");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line23
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 23
+IF true
+DO traceln("the line23");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line24
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 24
+IF true
+DO traceln("the line24");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line25
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 25
+IF true
+DO traceln("the line25");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line26
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 26
+IF true
+DO traceln("the line26");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line27
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 27
+IF true
+DO traceln("the line27");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line28
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 28
+IF true
+DO traceln("the line28");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line29
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 29
+IF true
+DO traceln("the line29");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line30
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 30
+IF true
+DO traceln("the line30");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line31
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 31
+IF true
+DO traceln("the line31");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line32
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 32
+IF true
+DO traceln("the line32");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line33
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 33
+IF true
+DO traceln("the line33");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line34
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 34
+IF true
+DO traceln("the line34");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line35
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 35
+IF true
+DO traceln("the line35");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line36
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 36
+IF true
+DO traceln("the line36");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line37
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 37
+IF true
+DO traceln("the line37");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line38
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 38
+IF true
+DO traceln("the line38");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line39
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 39
+IF true
+DO traceln("the line39");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line40
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 40
+IF true
+DO traceln("the line40");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line41
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 41
+IF true
+DO traceln("the line41");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line42
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 42
+IF true
+DO traceln("the line42");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line43
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 43
+IF true
+DO traceln("the line43");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line44
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 44
+IF true
+DO traceln("the line44");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line45
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 45
+IF true
+DO traceln("the line45");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line46
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 46
+IF true
+DO traceln("the line46");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line47
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 47
+IF true
+DO traceln("the line47");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line48
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 48
+IF true
+DO traceln("the line48");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+RULE Line49
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 49
+IF true
+DO traceln("the line49");
+incrementCounter("linenumber");
+traceln("the linenumber: "+readCounter("linenumber"))
+ENDRULE
+
+RULE Read1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
 HELPER byteman.LinkMapsHelper
-IF createLinkMap($0)
-DO traceln("got here!");
-   link($0,$1,$list);
-   printLinkMaps($0,$1);
+AT READ $list
+IF true
+DO addTOReadList("list",readCounter("linenumber"));
+traceln("link: "+linked("LineAndVariableMap",readCounter("linenumber")))
 ENDRULE
-RULE list2
+
+RULE Read2
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
-AT EXIT
+HELPER byteman.LinkMapsHelper
+AT INVOKE List.get
 IF true
-DO traceln("message321");
-   debug("throwing wrong state:");
-   traceln("message123");
+DO addTOReadList("ip",readCounter("linenumber"));
+traceln("link: "+linked("LineAndVariableMap",readCounter("linenumber")))
 ENDRULE
-RULE list3
+
+RULE Write1
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
-AT EXIT
+HELPER byteman.LinkMapsHelper
+AT WRITE $list
 IF true
-DO trace("found the caller!\n");
-   traceAllStacks("method call: ",10);
+DO addToWriteList("list",readCounter("linenumber"));
+traceln("link: "+linked("LineAndVariableMap",readCounter("linenumber")))
+ENDRULE
+
+RULE Write2
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+HELPER byteman.LinkMapsHelper
+AT INVOKE Set.add
+IF true
+DO addToWriteList("ips",readCounter("linenumber"));
+traceln("link: "+linked("LineAndVariableMap",readCounter("linenumber")))
 ENDRULE

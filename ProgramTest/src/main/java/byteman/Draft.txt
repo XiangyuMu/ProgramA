@@ -1,0 +1,3 @@
+根据byteman对行的遍历可以确定哪些输入（AT WRITE 和INVOKE add等）和输出（AT READ个INVOKE get等）在一行中。
+{key ： line，{read ： {a1,a2,a3...}，write :{b1,b2,b3...} }}
+
