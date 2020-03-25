@@ -529,6 +529,7 @@ IF true
 DO addTOReadList("ips",readCounter("linenumber"));
 traceln("link: "+linked("LineAndVariableMap",readCounter("linenumber")))
 ENDRULE
+
 RULE WRITE_ips
 CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)

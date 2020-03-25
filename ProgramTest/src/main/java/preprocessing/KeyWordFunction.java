@@ -33,19 +33,19 @@ public class KeyWordFunction {
 		return "KeyWordFunction [funcList=" + funcList + ", name=" + name + "]";
 	}
 
-	public String transFuncToString()  {
-    	
-        String tempString = "";
-        tempString = tempString + name + "@ \n";
-        FunctionLine fl = new FunctionLine();
-        if(funcList.size()!=0) {
-        	for(int i =0;i<funcList.size();i++) {
-        		tempString += funcList.get(i).transFuncToString();
-        	}
-        }
-        tempString = tempString  + "! \n";
-        return tempString;
-    }
+//	public String transFuncToString()  {
+//
+//        String tempString = "";
+//        tempString = tempString + name + "@ \n";
+//        FunctionLine fl = new FunctionLine();/
+//        if(funcList.size()!=0) {
+//        	for(int i =0;i<funcList.size();i++) {
+//        		tempString += funcList.get(i).transFuncToString();
+//        	}
+//        }
+//        tempString = tempString  + "! \n";
+//        return tempString;
+//    }
 	
 	public void transStringtoFunc(String str) {
 		

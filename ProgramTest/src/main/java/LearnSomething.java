@@ -6,23 +6,31 @@ import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ExpressionStmt;
 import com.github.javaparser.ast.stmt.ForEachStmt;
+import com.github.javaparser.ast.stmt.ForStmt;
+import com.github.javaparser.ast.stmt.WhileStmt;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.OutputFormat;
+import org.dom4j.io.SAXReader;
+import org.dom4j.io.XMLWriter;
 import preprocessing.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/reduceExample/IndexValuePair_2.java";
-    MethodCallExpr lastMethodCall = null;
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example01.java";
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, DocumentException {
         CompilationUnit cu = StaticJavaParser.parse(new File(FilePath));
         //BroadFirstSearch(cu);
 
-        String filename = "KeyWordList.txt";
+        String filename = "xmlTest.xml";
         // DrawTree dt = new DrawTree();
         //dt.writeImage("JPG",new File("pic.jpg"),cu.getChildNodes(),"CompilationUnit");
         List<MethodCallExpr> last = new ArrayList<MethodCallExpr>();
@@ -60,12 +68,57 @@ public class LearnSomething {
 //        CreateBTMFile cbf = new CreateBTMFile();
 //        cbf.createBTMFile(relatedWordList,"IndexValuePair_2");
 
+        System.out.println("last: "+ms.getLast());
         System.out.println("ms: "+ms.getKeyList());
+        System.out.println("FunctionLine: "+ms.getLf());
         LearnSomething ls = new LearnSomething();
+
+        MixStruct nms = new MixStruct();
+        System.out.println("forqunce: "+ms.getForList());
+        ms.sortForList();
+        System.out.println("forqunce: "+ms.getForList());
+        ms.completeLF();
+        System.out.println("sorted: "+ms.getLf());
         ls.printToFile(filename, ms.transKeyListToString());
+        ls.readFromFile(filename, nms);
+
+        System.out.println("fl: "+nms.getLf());
     }
 
-  public void mergeTwoRelatedList(List<KeyWord> list1,List<KeyWord> list2){
+
+    public MixStruct readFromFile(String filename,MixStruct nms) throws IOException, DocumentException {
+        File file = new File(filename);
+        SAXReader reader = new SAXReader();
+        Document doc = reader.read(filename);
+        Element root = doc.getRootElement();
+        nms.getMixStruct(root);
+        return nms;
+    }
+
+    public void printToFile(String filename, Document doc) throws IOException {
+        Writer out = new PrintWriter("xmlTest.xml", "utf-8");
+        OutputFormat format = new OutputFormat("\t", true);
+        format.setTrimText(true);
+        XMLWriter writer = new XMLWriter(out, format);
+        // 把document对象写到out流中。
+        writer.write(doc);
+
+        out.close();
+        writer.close();
+    }
+
+
+//    public void readFromFile(String filename,MixStruct ms) throws IOException {
+//        FileReader file = new FileReader(filename);
+//        BufferedReader input = new BufferedReader(file);
+//        String tempString = null;
+////    	while ((tempString = input.readLine()) != null) {
+////    		ms.transStringtoFunc(tempString);
+////    	}
+//        System.out.println("newMS: "+ms);
+//    }
+
+    public void mergeTwoRelatedList(List<KeyWord> list1,List<KeyWord> list2){
         for(int i = 0;i<list1.size();i++){
             for(int j = 0;j<list2.size();j++){
                 if(list1.get(i).equals(list2.get(j))){
@@ -74,16 +127,7 @@ public class LearnSomething {
                 }
             }
         }
-  }
-
-    public void printToFile(String filename,String content) throws IOException {
-        FileWriter file = new FileWriter(filename);
-        BufferedWriter output = new BufferedWriter(file);
-        output.write(content);
-        output.flush();
-        output.close();
     }
-
     public static void BroadFirstSearch(Node nodeHead){
         if(nodeHead==null) {
             return;
@@ -114,6 +158,7 @@ public class LearnSomething {
         @Override
         public void visit(ExpressionStmt e, MixStruct arg) {
             System.out.println("Statement: "+e.toString());
+
             super.visit(e, arg);
         }
 
@@ -150,6 +195,7 @@ public class LearnSomething {
 
         @Override
         public void visit(MethodCallExpr n, MixStruct arg) {
+            //System.out.println("Range: "+n.getRange());
             FunctionLine fl = new FunctionLine();
             super.visit(n, arg);
             System.out.println("MethodCallExpr: "+n);
@@ -158,6 +204,7 @@ public class LearnSomething {
                     System.out.println(n.getChildNodes().get(i).getMetaModel());
 
                 System.out.println("Argument: "+n);
+                System.out.println("ArgumentType: "+n.getMetaModel());
             }
 
             System.out.println("Name: "+n.getName());
@@ -172,20 +219,35 @@ public class LearnSomething {
                     arg.getLast().add(n);
                 }else {
                     if(n.getScope().get().getMetaModel().toString().equals("NameExpr")) {
-                        List<String> strlist = new ArrayList<String>();
+                        List<FunctionWord> fwlist = new ArrayList<FunctionWord>();
                         MethodCallExpr mce = arg.getLast().get(arg.getLast().size()-1);
                         Expression c = new MethodCallExpr();
                         while(true) {
                             if(!mce.getScope().toString().equals("Optional.empty")){
                                 if(mce.getScope().get().isMethodCallExpr()){
-                                    System.out.println("mce: "+mce);
-                                    strlist.add(mce.getNameAsString());
+
+                                    if(mce.getArguments().size()==0) {
+                                        fwlist.add(new FunctionWord(mce.getNameAsString()));
+                                    }else {
+                                        fwlist.add(new FunctionWord(mce.getNameAsString(), mce.getArguments()));
+                                    }
+
                                     mce = mce.getScope().get().asMethodCallExpr();
 
                                 }else{
-                                    strlist.add(mce.getNameAsString());
+                                    if(mce.getArguments().size()==0) {
+                                        fwlist.add(new FunctionWord(mce.getNameAsString()));
+                                    }else {
+                                        fwlist.add(new FunctionWord(mce.getNameAsString(), mce.getArguments()));
+                                    }
                                     c = mce.getScope().get();
-                                    arg.setKeyWordList(c.toString(), strlist);
+                                    fl.setName(c.toString());
+                                    fl.setFunctionName(fwlist);
+                                    fl.setLine(mce.getRange().get().begin.line);
+                                    System.out.println("mce: "+mce);
+                                    System.out.println("the range line: "+ mce.getRange());
+                                    System.out.println("funcLine: "+fl);
+                                    arg.getLf().add(fl);
                                     break;
                                 }
                             }else{
@@ -212,7 +274,9 @@ public class LearnSomething {
         @Override
         public void visit(ForEachStmt n, MixStruct arg) {
             super.visit(n, arg);
+            System.out.println("Range: "+n.getRange().get().begin);
             System.out.println("ForEachStmt: "+n);
+
             System.out.println("getIterable: "+n.getIterable());
             System.out.println("getVariable: "+n.getVariable().getChildNodes());
             System.out.println("count: "+n.getVariable().getVariables().size());
@@ -236,10 +300,7 @@ public class LearnSomething {
                 System.out.println("forBody: "+n.getBody().getChildNodes().get(a).getChildNodes().get(0).getMetaModel());
             }
 
-
-
-
-
+            arg.getForList().add(new ForInfo(n.getRange().get().begin.line, n.getRange().get().end.line));
 
         }
 
@@ -248,8 +309,22 @@ public class LearnSomething {
             super.visit(n, arg);
             System.out.println("VariableDeclarationExpr: "+n);
             for(int i = 0;i<n.getVariables().size();i++){
-                    System.out.println("left: "+n.getVariable(i).getChildNodes().get(1).getParentNode().get().getParentNode().get().getParentNode().get().getParentNode());
+                System.out.println("left: "+n.getVariable(i).getChildNodes().get(1).getParentNode().get().getParentNode().get().getParentNode().get().getParentNode());
             }
+        }
+
+        @Override
+        public void visit(ForStmt n, MixStruct arg) {
+            // TODO Auto-generated method stub
+            super.visit(n, arg);
+            arg.getForList().add(new ForInfo(n.getRange().get().begin.line, n.getRange().get().end.line));
+        }
+
+        @Override
+        public void visit(WhileStmt n, MixStruct arg) {
+            // TODO Auto-generated method stub
+            super.visit(n, arg);
+            arg.getForList().add(new ForInfo(n.getRange().get().begin.line, n.getRange().get().end.line));
         }
     }
 
