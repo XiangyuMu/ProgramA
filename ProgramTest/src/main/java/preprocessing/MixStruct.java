@@ -11,6 +11,8 @@ import org.dom4j.Element;
  * It has two type dataStructures: last and keylist
  * last:store the invoked functions to check out which which functions have been invoked in an expression
  * keylast keep the functions which are called for a keyword
+ * lf keeps the information of functions in XML file
+ * forList keeps the information of loop
  */
 public class MixStruct {
 
@@ -22,7 +24,15 @@ public class MixStruct {
 
 	List<ForInfo> forList = new ArrayList<ForInfo>();
 
+	List<AssignExpression> al = new ArrayList<>();
 
+	public List<AssignExpression> getAl() {
+		return al;
+	}
+
+	public void setAl(List<AssignExpression> al) {
+		this.al = al;
+	}
 
 	public List<ForInfo> getForList() {
 		return forList;

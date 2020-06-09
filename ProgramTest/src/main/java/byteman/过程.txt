@@ -1,0 +1,5 @@
+1、首先在初始化了maplink存储信息
+  （1）mapName:KeyWordMap key:keyWord的名字 value:keyWord的具体值，用来存储keyWord所关联的Atom。
+  (2)mapName:ValueTable key:keyWord的名字 value:
+  (3)mapName:currentValue key:variableName value:value 在运行到此语句是variable的值 在运行下一条语句前需要进行清空。
+

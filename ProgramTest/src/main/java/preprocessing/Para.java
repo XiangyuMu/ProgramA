@@ -6,21 +6,21 @@ import org.dom4j.Element;
 
 import java.util.Iterator;
 
-public class Assign {
+public class Para {
     @Override
     public String toString() {
-        return "Assign [strAssign=" + strAssign + ", fl=" + fl + "]";
+        return "Para [strAssign=" + para + ", fl=" + fl + "]";
     }
 
-    String strAssign;   //"#1"
+    String para;   //"#1"
     FunctionLine fl = new FunctionLine() ;      //"#2"
 
     public String getStrAssign() {
-        return strAssign;
+        return para;
     }
 
     public void setStrAssign(String strAssign) {
-        this.strAssign = strAssign;
+        this.para = strAssign;
     }
 
     public FunctionLine getFl() {
@@ -31,16 +31,16 @@ public class Assign {
         this.fl = fl;
     }
 
-    public  Assign(){
+    public Para(){
 
     }
 
-    public Assign(String str) {
-        strAssign = str;
+    public Para(String str) {
+        para = str;
         fl = null;
     }
 
-    public Assign(MethodCallExpr e) {
+    public Para(MethodCallExpr e) {
         if(e.getScope().toString().equals("Optional.empty")) {
             if(e.getArguments().size()!=0) {
                 fl.getFunctionName().add(new FunctionWord(e.getNameAsString(),e.getArguments()));
@@ -86,9 +86,9 @@ public class Assign {
 
     public Element transAssignToXML(Element fatherElement) {
         Element childElement = null;
-        childElement = fatherElement.addElement("Assign");
-        if(strAssign!=null) {
-            childElement.addElement("strAssign").addText(strAssign);
+        childElement = fatherElement.addElement("Para");
+        if(para!=null) {
+            childElement.addElement("strPara").addText(para);
         }
         if(fl!=null) {
 
@@ -102,7 +102,7 @@ public class Assign {
         for(Iterator i = fatherElement.elementIterator();i.hasNext();){
             Element element = (Element)i.next();
             if (element.getName().equals("strAssign")){
-                strAssign = element.getText();
+                para = element.getText();
             }else{
                 fl.getFunctionLine(element);
             }

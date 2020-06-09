@@ -1,8 +1,7 @@
-import AnalysisProgress.ParserDemo;
+
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
-import com.github.javaparser.ast.body.FieldDeclaration;
 import com.github.javaparser.ast.expr.*;
 import com.github.javaparser.ast.stmt.ExpressionStmt;
 import com.github.javaparser.ast.stmt.ForEachStmt;
@@ -24,7 +23,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example01.java";
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example02.java";
 
     public static void main(String[] args) throws IOException, DocumentException {
         CompilationUnit cu = StaticJavaParser.parse(new File(FilePath));
@@ -38,12 +37,12 @@ public class LearnSomething {
         MixStruct ms = new MixStruct();
 
         cu.accept(new ExpressVisitor(),ms);
-//        List<KeyWord> relatedWordList = new ArrayList<>();
-//        List<KeyWord> relatedWordList1 = new ArrayList<>();
-//        KeyWord list = new KeyWord("list","reduce");
-//        list.setDataStructure("ElemwntList");
-//        relatedWordList.add(list);
-//
+        List<KeyWord> relatedWordList = new ArrayList<>();
+        List<KeyWord> relatedWordList1 = new ArrayList<>();
+        KeyWord list = new KeyWord("list","reduce");
+        list.setDataStructure("ElemwntList");
+        relatedWordList.add(list);
+
 //        int formerNum  = 0,CurrentNum = 1;
 //        while(formerNum!=CurrentNum){
 //            formerNum = relatedWordList.size();
@@ -51,27 +50,27 @@ public class LearnSomething {
 //            CurrentNum = relatedWordList.size();
 //        }
 //        System.out.println(relatedWordList);
-//
-//
+
+
 //        ParserDemo.CreateRelatedWordListVisitor pd = new ParserDemo.CreateRelatedWordListVisitor();
 //        cu.accept(pd,relatedWordList1);
 //        System.out.println("relatedWordList1: "+relatedWordList1);
 //        LearnSomething ls = new LearnSomething();
 //        ls.mergeTwoRelatedList(relatedWordList,relatedWordList1);
 //        System.out.println("relatedWordList: "+relatedWordList);
-//
-//       // ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
-//       // cu.accept(rfs,relatedWordList);
-//       // System.out.println("IsSecondClass: "+rfs.isFlag());
-//        DealWithInfoToFile dwitf = new DealWithInfoToFile();
-//        dwitf.printKeyWordfile(relatedWordList);
-//        CreateBTMFile cbf = new CreateBTMFile();
-//        cbf.createBTMFile(relatedWordList,"IndexValuePair_2");
+
+       // ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
+       // cu.accept(rfs,relatedWordList);
+       // System.out.println("IsSecondClass: "+rfs.isFlag());
+        DealWithInfoToFile dwitf = new DealWithInfoToFile();
+        dwitf.printKeyWordfile(relatedWordList);
+        CreateBTMFile cbf = new CreateBTMFile();
+        cbf.createBTMFile(relatedWordList,"IndexValuePair_2");
 
         System.out.println("last: "+ms.getLast());
         System.out.println("ms: "+ms.getKeyList());
         System.out.println("FunctionLine: "+ms.getLf());
-        LearnSomething ls = new LearnSomething();
+        LearnSomething ls1 = new LearnSomething();
 
         MixStruct nms = new MixStruct();
         System.out.println("forqunce: "+ms.getForList());
@@ -79,8 +78,8 @@ public class LearnSomething {
         System.out.println("forqunce: "+ms.getForList());
         ms.completeLF();
         System.out.println("sorted: "+ms.getLf());
-        ls.printToFile(filename, ms.transKeyListToString());
-        ls.readFromFile(filename, nms);
+        ls1.printToFile(filename, ms.transKeyListToString());
+        ls1.readFromFile(filename, nms);
 
         System.out.println("fl: "+nms.getLf());
     }
@@ -100,7 +99,7 @@ public class LearnSomething {
         OutputFormat format = new OutputFormat("\t", true);
         format.setTrimText(true);
         XMLWriter writer = new XMLWriter(out, format);
-        // 把document对象写到out流中。
+        // 把document对象写到out流中。break;
         writer.write(doc);
 
         out.close();
@@ -179,9 +178,12 @@ public class LearnSomething {
         public void visit(AssignExpr n, MixStruct arg) {
             super.visit(n, arg);
             System.out.println("AssignExpr: "+n);
+            IdentifyVariable iv = new IdentifyVariable();
+ //           iv.transToIdentitedVariable(n,);
             if(n.getChildNodes().size()!=0){
-                System.out.println("Node: "+n.getChildNodes().get(0));
+                System.out.println("Node: "+n.getChildNodes().get(0).getMetaModel());
             }
+            System.out.println("iv: "+iv);
         }
 
         @Override
@@ -189,6 +191,7 @@ public class LearnSomething {
             super.visit(n, arg);
             System.out.println("BinaryExpr: "+n);
             if(n.getChildNodes().size()!=0){
+
                 System.out.println("Node: "+n.getChildNodes().get(0));
             }
         }
@@ -212,6 +215,7 @@ public class LearnSomething {
             if(n.getScope().toString().equals("Optional.empty")){
                 System.out.println("Empty");
             }else{
+
                 System.out.println("scopeMeta: "+n.getScope().get().getMetaModel());
                 System.out.println(arg);
                 System.out.println(n);

@@ -189,7 +189,7 @@ public class ToolBox {
         @Override
         public void visit(AssignExpr n, List<KeyWord> arg) {                  //Add AssignExpr Expression note to list
             super.visit(n, arg);
-            System.out.println("Assign: "+n);
+            System.out.println("Para: "+n);
             boolean flag;
             Expression left = n.getTarget();
             Expression right = n.getValue();

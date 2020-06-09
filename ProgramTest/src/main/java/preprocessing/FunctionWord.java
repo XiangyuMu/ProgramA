@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FunctionWord {
     String functionName;         //"@1"
-    List<Assign> assignList = new ArrayList<Assign>();          //"@2"
+    List<Para> paraList = new ArrayList<Para>();          //"@2"
 
     public FunctionWord(){
 
@@ -20,7 +20,7 @@ public class FunctionWord {
     public FunctionWord(String functionName) {
         super();
         this.functionName = functionName;
-        assignList = null;
+        paraList = null;
     }
 
     public FunctionWord(String functionName, List<Expression> le) {
@@ -31,7 +31,7 @@ public class FunctionWord {
 
     @Override
     public String toString() {
-        return "FunctionWord [functionName=" + functionName + ", assignList=" + assignList + "]";
+        return "FunctionWord [functionName=" + functionName + ", paraList=" + paraList + "]";
     }
 
     public String getFunctionName() {
@@ -42,20 +42,20 @@ public class FunctionWord {
         this.functionName = functionName;
     }
 
-    public List<Assign> getAssignList() {
-        return assignList;
+    public List<Para> getParaList() {
+        return paraList;
     }
 
-    public void setAssignList(List<Assign> assignList) {
-        this.assignList = assignList;
+    public void setParaList(List<Para> paraList) {
+        this.paraList = paraList;
     }
 
     public void extractAssign(List<Expression> le) {
         for(int i = 0;i < le.size();i++) {
             if(le.get(i).isMethodCallExpr()) {
-                assignList.add(new Assign(le.get(i).asMethodCallExpr()));
+                paraList.add(new Para(le.get(i).asMethodCallExpr()));
             }else {
-                assignList.add(new Assign(le.get(i).toString()));
+                paraList.add(new Para(le.get(i).toString()));
             }
         }
     }
@@ -65,18 +65,18 @@ public class FunctionWord {
         Element childElement = null;
         childElement = fatherElement.addElement("FunctionWord");
         childElement.addAttribute("functionName",functionName);
-        if (assignList!=null){
-            for (int i = 0;i<assignList.size();i++){
-                assignList.get(i).transAssignToXML(childElement);
+        if (paraList !=null){
+            for (int i = 0; i< paraList.size(); i++){
+                paraList.get(i).transAssignToXML(childElement);
             }
         }
 
 //        String tempStr = "";
 //        tempStr = tempStr + "@1\n" + functionName +"\n";
-//        if(assignList!=null) {
-//            for(int i = 0;i<assignList.size();i++) {
+//        if(paraList!=null) {
+//            for(int i = 0;i<paraList.size();i++) {
 //                tempStr = tempStr + "@2\n";
-//                tempStr = tempStr + assignList.get(i).transAssignToString("12");
+//                tempStr = tempStr + paraList.get(i).transAssignToString("12");
 //            }
 //        }
 
@@ -95,16 +95,16 @@ public class FunctionWord {
 //        }
 //        if (count>0){
 //            for (Iterator j = fatherElement.elementIterator();j.hasNext();){
-//                Assign assign = new Assign();
+//                Para assign = new Para();
 //                assign.getAssign((Element) j.next());
-//                assignList.add(assign);
+//                paraList.add(assign);
 //            }
 //        }
         for (Iterator j = fatherElement.elementIterator();j.hasNext();){
             Element element = (Element) j.next();
-            Assign assign = new Assign();
-            assign.getAssign(element);
-            assignList.add(assign);
+            Para para = new Para();
+            para.getAssign(element);
+            paraList.add(para);
         }
     }
 

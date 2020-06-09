@@ -27,11 +27,8 @@ public class Example02 {
         	System.out.println(i.getList().get(1));
             sum += Integer.parseInt(i.getList().get(1).toString());
         }
-        
         output.add(new TwoTuple(key, sum.toString()));
-    
 	}
-
 	
 	
 	public boolean equal(List<TwoTuple> list) {

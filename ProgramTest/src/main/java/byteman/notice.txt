@@ -1,9 +1,15 @@
 1、在对java文件进行编译时，要使用javac -g filepath 的命令！
 java -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example06.btm byteman.BytemanTest 运行
+java -cp .;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f
+9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example21.btm byteman.BytemanTest
+
 bmcheck -cp . -v byteman/TestCase1.btm
 javac -g byteman/BytemanTest.java  编译
 javac -classpath .;E:\gradleStore\caches\module4s-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar -g byteman/LinkMapsHelper.java
 javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar -g byteman/LinkMapsHelper.java
+javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar;E:\gradleS
+tore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -
+g byteman/LinkMapsHelper.java
 
 
 Example04存在没有正确分类的问题！
@@ -13,7 +19,7 @@ Example06对于数组处理有问题，无法填入相关list里(解决)
 
 Example08存在变量名重复问题StrArr（主要问题在于变量的范围问题）
 
-Example13第二类分析错误，因为最终输出的结果和第二类无关，代码存在冗余信息（先对输出语句进行向前切片在判断）
+Example13第二类分析错误，因为最终输出的结果和第二类无关，代码存在0101冗余信息（先对输出语句进行向前切片在判断）
 
 对于处于循环中的变量需不需要直接加入到相关变量中？
 

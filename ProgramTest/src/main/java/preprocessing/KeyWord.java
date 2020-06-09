@@ -2,6 +2,8 @@ package preprocessing;
 
 import com.github.javaparser.ast.Node;
 import com.github.javaparser.metamodel.NodeMetaModel;
+import reduceExample.Atom;
+import reduceExample.Element;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +12,8 @@ public class KeyWord {
     String name;
     String methodName;
 
-    List<Integer> row_list = new ArrayList<>();
-    List<Integer> column_list = new ArrayList<>();
+    List<Element> atomList = new ArrayList<>();
+
 
     String dataStructure;
 
@@ -48,20 +50,12 @@ public class KeyWord {
         this.name = name;
     }
 
-    public List<Integer> getRow_list() {
-        return row_list;
+    public List<Element> getAtomList() {
+        return atomList;
     }
 
-    public void setRow_list(List<Integer> row_list) {
-        this.row_list = row_list;
-    }
-
-    public List<Integer> getColumn_list() {
-        return column_list;
-    }
-
-    public void setColumn_list(List<Integer> column_list) {
-        this.column_list = column_list;
+    public void setAtomList(List<Element> atomList) {
+        this.atomList = atomList;
     }
 
     public String getDataStructure() {
@@ -117,8 +111,7 @@ public class KeyWord {
         return "KeyWord{" +
                 "name='" + name + '\'' +
                 ", methodName='" + methodName + '\'' +
-                ", row_list=" + row_list +
-                ", column_list=" + column_list +
+                ", atomList=" + atomList +
                 ", dataStructure='" + dataStructure + '\'' +
                 '}';
     }

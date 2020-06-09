@@ -10,6 +10,16 @@ public class Element {
 		return list;
 	}
 
+	public int getLine() {
+		return line;
+	}
+
+	public void setLine(int line) {
+		this.line = line;
+	}
+
+	int line;
+
 	public void setList(List<Atom> list) {
 		this.list = list;
 	}
