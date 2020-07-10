@@ -15,6 +15,55 @@ public class VariableDeclaratorInfo {
     int line = 0;
     String type = "";
 
+
+    public SimpleName getName() {
+        return name;
+    }
+
+    public void setName(SimpleName name) {
+        this.name = name;
+    }
+
+    public Expression getInit() {
+        return init;
+    }
+
+    public void setInit(Expression init) {
+        this.init = init;
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public void setLine(int line) {
+        this.line = line;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getNameStr() {
+        return nameStr;
+    }
+
+    public void setNameStr(String nameStr) {
+        this.nameStr = nameStr;
+    }
+
+    public List<Object> getObjectList() {
+        return objectList;
+    }
+
+    public void setObjectList(List<Object> objectList) {
+        this.objectList = objectList;
+    }
+
     @Override
     public String toString() {
         return "VariableDeclaratorInfo{" +
@@ -54,7 +103,6 @@ public class VariableDeclaratorInfo {
         if(e.getInitializer().toString().equals("Optional.empty")){
             this.init = null;
         }else{
-
             this.init = e.getInitializer().get();
             System.out.println("init: "+init);
             new IdentifyVariable().transToIdentitedVariable(init,childElement);
@@ -82,4 +130,6 @@ public class VariableDeclaratorInfo {
             }
         }
     }
+
+
 }

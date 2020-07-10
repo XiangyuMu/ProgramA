@@ -8,6 +8,14 @@ import java.util.List;
 public class IntegerLiteralExpression {
     int i;
 
+    public int getI() {
+        return i;
+    }
+
+    public void setI(int i) {
+        this.i = i;
+    }
+
     public IntegerLiteralExpression(Element element) {
         i = Integer.parseInt(element.getText());
     }

@@ -3,6 +3,7 @@ package preprocessing;
 import com.github.javaparser.ast.expr.AssignExpr;
 import com.github.javaparser.ast.expr.BinaryExpr;
 import com.github.javaparser.ast.expr.Expression;
+import learnJavaParser.Practice;
 import org.dom4j.Element;
 
 import java.util.List;
@@ -12,6 +13,8 @@ public class AssignExpression {
     int line  = 0;
     Expression target;
     String operator;
+    Object targetObject;
+    Object valueObject;
 
     public int getLine() {
         return line;
@@ -21,11 +24,6 @@ public class AssignExpression {
         super();
     }
 
-    public AssignExpression(Element element){
-        super();
-
-    }
-
     @Override
     public String toString() {
         return "AssignExpression{" +
@@ -33,7 +31,19 @@ public class AssignExpression {
                 ", line=" + line +
                 ", target=" + target +
                 ", operator='" + operator + '\'' +
+                ", targetObject=" + targetObject +
+                ", valueObject=" + valueObject +
                 '}';
+    }
+
+    public AssignExpression(Element element){
+        super();
+        line = Integer.parseInt(element.attribute("line").getValue());
+        List<Element> elementList = element.elements();
+        operator = element.attribute("operator").getValue();
+        System.out.println("operator: "+operator);
+        targetObject = new Practice().extractElement(elementList.get(0));
+        valueObject = new Practice().extractElement(elementList.get(1));
     }
 
     public void transToAssignExpression(AssignExpr e,Element fatherElement){

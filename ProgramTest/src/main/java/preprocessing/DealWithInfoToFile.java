@@ -51,6 +51,7 @@ public class DealWithInfoToFile {
             keyword.setMethodName(str[2]);
             listK.add(keyword);
         }
+//        System.out.println("listK: "+listK);
         return listK;
     }
 

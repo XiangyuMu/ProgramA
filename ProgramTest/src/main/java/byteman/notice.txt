@@ -10,6 +10,9 @@ javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\b
 javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar;E:\gradleS
 tore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -
 g byteman/LinkMapsHelper.java
+javac -Xlint:unchecked -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863
+ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.
+jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper.java
 
 
 Example04存在没有正确分类的问题！
@@ -43,3 +46,12 @@ Example38应该为第一类，却分为第二类，对于比较函数进行处�
 判断前三类和后两类中涉及到运算数值的覆盖、部分覆盖和不覆盖的问题。覆盖的话为前三类，不覆盖的为后两类。部分覆盖两类都可能存在。（list有顺序，map和set无顺序）（若出现覆盖，则以前三类处理，否则以后两类处理）
 解决方式：第一种、对基本的数据结构类型和运算符号进行判断。
          第二种、不同的状态和相同的值进行运算，若值相同则是覆盖，值不同则为非覆盖。
+
+
+
+属性：
+VariableDeclaratorInfo: line,type,nameStr,objectList.
+CastExpression: type,objectList.
+methodCallExpression: objectScope,objectName,parameterObjectList.
+
+在objectScope中是否是keyword中的词，然后读取后面的parameter的变量。

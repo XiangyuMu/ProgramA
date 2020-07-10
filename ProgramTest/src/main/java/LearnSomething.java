@@ -1,4 +1,5 @@
 
+import AnalysisProgress.ParserDemo;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Node;
@@ -43,25 +44,34 @@ public class LearnSomething {
         list.setDataStructure("ElemwntList");
         relatedWordList.add(list);
 
-//        int formerNum  = 0,CurrentNum = 1;
-//        while(formerNum!=CurrentNum){
-//            formerNum = relatedWordList.size();
-//            cu.accept(new ToolBox.CreateRelatedWordListVisitor(),relatedWordList);
-//            CurrentNum = relatedWordList.size();
-//        }
-//        System.out.println(relatedWordList);
 
 
-//        ParserDemo.CreateRelatedWordListVisitor pd = new ParserDemo.CreateRelatedWordListVisitor();
-//        cu.accept(pd,relatedWordList1);
-//        System.out.println("relatedWordList1: "+relatedWordList1);
-//        LearnSomething ls = new LearnSomething();
-//        ls.mergeTwoRelatedList(relatedWordList,relatedWordList1);
-//        System.out.println("relatedWordList: "+relatedWordList);
+
+
+        int formerNum  = 0,CurrentNum = 1;
+        while(formerNum!=CurrentNum){
+            formerNum = relatedWordList.size();
+            cu.accept(new ToolBox.CreateRelatedWordListVisitor(),relatedWordList);
+            CurrentNum = relatedWordList.size();
+        }
+        System.out.println("relatedWordList1: "+relatedWordList);
+
+
+        ParserDemo.CreateRelatedWordListVisitor pd = new ParserDemo.CreateRelatedWordListVisitor();
+        cu.accept(pd,relatedWordList1);
+        System.out.println("relatedWordList2: "+relatedWordList1);
+        LearnSomething ls = new LearnSomething();
+        ls.mergeTwoRelatedList(relatedWordList,relatedWordList1);
+        System.out.println("relatedWordList3: "+relatedWordList);
 
        // ToolBox.ReduceFunctionSorter rfs = new ToolBox.ReduceFunctionSorter();
        // cu.accept(rfs,relatedWordList);
        // System.out.println("IsSecondClass: "+rfs.isFlag());
+
+
+
+
+
         DealWithInfoToFile dwitf = new DealWithInfoToFile();
         dwitf.printKeyWordfile(relatedWordList);
         CreateBTMFile cbf = new CreateBTMFile();
@@ -79,9 +89,9 @@ public class LearnSomething {
         ms.completeLF();
         System.out.println("sorted: "+ms.getLf());
         ls1.printToFile(filename, ms.transKeyListToString());
-        ls1.readFromFile(filename, nms);
+       // ls1.readFromFile(filename, nms);
 
-        System.out.println("fl: "+nms.getLf());
+        //System.out.println("fl: "+nms.getLf());
     }
 
 
@@ -157,7 +167,6 @@ public class LearnSomething {
         @Override
         public void visit(ExpressionStmt e, MixStruct arg) {
             System.out.println("Statement: "+e.toString());
-
             super.visit(e, arg);
         }
 
@@ -191,10 +200,15 @@ public class LearnSomething {
             super.visit(n, arg);
             System.out.println("BinaryExpr: "+n);
             if(n.getChildNodes().size()!=0){
-
                 System.out.println("Node: "+n.getChildNodes().get(0));
             }
         }
+
+        /**
+         * 读取函数调用中的整个函数
+         * @param n
+         * @param arg
+         */
 
         @Override
         public void visit(MethodCallExpr n, MixStruct arg) {

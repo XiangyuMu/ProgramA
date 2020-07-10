@@ -1,6 +1,7 @@
 package preprocessing;
 
 import com.github.javaparser.ast.expr.*;
+import com.github.javaparser.ast.stmt.ForEachStmt;
 import org.dom4j.Element;
 
 public class IdentifyVariable {
@@ -35,7 +36,6 @@ public class IdentifyVariable {
             case "AssignExpr":{
                 AssignExpression ae = new AssignExpression();
                 ae.transToAssignExpression((AssignExpr) e,fatherElement);
-
                 System.out.println(ae);
                 break;
             }
@@ -113,11 +113,24 @@ public class IdentifyVariable {
             case "CastExpr":{
                 CastExpression ce = new CastExpression();
                 ce.transToCastExpression((CastExpr) e,fatherElement);
+                break;
+            }
+            case "ThisExpr":{
+                ThisExpression te = new ThisExpression();
+                te.transToThisExpression((ThisExpr) e,fatherElement);
+                System.out.println(te);
+                break;
             }
             default:{
                 System.out.println(formerExpression.getMetaModel().toString());
                 System.out.println("can't find this type!!!!!!!!!!!!");
             }
         }
+    }
+
+    public void transToIdentitedVariable(ForEachStmt n, Element arg) {
+        ForEachState fes = new ForEachState();
+        fes.transToForEachState(n, arg);
+        System.out.println(fes);
     }
 }

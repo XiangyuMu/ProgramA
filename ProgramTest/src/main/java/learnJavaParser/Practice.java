@@ -4,6 +4,7 @@ import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.VariableDeclarator;
 import com.github.javaparser.ast.expr.*;
+import com.github.javaparser.ast.stmt.ForEachStmt;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Practice {
+
     private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example02.java";
 
     public static void main(String[] args) throws IOException, DocumentException {
@@ -43,6 +45,7 @@ public class Practice {
     }
 
     private static class ExpressVisitor extends VoidVisitorAdapter<Element>{
+        List<Integer> lineList = new ArrayList<>();
         @Override
         public void visit(VariableDeclarationExpr n, Element arg) {
             System.out.println("VariableDeclaratorExpr: "+n);
@@ -50,6 +53,42 @@ public class Practice {
             iv.transToIdentitedVariable(n,arg);
             System.out.println("iv: "+iv);
             super.visit(n, arg);
+        }
+
+        public void visit(AssignExpr n,Element arg){
+            System.out.println("AssignExpr: "+n);
+            IdentifyVariable iv = new IdentifyVariable();
+            iv.transToIdentitedVariable(n,arg);
+            System.out.println("iv: "+iv);
+            super.visit(n, arg);
+
+        }
+
+        public void visit(ForEachStmt n,Element arg){
+            System.out.println("ForEachStmt: "+n);
+
+            IdentifyVariable iv = new IdentifyVariable();
+            iv.transToIdentitedVariable(n,arg);
+            System.out.println("iv: "+iv);
+            super.visit(n, arg);
+        }
+
+        public void visit(MethodCallExpr n,Element arg){
+            System.out.println("MethodCallExpr: "+n);
+            boolean flag = false;
+            for(Integer line : lineList){
+                if(line.intValue()==n.getRange().get().begin.line){
+                    flag = true;
+                    break;
+                }
+            }
+            if(!flag){
+                lineList.add(n.getRange().get().begin.line);
+                IdentifyVariable iv = new IdentifyVariable();
+                iv.transToIdentitedVariable(n,arg);
+                System.out.println("iv: "+iv);
+                super.visit(n,arg);
+            }
         }
     }
 
@@ -103,7 +142,7 @@ public class Practice {
                 System.out.println(dle);
                 return dle;
             }
-            case "FieldAccessExpr":{
+            case "FieldAccess":{
                 FieldAccessExpression fae = new FieldAccessExpression(element);
                 System.out.println("FieldAccessExpr: ");
                 System.out.println(fae);
@@ -164,6 +203,12 @@ public class Practice {
                 System.out.println("VariableDeclaratorInfo: ");
                 System.out.println(variableDeclaratorInfo);
                 return variableDeclaratorInfo;
+            }
+            case "ThisExpressipn":{
+                ThisExpression thisExpression = new ThisExpression(element);
+                System.out.println("ThisExpressipn: ");
+                System.out.println(thisExpression);
+                return thisExpression;
             }
             default:{
                 System.out.println("can't find this type!!!!!!!!!!!!");
