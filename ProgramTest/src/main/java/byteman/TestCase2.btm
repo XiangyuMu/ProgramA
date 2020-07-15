@@ -1,7 +1,44 @@
-RULE VarList1
-CLASS testList.Demo
-METHOD main
-AT WRITE var2
+RULE Init
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.HalperTest
+AT ENTRY
 IF true
-DO traceln("list before: ")
+DO readKeyWordFromFile();
+traceln("KeyWordMap: "+ linkValues("KeyWordMap"));
+ENDRULE
+
+RULE InitList
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.HalperTest
+AFTER INVOKE setRow
+IF true
+DO addAtomToKeyWord("KeyWordMap","list",$atom);
+ENDRULE
+
+RULE InitList1
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.HalperTest
+AT EXIT
+IF true
+DO traceln("KeyWordMap: "+ linkValues("KeyWordMap"));
+ENDRULE
+
+RULE InitList1
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+HELPER byteman.HalperTest
+AFTER WRITE $ips
+IF isChangeValue("ips",$ips)
+DO traceln("KeyWordMap: "+ linkValues("KeyWordMap"));
+ENDRULE
+
+RULE Line43
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+AT LINE 36
+IF true
+DO traceln("the line: "+$count);
 ENDRULE

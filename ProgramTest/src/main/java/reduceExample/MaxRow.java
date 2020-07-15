@@ -11,13 +11,13 @@ public class MaxRow {
 	public void reduce(ElemwntList list) {
 		int max = 0;
 		int y = 0;
-		int z = max+y;
+		//int z = max+y;
 		
 		for(Element el : list.getList()) {
-			int x = (Integer) el.getList().get(1);
+			int x = (Integer) el.getList().get(1).getAtom();
 			if(max<x) {
 				max = x;
-				y = (Integer) el.getList().get(2);
+				y = (Integer) el.getList().get(2).getAtom();
 			}
 		}
 

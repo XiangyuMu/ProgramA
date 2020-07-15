@@ -10,7 +10,7 @@ import java.util.List;
 //https://github.com/josonle/MapReduce-Demo/blob/master/src/main/java/mutualFriend/MergeFriendsReducer.java
 
 //输入<String,String>(key,value)
-//输出值为key与value的互换
+//value值累加String输出
 //不可交换（确定）
 public class Example32 {
 	
@@ -26,7 +26,7 @@ public class Example32 {
 	float gradesSum;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	String friends = "";
 		for (Element value : list.getList()) {

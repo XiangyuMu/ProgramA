@@ -56,28 +56,34 @@ public class Demo {
 	}
 	
 	public static void main(String[] args) throws IOException, InterruptedException {
+//		TestInput ti = new TestInput();
+//		list1 = ti.createTestCase_multi("ProgramTest/src/main/java/TestCase/case30mix.txt", "String", "String");
+//		Example30 e5 ;
+//
+//		e5 = new Example30();
+//
+//		e5.reduce(list1.get(0));
+//		tt1 = e5.getOutput();
+//		System.out.println("0th:"+tt1.toString());
+//		for(int i = 1;i<list1.size();i++) {
+//			Example30 e6 ;
+//			e6 = new Example30();
+//			e6.reduce(list1.get(i));
+//			System.out.println(list1.get(i));
+//			tt2 = e6.getOutput();
+//			System.out.println(i+"th:"+tt2.toString());
+//			if(!new Demo().isEqual(tt1, tt2)) {
+//				System.out.println("Not exchangeable!");
+//				break;
+//			}
+//		}
+//		System.out.println("exchangeable!");
+
 		TestInput ti = new TestInput();
-		list1 = ti.createTestCase_multi("ProgramTest/src/main/java/TestCase/case30mix.txt", "String", "String");
-		Example30 e5 ;
-		
-		e5 = new Example30();
-		
-		e5.reduce(list1.get(0));
-		tt1 = e5.getOutput();
-		System.out.println("0th:"+tt1.toString());
-		for(int i = 1;i<list1.size();i++) {
-			Example30 e6 ;
-			e6 = new Example30();
-			e6.reduce(list1.get(i));
-			System.out.println(list1.get(i));
-			tt2 = e6.getOutput();
-			System.out.println(i+"th:"+tt2.toString());
-			if(!new Demo().isEqual(tt1, tt2)) {
-				System.out.println("Not exchangeable!");
-				break;
-			}
-		}
-		System.out.println("exchangeable!");
+		ElemwntList el = ti.createTestCase_Single("ProgramTest/src/main/java/TestCase/case3.txt", "String", "String");
+		//System.out.println(el);
+		list1 = ti.createTestCase_multi("ProgramTest/src/main/java/TestCase/case3mix.txt", "String", "String");
+		System.out.println(list1);
 	}
 
 }

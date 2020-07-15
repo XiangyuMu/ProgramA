@@ -24,7 +24,7 @@ public class Example10 {
 	String userId = "";
 	String itermScore = "";
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0);
+		String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
         //map输出的数据key为1,value为101:5.0
         String itermPers = "";

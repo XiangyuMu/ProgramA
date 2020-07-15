@@ -1,0 +1,158 @@
+1、Thread Coordination Operations(线程协调操作)（应该用不到）
+2、Rule State Management Operations（规则状态管理操作）
+（1）LinkMaps byteman提供了LinkMaps来记录一些有用的信息供其他的规则或者是在规则的最后
+boolean createLinkMap(Object mapName)
+boolean deleteLinkMap(Object mapName)
+Object link(Object mapName, Object name, Object value)
+Object linked(Object mapName, Object name)
+Object unlink(Object mapName, Object name)
+List<Object> linkNames(Object mapName)
+List<Object> linkValues(Object mapName)
+boolean clearLinks(Object mapName)
+Object link(Object name, Object value)
+Object linked(Object name)
+Object unlink(Object name)
+List<Object> linkNames()
+List<Object> linkValues()
+boolean clearLinks()
+
+（2）CountDown 规则引擎提供了CountDowns，可用于确保某些特定规则的触发仅在其他规则被触发或触发一定次数后才发生。
+public boolean createCountDown(Object identifier, int count)
+public boolean getCountDown(Object identifier)
+public boolean countDown(Object identifier)
+
+（3）flag byteman维持了一个设置、测试和清除全局变量flag的机制
+public boolean flag(Object identifier)
+public boolean flagged(Object identifier)
+public boolean clear(Object identifier)
+
+（4）counters 维持了一个在独立规则之间的全局变量，此全局变量可以被建立，增减，清空，释放。与CountDown不同的是此全局变量甚至可以为负数
+public boolean createCounter(Object o)
+public boolean createCounter(Object o, int count)
+public boolean deleteCounter(Object o)
+public int incrementCounter(Object o, int amount)
+public int incrementCounter(Object o)
+public int decrementCounter(Object o)
+public int readCounter(Object o)
+public int readCounter(Object o, boolean zero)
+
+（5）Timers （暂时用不到）
+
+（6）Recursive Triggering（定于触发）
+
+3、Trace and Debug Operations（追踪和Debug操作）
+（1）Debugging 提供了一个内置的在程序运行时展示程序信息的Debug方法。
+public boolean debug(String message)
+
+（2）Tracing 提供了一个内置于程序中的显示logging日志的方法。
+public boolean traceOpen(Object identifier, String filename)
+public boolean traceOpen(Object identifier)
+public boolean traceClose(Object identifier)
+public boolean trace(Object identifier, String message)
+public boolean traceln(Object identifier, String message)
+public boolean trace(String message)
+public boolean traceln(String message)
+
+4、Stack Management Operations
+（1）Checking The Call Tree （检查函数调用树）byteman提供了一个可以检测函数调用栈来检测函数调用的触发点。
+public boolean callerEquals(String name)
+public boolean callerEquals(String name, int frameCount)
+public boolean callerEquals(String name, int startFrame, int frameCount)
+public boolean callerEquals(String name, boolean includeClass)
+public boolean callerEquals(String name, boolean includeClass, int frameCount)
+public boolean callerEquals(String name, boolean includeClass, int startFrame, int frameCount)
+public boolean callerEquals(String name, boolean includeClass, boolean includePackage)
+public boolean callerEquals(String name, boolean includeClass, boolean includePackage, int frameCount)
+public boolean callerEquals(String name, boolean includeClass, boolean includePackage, int startFrame, int frameCount)
+public boolean callerMatches(String regExp)
+public boolean callerMatches(String regExp, int frameCount)
+public boolean callerMatches(String regExp, int startFrame, int frameCount)
+public boolean callerMatches(String regExp, boolean includeClass)
+public boolean callerMatches(String regExp, boolean includeClass, int frameCount)
+
+（2）Tracing the Caller Stack（跟踪函数调用栈）提供了一个可以跟踪函数调用栈并输出logging的函数。
+public void traceStack()
+public void traceStack(String prefix)
+public void traceStack(String prefix, Object key)
+public void traceStack(int maxFrames)
+public void traceStack(String prefix, int maxFrames)
+public void traceStack(String prefix, Object key, int maxFrames)
+public String formatStack()
+public String formatStack(String prefix)
+public String formatStack(int maxFrames)
+public String formatStack(String prefix, int maxFrames)
+
+（3）Selective Stack Tracing Using a Regular Expression Filter（使用正则表达式选择性的跟踪调用栈）能够有选择地筛选堆栈跟踪，将其限制为仅包含给定包装或一组包装中的帧，这很有用。 规则引擎提供了一组替代的内置方法，这些方法可用于获取或打印使用正则表达式匹配过滤的堆栈某些子集的字符串表示形式。
+public void traceStackMatching(String regExp)
+public void traceStackMatching(String regExp, String prefix)
+public void traceStackMatching(String regExp, String prefix, Object key)
+public void traceStackMatching(String regExp, boolean includeClass)
+public void traceStackMatching(String regExp, boolean includeClass, String prefix)
+public void traceStackMatching(String regExp, boolean includeClass, String prefix, Object key)
+public void traceStackMatching(String regExp, boolean includeClass, boolean includePackage)
+public void traceStackMatching(String regExp, boolean includeClass, boolean includePackage, String prefix)
+public void traceStackMatching(String regExp, boolean includeClass, boolean includePackage, String prefix, Object key)
+public void formatStackMatching(String regExp)
+public void formatStackMatching(String regExp, String prefix)
+public void formatStackMatching(String regExp, boolean includeClass)
+public void formatStackMatching(String regExp, boolean includeClass, String prefix)
+public void formatStackMatching(String regExp, boolean includeClass, boolean includePackage)
+public void formatStackMatching(String regExp, boolean includeClass, boolean includePackage, String prefix)
+
+（4）Stack Range Tracing （栈范围追踪）选择性堆栈跟踪的另一个选项是指定一个匹配表达式以选择跟踪的开始和结束帧。 规则引擎提供了另一组内置方法，这些方法可用于以这种方式获取或打印堆栈段的字符串表示形式。
+public void traceStackBetween(String from, String to)
+public void traceStackBetween(String from, String to, String prefix)
+public void traceStackBetween(String from, String to, String prefix, Object key)
+public void traceStackBetween(String from, String to, boolean includeClass)
+public void traceStackBetween(String from, String to, boolean includeClass, String prefix)
+public void traceStackBetween(String from, String to, boolean includeClass, String prefix, Object key)
+public void traceStackBetween(String from, String to, boolean includeClass, boolean includePackage)
+public void traceStackBetween(String from, String to, boolean includeClass, boolean includePackage, String prefix)
+public void traceStackBetween(String from, String to, boolean includeClass, boolean includePackage, String prefix, Object key)
+public void formatStackBetween(String from, String to)
+public void formatStackBetween(String from, String to, String prefix)
+public void formatStackBetween(String from, String to, boolean includeClass)
+public void formatStackBetween(String from, String to, boolean includeClass, String prefix)
+public void formatStackBetween(String from, String to, boolean includeClass, boolean includePackage)
+public void formatStackBetween(String from, String to, boolean includeClass, boolean includePackage, String prefix)
+public void traceStackBetweenMatches(String from, String to)
+public void traceStackBetweenMatches(String from, String to, String prefix)
+public void traceStackBetweenMatches(String from,String to, String prefix, Object key)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass, String prefix)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass, String prefix, Object key)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass, boolean includePackage)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass, boolean includePackage, String prefix)
+public void traceStackBetweenMatches(String from, String to, boolean includeClass, boolean includePackage, String prefix, Object key)
+public void formatStackBetweenMatches(String from, String to)
+public void formatStackBetweenMatches(String from, String to, String prefix)
+public void formatStackBetweenMatches(String from, String to, boolean includeClass)
+public void formatStackBetweenMatches(String from, String to, boolean includeClass, String prefix)
+public void formatStackBetweenMatches(String from, String to, boolean includeClass, boolean includePackage)
+public void formatStackBetweenMatches(String from, String to, boolean includeClass, boolean includePackage,String prefix)
+public void traceStackRange(String from, String to, boolean isRegExp, boolean includeClass, boolean includePackage, String prefix, Object key)
+public String formatStackRange(String from, String to, boolean isRegExp,boolean includeClass, boolean includePackage, String prefix)
+
+（5）Tracing Named Thread Stacks（跟踪命名线程堆栈）
+public void traceThreadStack(String threadName)
+public void traceThreadStack(String threadName, String prefix)
+public void traceThreadStack(String threadName, String prefix, Object key)
+public void traceThreadStack(String threadName, int maxFrames)
+public void traceThreadStack(String threadName, String prefix, int maxFrames)
+public void traceThreadStack(String threadName, String prefix, Object key, int maxFrames)
+public void formatThreadStack(String threadName)
+public void formatThreadStack(String threadName, String prefix)
+public void traceThreadStack(String threadName, int maxFrames)
+public void traceThreadStack(String threadName, String prefix, int maxFrames)
+public void traceAllStacks()
+public void traceAllStacks(String prefix)
+public void traceAllStacks(String prefix, Object key)
+public void traceAllStacks(int maxFrames)
+public void traceAllStacks(String prefix, int maxFrames)
+public void traceAllStacks(String prefix, Object key, int maxFrames)
+public void formatAllStacks()
+public void formatAllStacks(String prefix)
+public void formatAllStacks(int maxFrames)
+public void formatAllStacks(String prefix , int maxFrames)
+
+4、Default Helper Lifecycle Methods

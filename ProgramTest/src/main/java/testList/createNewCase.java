@@ -40,7 +40,7 @@ public class createNewCase {
 	}
 	
 	
-	public int factorial(int num) {
+	public int factorial(int num) {                   //the number of factorial of variable n
 		int fact = 1;
 		int x = num;
 		for(;x>=1;x--) {
@@ -130,7 +130,7 @@ public class createNewCase {
 		
 		TestInput ti = new TestInput();
 		ti.setPath("case");
-		ElemwntList el = ti.createTestCase_Single(num, "String", "String");
+		ElemwntList el = ti.createTestCase_Single("case"+num+".txt", "String", "String");
 		createNewCase cnc = new createNewCase();
 		cnc.setElementList(el);
 		cnc.createAllCases();

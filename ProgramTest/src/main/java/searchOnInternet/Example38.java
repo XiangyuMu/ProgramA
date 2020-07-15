@@ -19,7 +19,7 @@ public class Example38 {
 	String minMinute = null;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	String nodes = "UNMODED";
 		String word = "";

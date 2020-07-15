@@ -24,7 +24,7 @@ public class Example33 {
 	float gradesSum;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	String friendList = "";
 		for (Element value : list.getList()) {

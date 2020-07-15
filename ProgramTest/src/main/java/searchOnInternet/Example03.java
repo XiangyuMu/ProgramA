@@ -23,8 +23,11 @@ public class Example03 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
         //使用set集合记性独立ip统计
-		String key = (String)list.getList().get(0).getList().get(0);
+		list.getList().remove(1);
+//		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = "1";
         Set<String> ips = new HashSet<String>();
+
         for (Element ip : list.getList()) {
             ips.add(ip.getList().get(1).toString());
         }

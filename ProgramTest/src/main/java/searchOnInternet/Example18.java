@@ -28,7 +28,7 @@ public class Example18 {
 		String points = "";
 		int i = 0;
 		while (i<list.getList().size()) {
-			double d = Double.parseDouble((String) list.getList().get(i).getList().get(1)) ;
+			double d = Double.parseDouble((String) list.getList().get(i).getList().get(1).getAtom()) ;
 		//	System.out.println(d);
 			points = points + " " + Double.toString(d);
 			sum = sum + d;

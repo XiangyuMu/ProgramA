@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<information>
+	<VariableDeclaratorInfo name="key" line="24" type="String">
+		<Cast type="String">
+			<Method>
+				<scope>
+					<Method>
+						<scope>
+							<Method>
+								<scope>
+									<Method>
+										<scope>
+											<Method>
+												<scope>
+													<Name>list</Name>
+												</scope>
+												<Parameter/>
+												<name>
+													<Name>getList</Name>
+												</name>
+											</Method>
+										</scope>
+										<Parameter>
+											<Integer>0</Integer>
+										</Parameter>
+										<name>
+											<Name>get</Name>
+										</name>
+									</Method>
+								</scope>
+								<Parameter/>
+								<name>
+									<Name>getList</Name>
+								</name>/
+							</Method>
+						</scope>
+						<Parameter>
+							<Integer>0</Integer>
+						</Parameter>
+						<name>
+							<Name>get</Name>
+						</name>
+					</Method>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getAtom</Name>
+				</name>
+			</Method>
+		</Cast>
+	</VariableDeclaratorInfo>
+	<VariableDeclaratorInfo name="sum" line="25" type="Integer">
+		<Integer>0</Integer>
+	</VariableDeclaratorInfo>
+	<VariableDeclaratorInfo name="i" line="26" type="Element"/>
+	<VariableDeclaratorInfo name="flag" line="38" type="boolean">
+		<Boolean>true</Boolean>
+	</VariableDeclaratorInfo>
+	<VariableDeclaratorInfo name="i" line="44" type="int">
+		<Integer>0</Integer>
+	</VariableDeclaratorInfo>
+</information>

@@ -16,11 +16,11 @@ public class Example28 {
 	
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	int sum = 0;
 		for (Element value : list.getList()) {
-			sum += (Integer)value.getList().get(1);
+			sum += (Integer)value.getList().get(1).getAtom();
 		}
 		// 使用MultiOutputs对象替代Context对象输出
 		// 1. 输出到不同文件（格式、文件名）

@@ -23,7 +23,7 @@ public class Example12 {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	String v = "";
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0);
+		String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
         String customerName = "";
         Set<Integer> orders = new HashSet<Integer>();

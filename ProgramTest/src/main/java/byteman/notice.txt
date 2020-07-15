@@ -1,8 +1,57 @@
 1、在对java文件进行编译时，要使用javac -g filepath 的命令！
+java -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example06.btm byteman.BytemanTest 运行
+java -cp .;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f
+9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example21.btm byteman.BytemanTest
+
+bmcheck -cp . -v byteman/TestCase1.btm
+javac -g byteman/BytemanTest.java  编译
+javac -classpath .;E:\gradleStore\caches\module4s-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar -g byteman/LinkMapsHelper.java
+javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar -g byteman/LinkMapsHelper.java
+javac -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar;E:\gradleS
+tore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -
+g byteman/LinkMapsHelper.java
+javac -Xlint:unchecked -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863
+ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.
+jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper.java
+
 
 Example04存在没有正确分类的问题！
 Example05存在没有正确分类的问题！
 
-Example06对于数组处理有问题，无法填入相关list里
+Example06对于数组处理有问题，无法填入相关list里(解决)
 
-Example08存在变量名重复问题StrArr
+Example08存在变量名重复问题StrArr（主要问题在于变量的范围问题）
+
+Example13第二类分析错误，因为最终输出的结果和第二类无关，代码存在0101冗余信息（先对输出语句进行向前切片在判断）
+
+对于处于循环中的变量需不需要直接加入到相关变量中？
+
+Example17对于set等集合数据结构的add相当于第二类，但没有归为第二类
+
+Example20需要注意是否为第二类
+
+Example26在for循环中的累加应该也算为第二类，但何时算何时不算需要考虑。（for循环中的自加变量是否要加入到list中）
+
+Example36应该为第二类，却分为第一类（对于一些特殊的数据类型如StringBuilder中的特殊函数调用与String的加法类似，也要算到第二类中）
+
+Example37应该为第一类，却分为第二类（是否判断应该在循环内进行）（在循环内进行的两个变量在同一侧才算是第二类）
+
+Example38应该为第一类，却分为第二类，对于比较函数进行处理
+
+
+先通过切片技术删除多余无关语句，再产生relatedtolist，然后在循环体中判断是第一类还是第二类。
+
+
+
+判断前三类和后两类中涉及到运算数值的覆盖、部分覆盖和不覆盖的问题。覆盖的话为前三类，不覆盖的为后两类。部分覆盖两类都可能存在。（list有顺序，map和set无顺序）（若出现覆盖，则以前三类处理，否则以后两类处理）
+解决方式：第一种、对基本的数据结构类型和运算符号进行判断。
+         第二种、不同的状态和相同的值进行运算，若值相同则是覆盖，值不同则为非覆盖。
+
+
+
+属性：
+VariableDeclaratorInfo: line,type,nameStr,objectList.
+CastExpression: type,objectList.
+methodCallExpression: objectScope,objectName,parameterObjectList.
+
+在objectScope中是否是keyword中的词，然后读取后面的parameter的变量。

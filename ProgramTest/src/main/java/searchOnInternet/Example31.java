@@ -24,7 +24,7 @@ public class Example31 {
 	float gradesSum;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0);
+    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
 
     	for (Element value : list.getList()) {
 			// 排序后再次颠倒k-v，将日期作为key
