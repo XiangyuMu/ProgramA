@@ -1,6 +1,9 @@
 package preprocessing;
 
-public class KeyWordAtom {
+import java.util.ArrayList;
+import java.util.List;
+
+public class  KeyWordAtom {
     String keyWordName;
     String column = "";
     String row = "";
@@ -8,7 +11,25 @@ public class KeyWordAtom {
     String rowType;
     String columnType;
 
+    List<KeyWordAtom> sonAtomList = new ArrayList<>();
+    String type;
     Object object = null;
+
+    public List<KeyWordAtom> getSonAtomList() {
+        return sonAtomList;
+    }
+
+    public void setSonAtomList(List<KeyWordAtom> sonAtomList) {
+        this.sonAtomList = sonAtomList;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     @Override
     public String toString() {
@@ -19,6 +40,8 @@ public class KeyWordAtom {
                 ", line=" + line +
                 ", rowType='" + rowType + '\'' +
                 ", columnType='" + columnType + '\'' +
+                ", sonAtomList=" + sonAtomList +
+                ", type='" + type + '\'' +
                 ", object=" + object +
                 '}';
     }
@@ -91,4 +114,28 @@ public class KeyWordAtom {
         }
     }
 
+
+    public void addKeyWordAtom(KeyWordAtom keyWordAtom){
+        this.sonAtomList.add(keyWordAtom);
+    }
+
+
+    public void changeKeyWordAtom(KeyWordAtom keyWordAtom){
+        this.sonAtomList.clear();
+        this.sonAtomList.add(keyWordAtom);
+    }
+
+    public void deleteKeyWordAtom(KeyWordAtom keyWordAtom){
+        boolean flag = true;
+        for(KeyWordAtom k : sonAtomList){
+            if (k.equals(keyWordAtom)){
+                sonAtomList.remove(k);
+                flag = false;
+                break;
+            }
+        }
+        if (!flag){
+            System.out.println("delete nothing from sonAtomList!");
+        }
+    }
 }

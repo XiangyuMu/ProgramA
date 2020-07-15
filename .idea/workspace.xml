@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/CreateBTMFileAgain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/Demo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/ForEachState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/KeyWordAtom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/ThisExpression.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/AnalysisProgress/kaifang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -16,19 +11,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/LearnSomething.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/LearnSomething.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/HalperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/HalperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/notice.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/notice.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/learnJavaParser/Practice.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/learnJavaParser/Practice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/AssignExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/AssignExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/DealWithInfoToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/DealWithInfoToFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/FieldAccessExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/FieldAccessExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/IdentifyVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/IdentifyVariable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/IntegerLiteralExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/IntegerLiteralExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/MethodCallExpression.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/MethodCallExpression.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/VariableDeclaratorInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/VariableDeclaratorInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/CreateBTMFileAgain.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/CreateBTMFileAgain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/KeyWordAtom.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/KeyWordAtom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,20 +92,7 @@
       <command value="？" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Demo (1)">
-    <configuration name="BytemanTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="byteman.BytemanTest" />
-      <module name="ProgramA.ProgramTest.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="byteman.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.kaifang">
     <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="preprocessing.Demo" />
       <module name="ProgramA.ProgramTest.main" />
@@ -168,20 +139,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="kaifang" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AnalysisProgress.kaifang" />
+      <module name="ProgramA.ProgramTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="AnalysisProgress.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.BytemanTest" />
       <item itemvalue="Application.LearnSomething" />
       <item itemvalue="Application.XmlCreateAndRead" />
       <item itemvalue="Application.Practice" />
       <item itemvalue="Application.Demo (1)" />
+      <item itemvalue="Application.kaifang" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.kaifang" />
         <item itemvalue="Application.Demo (1)" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.LearnSomething" />
         <item itemvalue="Application.XmlCreateAndRead" />
-        <item itemvalue="Application.BytemanTest" />
       </list>
     </recent_temporary>
   </component>
@@ -280,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591711293484</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="2020.7.09">
+      <created>1594424761271</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1594424761271</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -295,7 +286,8 @@
     <MESSAGE value="2020.3.12" />
     <MESSAGE value="2020.3.25" />
     <MESSAGE value="2020.6.09" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020.6.09" />
+    <MESSAGE value="2020.7.09" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020.7.09" />
   </component>
   <component name="WindowStateProjectService">
     <state x="465" y="13" key="#ProgramA" timestamp="1593592076344">
@@ -314,10 +306,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="507" y="88" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824@0.0.1536.824" timestamp="1586529538590" />
-    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1594384562857">
+    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1594645441738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594384562857" />
+    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1594645441738" />
     <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591234828936">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -330,38 +322,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="378" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1586161477892" />
-    <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1587729647361">
+    <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1594715492003">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587729647361" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1591711286883">
+    <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594715492003" />
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1594424756910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1591711286883" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1594390055481">
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594424756910" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1594716088243">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594390055481" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1594390055481">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1594716088243" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1594716088242">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594390055481" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1594390055481">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1594716088242" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1594716088242">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594390055481" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1594390055481">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1594716088242" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1594716088242">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594390055481" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1594716088242" />
     <state x="369" y="0" key="SettingsEditor" timestamp="1586998352533">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586998352533" />
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1591711356876">
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1594424824056">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1591711356876" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594424824056" />
     <state x="468" y="10" width="600" height="804" key="find.popup" timestamp="1594360097009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -370,10 +362,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594106143073" />
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1593438435781">
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1594715973490">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1593438435781" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594715973490" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

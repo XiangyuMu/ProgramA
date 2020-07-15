@@ -16,6 +16,7 @@ public class CreateBTMFileAgain {
     private List<KeyWordAtom> KeyWordsList = new ArrayList<>();
     Map VariableDeclararion = new HashMap();
     Map VariableDeclarationOnLine = new HashMap();
+    List<KeyWord> keyWordList = new ArrayList<>();
     List<ForEachState> forEachStateList = new ArrayList<>();
     public List<Object> textractFromXML() throws FileNotFoundException, DocumentException {
         System.out.println("the start of function textractFromXML");
@@ -207,18 +208,36 @@ public class CreateBTMFileAgain {
 
     }
 
+
+    public boolean isKeyWord(String name){
+        boolean flag = false;
+        for (KeyWord keyWord : keyWordList){
+            if (keyWord.getName().equals(name)){
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
     public KeyWordAtom dealWithClassOfStatement(Object object){
         String type = object.getClass().getSimpleName();
         KeyWordAtom keyWordAtom = new KeyWordAtom();
         System.out.println("type: "+type);
         switch (type){
             case "VariableDeclaratorInfo":{
+//                VariableDeclaratorInfo vdi = (VariableDeclaratorInfo)object;
+//                keyWordAtom.copyValue(dealWithClassOfStatement(vdi.objectList.get(0)));
+//                keyWordAtom.setKeyWordName(vdi.nameStr);
+//                keyWordAtom.setLine(vdi.line);
+//                System.out.println("VdiKeyWordAtom: "+keyWordAtom);
+//                return keyWordAtom;
+
+
                 VariableDeclaratorInfo vdi = (VariableDeclaratorInfo)object;
-                keyWordAtom.copyValue(dealWithClassOfStatement(vdi.objectList.get(0)));
-                keyWordAtom.setKeyWordName(vdi.nameStr);
-                keyWordAtom.setLine(vdi.line);
-                System.out.println("VdiKeyWordAtom: "+keyWordAtom);
-                return keyWordAtom;
+                String name = vdi.nameStr;
+                Object valueObject = vdi.objectList.get(0);
+                KeyWordAtom keyWordAtom1 = dealWithClassOfStatement(valueObject);
             }
             case "CastExpression":{
                 CastExpression ce = (CastExpression)object;
@@ -226,42 +245,52 @@ public class CreateBTMFileAgain {
                 return keyWordAtom;
             }
             case "MethodCallExpression":{
+//                MethodCallExpression mce = (MethodCallExpression)object;
+////                keyWordAtom.copyValue(mce.getKeyWordAtom());
+//
+//                if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
+//                    String name = ((NameExpression)(mce.objectScope)).name;
+//                    keyWordAtom.setKeyWordName(name);
+//
+//                }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
+//                    //System.out.println(objectScope.getClass().getSimpleName());
+//                    keyWordAtom.copyValue(((MethodCallExpression)(mce.objectScope)).getKeyWordAtom());
+//                }
+//
+//                if (mce.parameterObjectList.size()!=0){
+//                    if (mce.parameterObjectList.size()==1){
+//                        Object parameter = mce.parameterObjectList.get(0);
+//                        switch (parameter.getClass().getSimpleName()){
+//                            case "IntegerLiteralExpression":{
+//                                IntegerLiteralExpression ile = (IntegerLiteralExpression)parameter;
+//                                if (keyWordAtom.row.equals("")){
+//                                    keyWordAtom.setRowType("int");
+//                                    keyWordAtom.setRow(String.valueOf(ile.getI()));
+//                                }else{
+//                                    keyWordAtom.setColumnType("int");
+//                                    keyWordAtom.setColumn(String.valueOf(ile.getI()));
+//                                }
+//                                break;
+//                            }
+//                            //case ""
+//                        }
+//                    }else{
+//                        System.out.println("parameters are more than one!!");
+//                    }
+//                    return keyWordAtom;
+//                }
+//                System.out.println("RowType:"+keyWordAtom);
+//                return keyWordAtom;
+
                 MethodCallExpression mce = (MethodCallExpression)object;
-//                keyWordAtom.copyValue(mce.getKeyWordAtom());
-
+                String methodName;
                 if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
-                    String name = ((NameExpression)(mce.objectScope)).name;
-                    keyWordAtom.setKeyWordName(name);
-
+                    methodName = ((NameExpression)(mce.objectScope)).name;
                 }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
                     //System.out.println(objectScope.getClass().getSimpleName());
                     keyWordAtom.copyValue(((MethodCallExpression)(mce.objectScope)).getKeyWordAtom());
                 }
 
-                if (mce.parameterObjectList.size()!=0){
-                    if (mce.parameterObjectList.size()==1){
-                        Object parameter = mce.parameterObjectList.get(0);
-                        switch (parameter.getClass().getSimpleName()){
-                            case "IntegerLiteralExpression":{
-                                IntegerLiteralExpression ile = (IntegerLiteralExpression)parameter;
-                                if (keyWordAtom.row.equals("")){
-                                    keyWordAtom.setRowType("int");
-                                    keyWordAtom.setRow(String.valueOf(ile.getI()));
-                                }else{
-                                    keyWordAtom.setColumnType("int");
-                                    keyWordAtom.setColumn(String.valueOf(ile.getI()));
-                                }
-                                break;
-                            }
-                            //case ""
-                        }
-                    }else{
-                        System.out.println("parameters are more than one!!");
-                    }
-                    return keyWordAtom;
-                }
-                System.out.println("RowType:"+keyWordAtom);
-                return keyWordAtom;
             }
             case "IntegerLiteralExpression":{
                 keyWordAtom.setObject(((IntegerLiteralExpression) object).getI());
@@ -269,7 +298,24 @@ public class CreateBTMFileAgain {
             }
 
             case "AssignExpression": {
-                
+                AssignExpression ae = (AssignExpression)object;
+                String operator = ae.operator;
+
+                switch (operator){
+                    case "=":{
+                        keyWordAtom.copyValue(dealWithClassOfStatement(ae.valueObject));
+                        keyWordAtom.setKeyWordName(ae.targetObject.toString());
+                        keyWordAtom.line = ae.line;
+                        break;
+                    }
+                    case "+=": {
+                        keyWordAtom.copyValue(dealWithClassOfStatement(ae.valueObject));
+                        break;
+                    }
+
+
+                }
+                return keyWordAtom;
             }
             default:{
                 return null;
@@ -279,9 +325,9 @@ public class CreateBTMFileAgain {
 
 
     public void readKeyWordFromFile() throws IOException {
-        List<KeyWord> lk = new ArrayList<>();
-        lk = new DealWithInfoToFile().readKeyWordfile();
-        System.out.println("KeyWordList: "+lk);
+        keyWordList = new DealWithInfoToFile().readKeyWordfile();
+        System.out.println("KeyWordList: "+keyWordList);
+
     }
 
 
