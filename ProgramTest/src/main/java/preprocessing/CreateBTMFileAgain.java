@@ -238,6 +238,11 @@ public class CreateBTMFileAgain {
                 String name = vdi.nameStr;
                 Object valueObject = vdi.objectList.get(0);
                 KeyWordAtom keyWordAtom1 = dealWithClassOfStatement(valueObject);
+
+                keyWordAtom.setKeyWordName(name);
+                keyWordAtom.changeKeyWordAtom(keyWordAtom1);
+
+                return keyWordAtom;
             }
             case "CastExpression":{
                 CastExpression ce = (CastExpression)object;

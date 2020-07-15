@@ -112,6 +112,8 @@ public class  KeyWordAtom {
         if (keyWordAtom.line!=-1){
             this.line = keyWordAtom.line;
         }
+        this.sonAtomList = keyWordAtom.sonAtomList;
+        this.type = keyWordAtom.type;
     }
 
 
