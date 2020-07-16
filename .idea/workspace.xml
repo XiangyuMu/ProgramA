@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +60,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16936672" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -267,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594865868317</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2020.7.09">
+      <created>1594881520206</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1594881520206</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -322,10 +327,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594715492003" />
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1594865864891">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1594881518820">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594865864891" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594881518820" />
     <state width="1493" height="234" key="GridCell.Tab.0.bottom" timestamp="1594862062835">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -358,15 +363,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594862062835" />
-    <state x="461" y="0" key="SettingsEditor" timestamp="1594797236637">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586998352533" />
-    <state x="461" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594797236637" />
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1594866037484">
+    <state x="369" y="0" key="SettingsEditor" timestamp="1594881669955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594866037484" />
+    <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594881669955" />
+    <state x="461" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594797236637" />
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2" timestamp="1594881527252">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594881527252" />
     <state x="468" y="10" width="600" height="804" key="find.popup" timestamp="1594360097009">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
