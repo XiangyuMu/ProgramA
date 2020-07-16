@@ -286,9 +286,22 @@ public class CreateBTMFileAgain {
 //                }
 //                System.out.println("RowType:"+keyWordAtom);
 //                return keyWordAtom;
-
+                List<MethodWord> methodWordList = new ArrayList<>();
                 MethodCallExpression mce = (MethodCallExpression)object;
                 String methodName;
+                while(true){
+                    if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
+                        methodName = ((NameExpression)(mce.objectScope)).name;
+                        System.out.println("methodName: "+methodName);
+                        break;
+                    }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        System.out.println("Parameters: "+mce.parameterObjectList);
+                        mce = (MethodCallExpression) mce.objectScope;
+                    }
+                }
+
+
                 if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
                     methodName = ((NameExpression)(mce.objectScope)).name;
                 }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
