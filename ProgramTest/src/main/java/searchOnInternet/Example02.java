@@ -24,7 +24,7 @@ public class Example02 {
 		String key = (String)list.getList().get(0).getList().get(0).getAtom();
         Integer sum = 0;
         for (Element i : list.getList()) {
-        	System.out.println(i.getList().get(1) );
+        	System.out.println(i.getList().get(1));
             sum += Integer.parseInt(i.getList().get(1).getAtom().toString());
         }
         output.add(new TwoTuple(key, sum.toString()));

@@ -7,10 +7,7 @@ import org.dom4j.io.SAXReader;
 import searchOnInternet.Example02;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class CreateBTMFileAgain {
     private List<KeyWordAtom> KeyWordsList = new ArrayList<>();
@@ -223,7 +220,7 @@ public class CreateBTMFileAgain {
     public KeyWordAtom dealWithClassOfStatement(Object object){
         String type = object.getClass().getSimpleName();
         KeyWordAtom keyWordAtom = new KeyWordAtom();
-        System.out.println("type: "+type);
+        System.out.println("Stype: "+type);
         switch (type){
             case "VariableDeclaratorInfo":{
 //                VariableDeclaratorInfo vdi = (VariableDeclaratorInfo)object;
@@ -237,8 +234,9 @@ public class CreateBTMFileAgain {
                 VariableDeclaratorInfo vdi = (VariableDeclaratorInfo)object;
                 String name = vdi.nameStr;
                 Object valueObject = vdi.objectList.get(0);
-                KeyWordAtom keyWordAtom1 = dealWithClassOfStatement(valueObject);
+                List<KeyWordAtom> keyWordAtom1 = dealWithClassOfExpression(valueObject);
 
+                keyWordAtom.line = vdi.line;
                 keyWordAtom.setKeyWordName(name);
                 keyWordAtom.changeKeyWordAtom(keyWordAtom1);
 
@@ -286,10 +284,15 @@ public class CreateBTMFileAgain {
 //                }
 //                System.out.println("RowType:"+keyWordAtom);
 //                return keyWordAtom;
+                String structure = "";
+
                 List<MethodWord> methodWordList = new ArrayList<>();
                 MethodCallExpression mce = (MethodCallExpression)object;
+
                 String methodName;
+                keyWordAtom.line = mce.line;
                 while(true){
+                    System.out.println("ScopeType: "+mce.objectScope.getClass().getSimpleName() );
                     if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
                         methodName = ((NameExpression)(mce.objectScope)).name;
                         System.out.println("methodName: "+methodName);
@@ -298,36 +301,114 @@ public class CreateBTMFileAgain {
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
                         System.out.println("Parameters: "+mce.parameterObjectList);
                         mce = (MethodCallExpression) mce.objectScope;
+                    }else if (mce.objectScope.getClass().getSimpleName().equals("FieldAccessExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        methodName = ((FieldAccessExpression)(mce.objectScope)).name;
+                        System.out.println("methodName: "+mce.objectScope);
+                        break;
                     }
                 }
 
 
-                if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
-                    methodName = ((NameExpression)(mce.objectScope)).name;
-                }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
-                    //System.out.println(objectScope.getClass().getSimpleName());
-                    keyWordAtom.copyValue(((MethodCallExpression)(mce.objectScope)).getKeyWordAtom());
+                boolean flag = false;
+                for (int i = 0;i<keyWordList.size();i++){
+                    if (keyWordList.get(i).name.equals(methodName)){
+                        flag = true;
+                        structure = keyWordList.get(i).dataStructure;
+                        break;
+                    }
                 }
 
-            }
-            case "IntegerLiteralExpression":{
-                keyWordAtom.setObject(((IntegerLiteralExpression) object).getI());
+
+
+
+                Collections.reverse(methodWordList);
+                System.out.println(methodWordList);
+                if (flag){
+                    keyWordAtom.keyWordName =methodName;
+                    if (structure == "ElemwntList"){
+                        if (methodWordList.get(0).name=="getList"&&methodWordList.get(1).name=="get"){
+                            keyWordAtom.column = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.columnType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }if (methodWordList.get(2).name=="getList"&&methodWordList.get(3).name=="get"){
+                            keyWordAtom.row = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.rowType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }
+                    }else if (structure == "Element"){
+                        if (methodWordList.get(0).name=="getList"&&methodWordList.get(1).name=="get"){
+                            keyWordAtom.row = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.rowType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }
+                    }else{
+                        for(MethodWord methodWord : methodWordList){
+                            if (methodWord.parameterList.size()!=0){
+
+                                if (methodWord.name.equals("add")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else if (methodWord.name.equals("delete")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else if (methodWord.name.equals("get")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else{
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+
+
+
+                }else{
+                    keyWordAtom.setKeyWordName("NULL");
+                    for(MethodWord methodWord : methodWordList){
+                        if (methodWord.parameterList.size()!=0){
+
+                            if (methodWord.name.equals("add")){
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }else if (methodWord.name.equals("delete")){
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }else {
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }
+
+                        }
+                    }
+                }
                 return keyWordAtom;
             }
+
 
             case "AssignExpression": {
                 AssignExpression ae = (AssignExpression)object;
                 String operator = ae.operator;
 
+                keyWordAtom.line = ae.line;
                 switch (operator){
                     case "=":{
-                        keyWordAtom.copyValue(dealWithClassOfStatement(ae.valueObject));
+                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(ae.valueObject));
                         keyWordAtom.setKeyWordName(ae.targetObject.toString());
                         keyWordAtom.line = ae.line;
                         break;
                     }
                     case "+=": {
-                        keyWordAtom.copyValue(dealWithClassOfStatement(ae.valueObject));
+                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(ae.valueObject));
+                        keyWordAtom.setKeyWordName(ae.targetObject.toString());
                         break;
                     }
 
@@ -341,6 +422,140 @@ public class CreateBTMFileAgain {
         }
     }
 
+
+    public List<KeyWordAtom> dealWithClassOfExpression(Object object){
+        String type = object.getClass().getSimpleName();
+        List<KeyWordAtom> keyWordAtomList = new ArrayList<>();
+        System.out.println("type: "+type);
+        switch(type){
+            case "CastExpression":{
+                CastExpression ce = (CastExpression)object;
+                keyWordAtomList = (dealWithClassOfExpression(ce.objectList.get(0)));
+                return keyWordAtomList;
+            }
+
+            case "IntegerLiteralExpression":{
+                KeyWordAtom keyWordAtom = new KeyWordAtom();
+                keyWordAtom.setKeyWordName("NULL");
+                keyWordAtom.column = String.valueOf(((IntegerLiteralExpression) object).i);
+                keyWordAtom.columnType = "int";
+                keyWordAtomList.add(keyWordAtom);
+                return keyWordAtomList;
+            }
+
+            case "MethodCallExpression":{
+                KeyWordAtom keyWordAtom = new KeyWordAtom();
+                String structure = "";
+                List<MethodWord> methodWordList = new ArrayList<>();
+                MethodCallExpression mce = (MethodCallExpression)object;
+                String methodName;
+                keyWordAtom.line = mce.line;
+                while(true){
+                    if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        methodName = ((NameExpression)(mce.objectScope)).name;
+                        System.out.println("methodName: "+methodName);
+                        break;
+                    }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        System.out.println("Parameters: "+mce.parameterObjectList);
+                        mce = (MethodCallExpression) mce.objectScope;
+                    }
+                }
+
+
+                boolean flag = false;
+                for (int i = 0;i<keyWordList.size();i++){
+                    if (keyWordList.get(i).name.equals(methodName)){
+                        flag = true;
+                        structure = keyWordList.get(i).dataStructure;
+                        break;
+                    }
+                }
+                System.out.println("structure: "+structure);
+                Collections.reverse(methodWordList);
+                System.out.println("methodWordList: "+methodWordList);
+                if (flag){
+                    keyWordAtom.keyWordName =methodName;
+                    if (structure.equals("ElemwntList")){
+                        System.out.println("123123");
+                        if (methodWordList.get(0).name.equals("getList")&&methodWordList.get(1).name.equals("get")){
+                            keyWordAtom.column = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.columnType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }if (methodWordList.get(2).name.equals("getList")&&methodWordList.get(3).name.equals("get")){
+                            keyWordAtom.row = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.rowType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }
+                    }else if (structure.equals("Element") ){
+                        if (methodWordList.get(0).name.equals("getList")&&methodWordList.get(1).name.equals("get")){
+                            keyWordAtom.row = methodWordList.get(1).parameterList.get(0).toString();
+                            keyWordAtom.rowType = methodWordList.get(1).parameterList.get(0).getClass().getSimpleName();
+                        }
+                    }else{
+                        for(MethodWord methodWord : methodWordList){
+                            if (methodWord.parameterList.size()!=0){
+
+                                if (methodWord.name.equals("add")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else if (methodWord.name.equals("delete")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else if (methodWord.name.equals("get")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }else{
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    }
+                                }
+
+
+                            }
+                        }
+                    }
+
+
+
+                }else{
+                    keyWordAtom.setKeyWordName("NULL");
+                    for(MethodWord methodWord : methodWordList){
+                        if (methodWord.parameterList.size()!=0){
+
+                            if (methodWord.name.equals("add")){
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }else if (methodWord.name.equals("delete")){
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }else if (methodWord.name.equals("get")){
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }else{
+                                for (int k = 0;k<methodWord.parameterList.size();k++){
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                }
+                            }
+
+
+                        }
+                    }
+                }
+                keyWordAtomList.add(keyWordAtom);
+                return keyWordAtomList;
+            }
+
+            default:{
+                return null;
+            }
+        }
+    }
 
     public void readKeyWordFromFile() throws IOException {
         keyWordList = new DealWithInfoToFile().readKeyWordfile();
