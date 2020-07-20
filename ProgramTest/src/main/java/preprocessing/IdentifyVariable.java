@@ -82,6 +82,7 @@ public class IdentifyVariable {
             }
             case "MethodCallExpr":{
                 MethodCallExpression mce = new MethodCallExpression();
+
                 mce.transToMethodCallExpression((MethodCallExpr) e,fatherElement);
                 System.out.println(mce);
                 break;
@@ -119,6 +120,16 @@ public class IdentifyVariable {
                 ThisExpression te = new ThisExpression();
                 te.transToThisExpression((ThisExpr) e,fatherElement);
                 System.out.println(te);
+                break;
+            }
+            case "ObjectCreationExpr":{
+                ObjectCreation oc = new ObjectCreation();
+                ObjectCreationExpr oce = (ObjectCreationExpr)e;
+                System.out.println("ObjectCreationExprType:"+oce.getTypeAsString());
+                System.out.println("ObjectCreationExprScope:"+oce.getScope());
+                System.out.println("ObjectCreationExprParamter:"+oce.getArguments());
+                oc.transToMethodCallExpression(oce,fatherElement);
+                System.out.println(oc);
                 break;
             }
             default:{

@@ -149,6 +149,12 @@ public class CreateBTMFileAgain {
                 return forEachState;
             }
 
+            case "ObjectCreation": {
+                ObjectCreation objectCreation = new ObjectCreation(element);
+                System.out.println(objectCreation);
+                System.out.println(objectCreation);
+            }
+
             default:{
                 System.out.println("can't find this type!!!!!!!!!!!!");
                 return null;
@@ -293,9 +299,12 @@ public class CreateBTMFileAgain {
                 keyWordAtom.line = mce.line;
                 while(true){
                     System.out.println("ScopeType: "+mce.objectScope.getClass().getSimpleName() );
+                    System.out.println("ScopeName: "+mce.objectName.getClass().getSimpleName() );
                     if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
                         methodName = ((NameExpression)(mce.objectScope)).name;
                         System.out.println("methodName: "+methodName);
+                        System.out.println("Parameters: "+mce.parameterObjectList);
                         break;
                     }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
@@ -460,6 +469,11 @@ public class CreateBTMFileAgain {
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
                         System.out.println("Parameters: "+mce.parameterObjectList);
                         mce = (MethodCallExpression) mce.objectScope;
+                    }else if (mce.objectScope.getClass().getSimpleName().equals("FieldAccessExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        methodName = ((FieldAccessExpression)(mce.objectScope)).name;
+                        System.out.println("methodName: "+mce.objectScope);
+                        break;
                     }
                 }
 

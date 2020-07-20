@@ -76,6 +76,11 @@ public class Practice {
         public void visit(MethodCallExpr n,Element arg){
             System.out.println("MethodCallExpr: "+n);
             boolean flag = false;
+            System.out.println("DemoParamter: "+n.getArguments());
+            for (Expression expression:n.getArguments()){
+                System.out.println("Paramter: "+expression.getMetaModel());
+            }
+
             for(Integer line : lineList){
                 if(line.intValue()==n.getRange().get().begin.line){
                     flag = true;
@@ -90,6 +95,15 @@ public class Practice {
                 super.visit(n,arg);
             }
         }
+//        public void visit(ObjectCreationExpr n,Element arg){
+//            System.out.println("ObjectCreationExpr: "+n);
+//            IdentifyVariable iv = new IdentifyVariable();
+//            iv.transToIdentitedVariable(n,arg);
+//            System.out.println("iv: "+iv);
+//            super.visit(n, arg);
+//        }
+
+
     }
 
     public List<Object> extractTromXML(String fileName) throws FileNotFoundException, DocumentException {
