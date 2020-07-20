@@ -4,6 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class  KeyWordAtom {
+    @Override
+    public String toString() {
+        return "KeyWordAtom{" +
+                "keyWordName='" + keyWordName + '\'' +
+                ", column='" + column + '\'' +
+                ", row='" + row + '\'' +
+                ", line=" + line +
+                ", rowType='" + rowType + '\'' +
+                ", columnType='" + columnType + '\'' +
+                ", sonAtomList=" + sonAtomList +
+                ", type='" + type + '\'' +
+                ", object=" + object +
+                '}';
+    }
+
     String keyWordName;
     String column = "";
     String row = "";
@@ -29,21 +44,6 @@ public class  KeyWordAtom {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    @Override
-    public String toString() {
-        return "KeyWordAtom{" +
-                "keyWordName='" + keyWordName + '\'' +
-                ", column='" + column + '\'' +
-                ", row='" + row + '\'' +
-                ", line=" + line +
-                ", rowType='" + rowType + '\'' +
-                ", columnType='" + columnType + '\'' +
-                ", sonAtomList=" + sonAtomList +
-                ", type='" + type + '\'' +
-                ", object=" + object +
-                '}';
     }
 
     public Object getObject() {
@@ -117,23 +117,28 @@ public class  KeyWordAtom {
     }
 
 
-    public void addKeyWordAtom(KeyWordAtom keyWordAtom){
-        this.sonAtomList.add(keyWordAtom);
+    public void addKeyWordAtom(List<KeyWordAtom> keyWordAtomList){
+        for (KeyWordAtom k : keyWordAtomList){
+            this.sonAtomList.add(k);
+        }
     }
 
 
-    public void changeKeyWordAtom(KeyWordAtom keyWordAtom){
+    public void changeKeyWordAtom(List<KeyWordAtom> keyWordAtomList){
         this.sonAtomList.clear();
-        this.sonAtomList.add(keyWordAtom);
+        for (KeyWordAtom k : keyWordAtomList){
+            this.sonAtomList.add(k);
+        };
     }
 
-    public void deleteKeyWordAtom(KeyWordAtom keyWordAtom){
+    public void deleteKeyWordAtom(List<KeyWordAtom> keyWordAtom){
         boolean flag = true;
         for(KeyWordAtom k : sonAtomList){
-            if (k.equals(keyWordAtom)){
-                sonAtomList.remove(k);
-                flag = false;
-                break;
+            for (KeyWordAtom j : keyWordAtom){
+                if (k.equals(j)){
+                    sonAtomList.remove(k);
+                    flag = true;
+                }
             }
         }
         if (!flag){

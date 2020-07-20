@@ -1,55 +1,45 @@
 package AnalysisProgress;
 
 import java.math.BigDecimal;
+import java.util.Scanner;
+import java.util.Stack;
 
 public class kaifang {
-
-
     public static void main(String[] args) {
         kaifang k = new kaifang();
-        System.out.println(k.kaifangFunction(15));
+        k.func();
     }
 
-    public float kaifangFunction(int num){
-        float min = 0;
-        float max = num;
-        int i;
-        float formerNum = 0;
-        while(true){
-            float interNum = (min+max)/2;
-            if (interNum*interNum>num){
-                if (quzheng(interNum) == quzheng(formerNum)){
-//
-                    return quzheng(interNum);
-                }
-                formerNum = interNum;
-                max = interNum;
-            }else if (interNum*interNum<num){
-                if (quzheng(interNum) == quzheng(formerNum)){
-//
-                    return quzheng(interNum);
-                }
-                formerNum = interNum;
-                min = interNum;
-            }else{
-//
-                return quzheng(interNum);
+
+    public void func(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("qingshuru");
+        String s = scan.next();
+        char[] chars= s.toCharArray();
+        Stack stack = new Stack();
+        boolean flag = true;
+        for (char c:chars){
+            if (c == '('){
+                stack.push(c);
+            }
+            else if (c == ')'&&!stack.empty()){
+                stack.pop();
+            }else if (c == ')'&&stack.empty()){
+                flag = false;
+                break;
             }
         }
-
-
-
+        if (!stack.empty()){
+            flag = false;
+        }
+        if (flag){
+            System.out.println("valid");
+        }else{
+            System.out.println("invalid");
+        }
     }
-
-    /**
-     * 取整，保留两位
-     * @param num1
-     * @return
-     */
-    public float quzheng(float num1){
-        BigDecimal b = new BigDecimal(num1);
-        return b.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
-    }
-
-
 }
+
+
+
+

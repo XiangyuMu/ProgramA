@@ -11,7 +11,7 @@ public class Demo {
         c.readKeyWordFromFile();
         c.textractFromXML();
         System.out.println("Demo.Map: "+c.VariableDeclararion);
-        c.parserVariableDeclararion(24);
+        c.parserVariableDeclararion(30);
         c.printIntoBtmFile();
     }
 }
