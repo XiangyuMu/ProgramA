@@ -224,6 +224,12 @@ public class Practice {
                 System.out.println(thisExpression);
                 return thisExpression;
             }
+            case "ObjectCreation":{
+                ObjectCreation objectCreation = new ObjectCreation(element);
+                System.out.println("ObjectCreation: ");
+                System.out.println(objectCreation);
+                return objectCreation;
+            }
             default:{
                 System.out.println("can't find this type!!!!!!!!!!!!");
                 return null;

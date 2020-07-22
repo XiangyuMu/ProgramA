@@ -2,6 +2,7 @@ package preprocessing;
 
 import com.github.javaparser.ast.expr.Expression;
 import com.github.javaparser.ast.expr.ObjectCreationExpr;
+import learnJavaParser.Practice;
 import org.dom4j.Element;
 
 import java.util.ArrayList;
@@ -25,13 +26,44 @@ public class ObjectCreation {
 
     }
 
+
+    @Override
+    public String toString() {
+        return "ObjectCreation{" +
+                "type='" + type + '\'' +
+                ", scope='" + scope + '\'' +
+                ", scopeEx=" + scopeEx +
+                ", objectScope=" + objectScope +
+                ", name=" + name +
+                ", objectName=" + objectName +
+                ", parameterList=" + parameterList +
+                ", parameterObjectList=" + parameterObjectList +
+                ", keyWordAtom=" + keyWordAtom +
+                ", line=" + line +
+                '}';
+    }
+
     public ObjectCreation(Element element){
         line = Integer.parseInt(element.attribute("line").getValue());
-        type = element.attribute("type").getValue();
+        type = element.attribute("Type").getValue();
         List<Element> elementList = element.elements();
+
         for (Element ele : elementList){
             System.out.println("elementList: "+ele);
+            String eleText = ele.getText();
+            if(eleText.trim().equals("")){
+                eleText = "";
+            }
+            if (ele.getName().equals("Parameter")){
+                List<Element> elementList1 = ele.elements();
+                for (Element element1: elementList1){
+                    Practice p = new Practice();
+                    System.out.println("eleType: "+element1.getName());
+                    parameterObjectList.add(p.extractElement(element1));
+                }
+            }
         }
+
     }
 
     public void transToMethodCallExpression(ObjectCreationExpr e, Element fatherElement){

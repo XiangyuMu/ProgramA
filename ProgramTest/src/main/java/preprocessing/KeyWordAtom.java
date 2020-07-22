@@ -118,9 +118,12 @@ public class  KeyWordAtom {
 
 
     public void addKeyWordAtom(List<KeyWordAtom> keyWordAtomList){
-        for (KeyWordAtom k : keyWordAtomList){
-            this.sonAtomList.add(k);
+        if (!keyWordAtomList.isEmpty()){
+            for (KeyWordAtom k : keyWordAtomList){
+                this.sonAtomList.add(k);
+            }
         }
+
     }
 
 

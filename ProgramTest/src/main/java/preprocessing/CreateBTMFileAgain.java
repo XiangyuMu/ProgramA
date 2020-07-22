@@ -150,9 +150,10 @@ public class CreateBTMFileAgain {
             }
 
             case "ObjectCreation": {
+                System.out.println("read ObjectCreate");
                 ObjectCreation objectCreation = new ObjectCreation(element);
                 System.out.println(objectCreation);
-                System.out.println(objectCreation);
+                return  objectCreation;
             }
 
             default:{
@@ -565,8 +566,27 @@ public class CreateBTMFileAgain {
                 return keyWordAtomList;
             }
 
+            case"ObjectCreation":{
+                ObjectCreation objectCreation = (ObjectCreation) object;
+                System.out.println("objectCreation: "+objectCreation);
+                List<Object> paramterList = objectCreation.parameterObjectList;
+                for (Object o : paramterList){
+                    KeyWordAtom keyWordAtom = new KeyWordAtom();
+                    System.out.println(dealWithClassOfExpression(o));
+                    if (dealWithClassOfExpression(o).size()!=0){
+                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(o));
+                    }
+
+                    keyWordAtomList.add(keyWordAtom );
+                }
+                return keyWordAtomList;
+
+            }
+
             default:{
-                return null;
+                System.out.println("output is null");
+
+                return keyWordAtomList;
             }
         }
     }
