@@ -602,7 +602,22 @@ public class CreateBTMFileAgain {
         FileWriter file = new FileWriter("ProgramTest/src/main/java/byteman/"+"Test"+".btm");
         BufferedWriter output = new BufferedWriter(file);
 
-        String  str1;
+        String  str1 = "";
+
+        System.out.println("KeyWordsList: "+ KeyWordsList);
+        System.out.println("ForList: "+ forEachStateList);
+
+        for (int j = 0; j<KeyWordsList.size();j++){
+            int line = KeyWordsList.get(j).line;
+            for (int forNum = 0;forNum<forEachStateList.size();forNum++){
+                if (line<=forEachStateList.get(forNum).last&&line>=forEachStateList.get(forNum).line){
+                    str1 = str1 + CreateBTMString(KeyWordsList.get(j),forEachStateList.get(forNum));
+                }else{
+                    str1 = str1 + CreateBTMString(KeyWordsList.get(j),null);
+                }
+            }
+        }
+
 
         for (int i = 0;i<KeyWordsList.size();i++){
             if(KeyWordsList.get(i).getColumn().equals("")&&KeyWordsList.get(i).getRow().equals("")){
@@ -625,6 +640,18 @@ public class CreateBTMFileAgain {
             str1 = str1 + "ENDRULE\n";
             output.write(str1);
         }output.close();
+    }
+
+
+    public String  CreateBTMString(KeyWordAtom keyWordAtom,ForEachState forEachState){
+        String str = "";
+        if (forEachState.equals(null)){
+
+        }else{
+
+        }
+
+        return str;
     }
 
 }
