@@ -14,6 +14,10 @@ javac -Xlint:unchecked -classpath .;E:\gradleStore\caches\modules-2\files-2.1\or
 ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.
 jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper.java
 
+javac -Xlint:unchecked -classpath .;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.12\d59953e2cf849304b40036e84da171dcf865c220\byteman-4.0.12.jar;C:\Users\Administrator
+\.gradle\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper01.java
+
+
 
 Example04存在没有正确分类的问题！
 Example05存在没有正确分类的问题！

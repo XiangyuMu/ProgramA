@@ -644,6 +644,7 @@ public class CreateBTMFileAgain {
 
 
     public String  CreateBTMString(KeyWordAtom keyWordAtom,ForEachState forEachState){
+
         String str = "";
         if (forEachState.equals(null)){
 
