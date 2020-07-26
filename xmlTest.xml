@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<information>
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="24">
+		<FunctionWord functionName="getAtom"/>
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>0</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>0</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="System.out" isChecked="false" number="0" circumPotion="1" line="27">
+		<FunctionWord functionName="println">
+			<Para>
+				<FunctionLine name="i" isChecked="false" number="0" circumPotion="0" line="0">
+					<FunctionWord functionName="get">
+						<Para>
+							<strPara>1</strPara>
+						</Para>
+					</FunctionWord>
+					<FunctionWord functionName="getList"/>
+				</FunctionLine>
+			</Para>
+		</FunctionWord>
+	</FunctionLine>
+	<FunctionLine name="i" isChecked="false" number="0" circumPotion="1" line="28">
+		<FunctionWord functionName="toString"/>
+		<FunctionWord functionName="getAtom"/>
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>1</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="Integer" isChecked="false" number="0" circumPotion="1" line="28">
+		<FunctionWord functionName="parseInt">
+			<Para>
+				<FunctionLine name="i" isChecked="false" number="0" circumPotion="0" line="0">
+					<FunctionWord functionName="toString"/>
+					<FunctionWord functionName="getAtom"/>
+					<FunctionWord functionName="get">
+						<Para>
+							<strPara>1</strPara>
+						</Para>
+					</FunctionWord>
+					<FunctionWord functionName="getList"/>
+				</FunctionLine>
+			</Para>
+		</FunctionWord>
+	</FunctionLine>
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="26">
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="sum" isChecked="false" number="0" circumPotion="0" line="30">
+		<FunctionWord functionName="toString"/>
+	</FunctionLine>
+	<FunctionLine name="output" isChecked="false" number="0" circumPotion="0" line="30">
+		<FunctionWord functionName="add">
+			<Para>
+				<strPara>new TwoTuple(key, sum.toString())</strPara>
+			</Para>
+		</FunctionWord>
+	</FunctionLine>
+	<FunctionLine name="output" isChecked="false" number="0" circumPotion="0" line="36">
+		<FunctionWord functionName="size"/>
+	</FunctionLine>
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="36">
+		<FunctionWord functionName="size"/>
+	</FunctionLine>
+	<FunctionLine name="output" isChecked="false" number="0" circumPotion="2" line="42">
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>i</strPara>
+			</Para>
+		</FunctionWord>
+	</FunctionLine>
+	<FunctionLine name="System.out" isChecked="false" number="0" circumPotion="2" line="44">
+		<FunctionWord functionName="println">
+			<Para>
+				<strPara>"�����ͬ��"</strPara>
+			</Para>
+		</FunctionWord>
+	</FunctionLine>
+</information>

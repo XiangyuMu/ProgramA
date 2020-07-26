@@ -1,0 +1,5 @@
+list# ElemwntList# reduce# 
+key# String# reduce# 
+i# Element# reduce# 
+output# null# reduce# 
+sum# Integer# reduce# 
