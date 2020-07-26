@@ -57,36 +57,77 @@ public class VariableHelper01 extends Helper {
 
     public void dealwithKeyWord(String dadNode,String row,String column,String rowType,String columnType){
         KeyWord keyWord = (KeyWord) linked("KeyWordMap",dadNode);
+        int rowNum = -1;
+        int columnNum = -1;
+        if (rowType.equals("Int")&&columnType.equals("Int")){
+            rowNum = Integer.parseInt(row);
+            columnNum = Integer.parseInt(column);
+        }else  if (rowType.equals("Int")&&columnType.equals("")){
+            rowNum = Integer.parseInt(row);
+        }
+        List<Element> atomList = keyWord.getAtomList();
+        if (rowNum!=-1&&columnNum!=-1){
+            if (atomList.size()>rowNum){
+                if (atomList.get(rowNum).getList().size()>columnNum){
+                    Atom atom = atomList.get(rowNum).getList().get(columnNum);
+                    Element element = new Element();
+                    element.getList().add(atom);
+                    keyWord.getAtomList().add(element);
+                    link("KeyWordMap",dadNode,keyWord);
+                }else {
+                    traceln("the column < size! ");
+                }
+            }else{
+                traceln("the row < size! ");
+            }
+        }else if (rowNum!=-1&&columnNum==-1){
+            if (atomList.size()>rowNum){
+                Element element = atomList.get(rowNum);
+                keyWord.getAtomList().add(element);
+                link("KeyWordMap",dadNode,keyWord);
+            }else {
+                traceln("the row < size! ");
+            }
+        }
 
     }
 
     public void dealwithKeyWord(String sonNode,String dadNode,String row,String column,String rowType,String columnType){
+        traceln("before update: "+linkValues("KeyWordMap"));
         KeyWord dadkeyWord = (KeyWord) linked("KeyWordMap",dadNode);
         KeyWord sondkeyWord = (KeyWord) linked("KeyWordMap",sonNode);
         int rowNum = -1;
         int columnNum = -1;
-        if (rowType.equals("Int")&rowType.equals("Int")){
+        if (rowType.equals("Int")&&columnType.equals("Int")){
             rowNum = Integer.parseInt(row);
             columnNum = Integer.parseInt(column);
-        }else  if (rowType.equals("")){
+        }else  if (rowType.equals("Int")&&columnType.equals("")){
             rowNum = Integer.parseInt(row);
         }
         List<Element> atomList = sondkeyWord.getAtomList();
         if (rowNum!=-1&&columnNum!=-1){
-            for (Element element:atomList){
-                for (Atom atom : element.getList()){
-                    if (atom.getRow()==rowNum&&atom.getColumn()==columnNum){
-                        Element e = new Element();
-                        e.getList().add(atom);
-                        dadkeyWord.getAtomList().add(e);
-                        break;
-                    }
+            if (atomList.size()>rowNum){
+                if (atomList.get(rowNum).getList().size()>columnNum){
+                    Atom atom = atomList.get(rowNum).getList().get(columnNum);
+                    Element element = new Element();
+                    element.getList().add(atom);
+                    dadkeyWord.getAtomList().add(element);
+                }else {
+                    traceln("the column < size! ");
                 }
+            }else{
+                traceln("the row < size! ");
             }
         }else if (rowNum!=-1&&columnNum==-1){
-
+            if (atomList.size()>rowNum){
+                Element element = atomList.get(rowNum);
+                dadkeyWord.getAtomList().add(element);
+            }else {
+                traceln("the row < size! ");
+            }
         }
 
+        traceln("after update: "+linkValues("KeyWordMap"));
 
     }
 }
