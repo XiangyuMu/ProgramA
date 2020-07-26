@@ -24,3 +24,22 @@ AT LINE 24
 IF true
 DO dealwithKeyWord("list","key","0","0","Int","Int");
 ENDRULE
+
+RULE LINE24
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 24
+IF true
+DO dealwithKeyWord("list","key","0","0","Int","Int");
+ENDRULE
+
+
+RULE LINE26
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 26
+IF true
+DO forAdd(i);
+ENDRULE

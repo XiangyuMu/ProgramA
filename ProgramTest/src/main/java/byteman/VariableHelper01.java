@@ -130,4 +130,8 @@ public class VariableHelper01 extends Helper {
         traceln("after update: "+linkValues("KeyWordMap"));
 
     }
+
+    public void forAdd(){
+        traceln("forFunc!!");
+    }
 }
