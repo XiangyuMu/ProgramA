@@ -20,6 +20,7 @@ public class VariableHelper01 extends Helper {
     public void initFunc() throws IOException {
         createLinkMap("KeyWordMap");
         createLinkMap("ValueTable");
+        createCounter("i");
         List<KeyWord> lk = new ArrayList<>();
         lk = new DealWithInfoToFile().readKeyWordfile();
         traceln("lk: "+lk);
@@ -129,5 +130,13 @@ public class VariableHelper01 extends Helper {
 
         traceln("after update: "+linkValues("KeyWordMap"));
 
+    }
+
+
+    public void addFor(){
+        incrementCounter("i");
+        incrementCounter("o");
+        traceln("this is for func!"+ readCounter("i"));
+        traceln("this is for func!"+ readCounter("o"));
     }
 }
