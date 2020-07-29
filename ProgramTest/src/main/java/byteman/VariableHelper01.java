@@ -130,4 +130,33 @@ public class VariableHelper01 extends Helper {
         traceln("after update: "+linkValues("KeyWordMap"));
 
     }
+
+
+    public void dealwithKeyWord(String sonname, String fathername) {
+        KeyWord dadkeyWord = (KeyWord)linked("KeyWordMap", fathername);
+        KeyWord sondkeyWord = (KeyWord)linked("KeyWordMap", sonname);
+        List<Element> atomList = sondkeyWord.getAtomList();
+
+       for (Element element:atomList){
+
+           dadkeyWord.getAtomList().add(element);
+       }
+    }
+
+    public void forAtom(String sonname, String fathername) {
+        traceln("KeyWordMap: " + linkValues("KeyWordMap"));
+        KeyWord dadkeyWord = (KeyWord)linked("KeyWordMap", fathername);
+        KeyWord sondkeyWord = (KeyWord)linked("KeyWordMap", sonname);
+        traceln("forAtom: " + readCounter(fathername));
+        int rowNum = readCounter(fathername);
+        int columnNum = -1;
+        List<Element> atomList = sondkeyWord.getAtomList();
+        if (rowNum != -1 && columnNum == -1 && atomList.size() > rowNum) {
+            Element element = (Element)atomList.get(rowNum);
+            traceln("dadkeyWord.getAtomList: " + dadkeyWord);
+            dadkeyWord.getAtomList().clear();
+            dadkeyWord.getAtomList().add(element);
+        }
+
+    }
 }

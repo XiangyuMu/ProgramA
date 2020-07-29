@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/KeyWordFile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/KeyWordFile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/Test.btm" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/Test.btm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595771961771</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="2020.7.09">
+      <created>1596029722328</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1596029722328</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -373,11 +377,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1536.824@0.0.1536.824" timestamp="1594715492003" />
-    <state x="371" y="0" key="CommitChangelistDialog2" timestamp="1595771960335">
+    <state x="371" y="0" key="CommitChangelistDialog2" timestamp="1596029719344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594881681690" />
-    <state x="371" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595771960335" />
+    <state x="371" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596029719344" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1595573801985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -414,16 +418,24 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="234" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1594862062835" />
+    <state x="184" y="91" key="MergeDialog" timestamp="1596029760676">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="91" key="MergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596029760676" />
+    <state x="669" y="235" key="MultipleFileMergeDialog" timestamp="1596029760687">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="235" key="MultipleFileMergeDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596029760687" />
     <state x="461" y="0" key="SettingsEditor" timestamp="1595221550047">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="369" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1594881669955" />
     <state x="461" y="0" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595221550047" />
-    <state x="553" y="252" key="Vcs.Push.Dialog.v2" timestamp="1595986039526">
+    <state x="553" y="252" key="Vcs.Push.Dialog.v2" timestamp="1596029727143">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="442" y="200" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1594881684935" />
-    <state x="553" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595986039526" />
+    <state x="553" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596029727143" />
     <state x="585" y="13" width="750" height="1015" key="find.popup" timestamp="1596007504400">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
