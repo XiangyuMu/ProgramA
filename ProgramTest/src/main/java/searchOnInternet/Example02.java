@@ -10,14 +10,14 @@ import reduceExample.ElemwntList;
 //将value的值进行累加
 //可交换(确定)
 public class Example02 {
-	
+
 	public List<TwoTuple> getOutput() {
 		return output;
 	}
 	public void setOutput(List<TwoTuple> output) {
 		this.output = output;
 	}
-	
+
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
 
@@ -29,8 +29,8 @@ public class Example02 {
         }
         output.add(new TwoTuple(key, sum.toString()));
 	}
-	
-	
+
+
 	public boolean equal(List<TwoTuple> list) {
 		boolean flag = true;
 		if(output.size() != list.size()) {

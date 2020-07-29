@@ -25,15 +25,6 @@ IF true
 DO dealwithKeyWord("list","key","0","0","Int","Int");
 ENDRULE
 
-RULE LINE24
-CLASS searchOnInternet.Example02
-METHOD reduce(ElemwntList)
-HELPER byteman.VariableHelper01
-AT LINE 24
-IF true
-DO dealwithKeyWord("list","key","0","0","Int","Int");
-ENDRULE
-
 
 RULE LINE26
 CLASS searchOnInternet.Example02
@@ -41,5 +32,50 @@ METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 26
 IF true
-DO forAdd(i);
+DO createCounter("i",0);
+ENDRULE
+
+RULE LINE27
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 27
+IF true
+DO forAtom("list","i");
+ENDRULE
+
+RULE LINE28
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 28
+IF true
+DO dealwithKeyWord("i","sum","0","0","Int","Int");
+ENDRULE
+
+RULE LINE29
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 29
+IF true
+DO incrementCounter("i");
+ENDRULE
+
+RULE LINE30
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 30
+IF true
+DO dealwithKeyWord("sum","output");
+ENDRULE
+
+RULE ENDS
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT EXIT
+IF true
+DO traceln("after update: "+linkValues("KeyWordMap"));
 ENDRULE
