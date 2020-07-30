@@ -18,7 +18,7 @@ public class BytemanTest {
         List<ElemwntList> list = new ArrayList<>();
         ElemwntList elist ;
         elist = ti.createTestCase_Single("TestCase/case2.txt", "String", "String");
-        Example02 e = new Example02();
+        Example03 e = new Example03();
         e.reduce(elist);
         List<TwoTuple> tt1  = e.getOutput();
         System.out.println(tt1);

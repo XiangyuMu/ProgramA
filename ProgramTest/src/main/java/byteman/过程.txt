@@ -3,3 +3,84 @@
   (2)mapName:ValueTable key:keyWord的名字 value:
   (3)mapName:currentValue key:variableName value:value 在运行到此语句是variable的值 在运行下一条语句前需要进行清空。
 
+RULE INIT
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AT ENTRY
+IF true
+DO initFunc();
+ENDRULE
+
+RULE InitList
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AFTER INVOKE setRow
+IF true
+DO addAtomToKeyWord("KeyWordMap","list",$atom);
+ENDRULE
+
+RULE LINE24
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 24
+IF true
+DO dealwithKeyWord("list","key","0","0","Int","Int");
+ENDRULE
+
+
+RULE LINE26
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 26
+IF true
+DO createCounter("i",0);
+ENDRULE
+
+RULE LINE27
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 27
+IF true
+DO forAtom("list","i");
+ENDRULE
+
+RULE LINE28
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 28
+IF true
+DO dealwithKeyWord("i","sum","0","0","Int","Int");
+ENDRULE
+
+RULE LINE29
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 29
+IF true
+DO incrementCounter("i");
+ENDRULE
+
+RULE LINE30
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 30
+IF true
+DO dealwithKeyWord("sum","output");
+ENDRULE
+
+RULE ENDS
+CLASS searchOnInternet.Example02
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT EXIT
+IF true
+DO traceln("after update: "+linkValues("KeyWordMap"));
+ENDRULE

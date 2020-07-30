@@ -63,3 +63,8 @@ CastExpression: type,objectList.
 methodCallExpression: objectScope,objectName,parameterObjectList.
 
 在objectScope中是否是keyword中的词，然后读取后面的parameter的变量。
+
+
+
+Practice.java  提取程序中的语句结构输入到xmlTest123.xml中。
+DealWithInfoToFile.java 提取程序中的list输入到KeyWordFile.txt中。

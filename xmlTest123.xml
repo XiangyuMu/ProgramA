@@ -1,112 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <information>
-	<Assign operator="=" line="18">
+	<Assign operator="=" line="20">
 		<FieldAccess name="output">
 			<ThisExpressipn>this</ThisExpressipn>
 		</FieldAccess>
 		<Name>output</Name>
 	</Assign>
-	<VariableDeclaratorInfo name="key" line="24" type="String">
-		<Cast type="String">
-			<Method line="24">
+	<Method line="26">
+		<scope>
+			<Method line="26">
 				<scope>
-					<Method line="24">
-						<scope>
-							<Method line="24">
-								<scope>
-									<Method line="24">
-										<scope>
-											<Method line="24">
-												<scope>
-													<Name>list</Name>
-												</scope>
-												<Parameter/>
-												<name>
-													<Name>getList</Name>
-												</name>
-											</Method>
-										</scope>
-										<Parameter>
-											<Integer>0</Integer>
-										</Parameter>
-										<name>
-											<Name>get</Name>
-										</name>
-									</Method>
-								</scope>
-								<Parameter/>
-								<name>
-									<Name>getList</Name>
-								</name>
-							</Method>
-						</scope>
-						<Parameter>
-							<Integer>0</Integer>
-						</Parameter>
-						<name>
-							<Name>get</Name>
-						</name>
-					</Method>
+					<Name>list</Name>
 				</scope>
 				<Parameter/>
 				<name>
-					<Name>getAtom</Name>
-				</name>
-			</Method>
-		</Cast>
-	</VariableDeclaratorInfo>
-	<Method line="24">
-		<scope>
-			<Method line="24">
-				<scope>
-					<Method line="24">
-						<scope>
-							<Method line="24">
-								<scope>
-									<Method line="24">
-										<scope>
-											<Name>list</Name>
-										</scope>
-										<Parameter/>
-										<name>
-											<Name>getList</Name>
-										</name>
-									</Method>
-								</scope>
-								<Parameter>
-									<Integer>0</Integer>
-								</Parameter>
-								<name>
-									<Name>get</Name>
-								</name>
-							</Method>
-						</scope>
-						<Parameter/>
-						<name>
-							<Name>getList</Name>
-						</name>
-					</Method>
-				</scope>
-				<Parameter>
-					<Integer>0</Integer>
-				</Parameter>
-				<name>
-					<Name>get</Name>
+					<Name>getList</Name>
 				</name>
 			</Method>
 		</scope>
-		<Parameter/>
+		<Parameter>
+			<Integer>1</Integer>
+		</Parameter>
 		<name>
-			<Name>getAtom</Name>
+			<Name>remove</Name>
 		</name>
 	</Method>
-	<VariableDeclaratorInfo name="sum" line="25" type="Integer">
-		<Integer>0</Integer>
+	<VariableDeclaratorInfo name="key" line="28" type="String">
+		<String>1</String>
 	</VariableDeclaratorInfo>
-	<ForEach line="26" last="29">
+	<VariableDeclaratorInfo name="ips" line="29" type="Set&lt;String&gt;">
+		<ObjectCreation line="29" Type="HashSet&lt;String&gt;">
+			<Parameter/>
+		</ObjectCreation>
+	</VariableDeclaratorInfo>
+	<ForEach line="31" last="33">
 		<Iterator>
-			<Method line="26">
+			<Method line="31">
 				<scope>
 					<Name>list</Name>
 				</scope>
@@ -117,120 +47,33 @@
 			</Method>
 		</Iterator>
 		<VariableDeclaration>
-			<VariableDeclaratorInfo name="i" line="26" type="Element"/>
+			<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
 		</VariableDeclaration>
 	</ForEach>
-	<Method line="27">
+	<Method line="32">
 		<scope>
-			<FieldAccess name="out">
-				<Name>System</Name>
-			</FieldAccess>
+			<Name>ips</Name>
 		</scope>
 		<Parameter>
-			<Method line="27">
+			<Method line="32">
 				<scope>
-					<Method line="27">
+					<Method line="32">
 						<scope>
-							<Name>i</Name>
-						</scope>
-						<Parameter/>
-						<name>
-							<Name>getList</Name>
-						</name>
-					</Method>
-				</scope>
-				<Parameter>
-					<Integer>1</Integer>
-				</Parameter>
-				<name>
-					<Name>get</Name>
-				</name>
-			</Method>
-		</Parameter>
-		<name>
-			<Name>println</Name>
-		</name>
-	</Method>
-	<Assign operator="+=" line="28">
-		<Name>sum</Name>
-		<Method line="28">
-			<scope>
-				<Name>Integer</Name>
-			</scope>
-			<Parameter>
-				<Method line="28">
-					<scope>
-						<Method line="28">
-							<scope>
-								<Method line="28">
-									<scope>
-										<Method line="28">
-											<scope>
-												<Name>i</Name>
-											</scope>
-											<Parameter/>
-											<name>
-												<Name>getList</Name>
-											</name>
-										</Method>
-									</scope>
-									<Parameter>
-										<Integer>1</Integer>
-									</Parameter>
-									<name>
-										<Name>get</Name>
-									</name>
-								</Method>
-							</scope>
-							<Parameter/>
-							<name>
-								<Name>getAtom</Name>
-							</name>
-						</Method>
-					</scope>
-					<Parameter/>
-					<name>
-						<Name>toString</Name>
-					</name>
-				</Method>
-			</Parameter>
-			<name>
-				<Name>parseInt</Name>
-			</name>
-		</Method>
-	</Assign>
-	<Method line="28">
-		<scope>
-			<Name>Integer</Name>
-		</scope>
-		<Parameter>
-			<Method line="28">
-				<scope>
-					<Method line="28">
-						<scope>
-							<Method line="28">
+							<Method line="32">
 								<scope>
-									<Method line="28">
-										<scope>
-											<Name>i</Name>
-										</scope>
-										<Parameter/>
-										<name>
-											<Name>getList</Name>
-										</name>
-									</Method>
+									<Name>ip</Name>
 								</scope>
-								<Parameter>
-									<Integer>1</Integer>
-								</Parameter>
+								<Parameter/>
 								<name>
-									<Name>get</Name>
+									<Name>getList</Name>
 								</name>
 							</Method>
 						</scope>
-						<Parameter/>
+						<Parameter>
+							<Integer>1</Integer>
+						</Parameter>
 						<name>
-							<Name>getAtom</Name>
+							<Name>get</Name>
 						</name>
 					</Method>
 				</scope>
@@ -241,10 +84,10 @@
 			</Method>
 		</Parameter>
 		<name>
-			<Name>parseInt</Name>
+			<Name>add</Name>
 		</name>
 	</Method>
-	<Method line="26">
+	<Method line="31">
 		<scope>
 			<Name>list</Name>
 		</scope>
@@ -253,24 +96,39 @@
 			<Name>getList</Name>
 		</name>
 	</Method>
-	<VariableDeclaratorInfo name="i" line="26" type="Element"/>
-	<Method line="30">
+	<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
+	<VariableDeclaratorInfo name="count" line="34" type="int">
+		<Method line="34">
+			<scope>
+				<Name>ips</Name>
+			</scope>
+			<Parameter/>
+			<name>
+				<Name>size</Name>
+			</name>
+		</Method>
+	</VariableDeclaratorInfo>
+	<Method line="34">
+		<scope>
+			<Name>ips</Name>
+		</scope>
+		<Parameter/>
+		<name>
+			<Name>size</Name>
+		</name>
+	</Method>
+	<Method line="35">
 		<scope>
 			<Name>output</Name>
 		</scope>
 		<Parameter>
-			<ObjectCreation line="30" Type="TwoTuple">
+			<ObjectCreation line="35" Type="TwoTuple">
 				<Parameter>
 					<Name>key</Name>
-					<Method line="30">
-						<scope>
-							<Name>sum</Name>
-						</scope>
-						<Parameter/>
-						<name>
-							<Name>toString</Name>
-						</name>
-					</Method>
+					<Binary operator="PLUS">
+						<String></String>
+						<Name>count</Name>
+					</Binary>
 				</Parameter>
 			</ObjectCreation>
 		</Parameter>
@@ -278,93 +136,4 @@
 			<Name>add</Name>
 		</name>
 	</Method>
-	<VariableDeclaratorInfo name="flag" line="35" type="boolean">
-		<Boolean>true</Boolean>
-	</VariableDeclaratorInfo>
-	<Method line="36">
-		<scope>
-			<Name>output</Name>
-		</scope>
-		<Parameter/>
-		<name>
-			<Name>size</Name>
-		</name>
-	</Method>
-	<Method line="42">
-		<scope>
-			<Method line="42">
-				<scope>
-					<Name>list</Name>
-				</scope>
-				<Parameter>
-					<Name>i</Name>
-				</Parameter>
-				<name>
-					<Name>get</Name>
-				</name>
-			</Method>
-		</scope>
-		<Parameter>
-			<Method line="42">
-				<scope>
-					<Name>output</Name>
-				</scope>
-				<Parameter>
-					<Name>i</Name>
-				</Parameter>
-				<name>
-					<Name>get</Name>
-				</name>
-			</Method>
-		</Parameter>
-		<name>
-			<Name>equal</Name>
-		</name>
-	</Method>
-	<Assign operator="=" line="43">
-		<Name>flag</Name>
-		<Boolean>false</Boolean>
-	</Assign>
-	<Method line="44">
-		<scope>
-			<FieldAccess name="out">
-				<Name>System</Name>
-			</FieldAccess>
-		</scope>
-		<Parameter>
-			<String>�����ͬ��</String>
-		</Parameter>
-		<name>
-			<Name>println</Name>
-		</name>
-	</Method>
-	<Method line="41">
-		<scope>
-			<Name>output</Name>
-		</scope>
-		<Parameter/>
-		<name>
-			<Name>size</Name>
-		</name>
-	</Method>
-	<VariableDeclaratorInfo name="i" line="41" type="int">
-		<Integer>0</Integer>
-	</VariableDeclaratorInfo>
-	<Method line="37">
-		<scope>
-			<FieldAccess name="out">
-				<Name>System</Name>
-			</FieldAccess>
-		</scope>
-		<Parameter>
-			<String>���������ͬ��</String>
-		</Parameter>
-		<name>
-			<Name>println</Name>
-		</name>
-	</Method>
-	<Assign operator="=" line="38">
-		<Name>flag</Name>
-		<Boolean>false</Boolean>
-	</Assign>
 </information>
