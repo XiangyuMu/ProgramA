@@ -13,6 +13,7 @@ public class  KeyWordAtom {
                 ", line=" + line +
                 ", rowType='" + rowType + '\'' +
                 ", columnType='" + columnType + '\'' +
+                ", operation='" + operation + '\'' +
                 ", sonAtomList=" + sonAtomList +
                 ", type='" + type + '\'' +
                 ", object=" + object +
@@ -26,6 +27,7 @@ public class  KeyWordAtom {
     String rowType;
     String columnType;
 
+    String operation = "";
     List<KeyWordAtom> sonAtomList = new ArrayList<>();
     String type;
     Object object = null;
@@ -44,6 +46,14 @@ public class  KeyWordAtom {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
     }
 
     public Object getObject() {
