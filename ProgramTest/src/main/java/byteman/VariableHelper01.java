@@ -91,32 +91,51 @@ public class VariableHelper01 extends Helper {
                 }
             }
         }else if (operation == "delete"){
+            if (rowNum!=-1&&columnNum!=-1){
+                if (atomList.size()>rowNum){
+                    if (atomList.get(rowNum).getList().size()>columnNum){
+                        keyWord.getAtomList().get(rowNum).getList().remove(columnNum);
 
-        }
-        if (rowNum!=-1&&columnNum!=-1){
-            if (atomList.size()>rowNum){
-                if (atomList.get(rowNum).getList().size()>columnNum){
-                    Atom atom = atomList.get(rowNum).getList().get(columnNum);
-                    Element element = new Element();
-                    element.getList().add(atom);
+                        link("KeyWordMap",dadNode,keyWord);
+                    }else {
+                        traceln("the column < size! ");
+                    }
+                }else{
+                    traceln("the row < size! ");
+                }
+            }else if (rowNum!=-1&&columnNum==-1){
+                if (atomList.size()>rowNum){
+                    keyWord.getAtomList().remove(rowNum);
+                    link("KeyWordMap",dadNode,keyWord);
+                }else {
+                    traceln("the row < size! ");
+                }
+            }
+        }else if (operation == "change"){
+            if (rowNum!=-1&&columnNum!=-1){
+                if (atomList.size()>rowNum){
+                    if (atomList.get(rowNum).getList().size()>columnNum){
+                        Atom atom = atomList.get(rowNum).getList().get(columnNum);
+                        Element element = new Element();
+                        element.getList().add(atom);
+                        keyWord.getAtomList().add(element);
+                        link("KeyWordMap",dadNode,keyWord);
+                    }else {
+                        traceln("the column < size! ");
+                    }
+                }else{
+                    traceln("the row < size! ");
+                }
+            }else if (rowNum!=-1&&columnNum==-1){
+                if (atomList.size()>rowNum){
+                    Element element = atomList.get(rowNum);
                     keyWord.getAtomList().add(element);
                     link("KeyWordMap",dadNode,keyWord);
                 }else {
-                    traceln("the column < size! ");
+                    traceln("the row < size! ");
                 }
-            }else{
-                traceln("the row < size! ");
-            }
-        }else if (rowNum!=-1&&columnNum==-1){
-            if (atomList.size()>rowNum){
-                Element element = atomList.get(rowNum);
-                keyWord.getAtomList().add(element);
-                link("KeyWordMap",dadNode,keyWord);
-            }else {
-                traceln("the row < size! ");
             }
         }
-
     }
 
     public void dealwithKeyWord(String sonNode,String dadNode,String row,String column,String rowType,String columnType,String operation){
@@ -139,6 +158,7 @@ public class VariableHelper01 extends Helper {
                     Element element = new Element();
                     element.getList().add(atom);
                     dadkeyWord.getAtomList().add(element);
+                    link("KeyWordMap",dadNode,dadkeyWord);
                 }else {
                     traceln("the column < size! ");
                 }
@@ -149,6 +169,7 @@ public class VariableHelper01 extends Helper {
             if (atomList.size()>rowNum){
                 Element element = atomList.get(rowNum);
                 dadkeyWord.getAtomList().add(element);
+                link("KeyWordMap",dadNode,dadkeyWord);
             }else {
                 traceln("the row < size! ");
             }
