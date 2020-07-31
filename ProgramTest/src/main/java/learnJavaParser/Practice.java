@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Practice {
 
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example02.java";
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example03.java";
 
     public static void main(String[] args) throws IOException, DocumentException {
 
@@ -76,6 +76,11 @@ public class Practice {
         public void visit(MethodCallExpr n,Element arg){
             System.out.println("MethodCallExpr: "+n);
             boolean flag = false;
+            System.out.println("DemoParamter: "+n.getArguments());
+            for (Expression expression:n.getArguments()){
+                System.out.println("Paramter: "+expression.getMetaModel());
+            }
+
             for(Integer line : lineList){
                 if(line.intValue()==n.getRange().get().begin.line){
                     flag = true;
@@ -90,6 +95,15 @@ public class Practice {
                 super.visit(n,arg);
             }
         }
+//        public void visit(ObjectCreationExpr n,Element arg){
+//            System.out.println("ObjectCreationExpr: "+n);
+//            IdentifyVariable iv = new IdentifyVariable();
+//            iv.transToIdentitedVariable(n,arg);
+//            System.out.println("iv: "+iv);
+//            super.visit(n, arg);
+//        }
+
+
     }
 
     public List<Object> extractTromXML(String fileName) throws FileNotFoundException, DocumentException {
@@ -209,6 +223,12 @@ public class Practice {
                 System.out.println("ThisExpressipn: ");
                 System.out.println(thisExpression);
                 return thisExpression;
+            }
+            case "ObjectCreation":{
+                ObjectCreation objectCreation = new ObjectCreation(element);
+                System.out.println("ObjectCreation: ");
+                System.out.println(objectCreation);
+                return objectCreation;
             }
             default:{
                 System.out.println("can't find this type!!!!!!!!!!!!");

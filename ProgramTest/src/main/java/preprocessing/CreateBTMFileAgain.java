@@ -4,7 +4,6 @@ import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-import searchOnInternet.Example02;
 
 import java.io.*;
 import java.util.*;
@@ -149,6 +148,13 @@ public class CreateBTMFileAgain {
                 return forEachState;
             }
 
+            case "ObjectCreation": {
+                System.out.println("read ObjectCreate");
+                ObjectCreation objectCreation = new ObjectCreation(element);
+                System.out.println(objectCreation);
+                return  objectCreation;
+            }
+
             default:{
                 System.out.println("can't find this type!!!!!!!!!!!!");
                 return null;
@@ -234,7 +240,7 @@ public class CreateBTMFileAgain {
                 VariableDeclaratorInfo vdi = (VariableDeclaratorInfo)object;
                 String name = vdi.nameStr;
                 Object valueObject = vdi.objectList.get(0);
-                List<KeyWordAtom> keyWordAtom1 = dealWithClassOfExpression(valueObject);
+                List<KeyWordAtom> keyWordAtom1 = dealWithClassOfExpression(valueObject,"change");
 
                 keyWordAtom.line = vdi.line;
                 keyWordAtom.setKeyWordName(name);
@@ -293,9 +299,12 @@ public class CreateBTMFileAgain {
                 keyWordAtom.line = mce.line;
                 while(true){
                     System.out.println("ScopeType: "+mce.objectScope.getClass().getSimpleName() );
+                    System.out.println("ScopeName: "+mce.objectName.getClass().getSimpleName() );
                     if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
                         methodName = ((NameExpression)(mce.objectScope)).name;
                         System.out.println("methodName: "+methodName);
+                        System.out.println("Parameters: "+mce.parameterObjectList);
                         break;
                     }else if (mce.objectScope.getClass().getSimpleName().equals("MethodCallExpression")){
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
@@ -345,19 +354,23 @@ public class CreateBTMFileAgain {
 
                                 if (methodWord.name.equals("add")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"add"));
                                     }
                                 }else if (methodWord.name.equals("delete")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"delete"));
                                     }
                                 }else if (methodWord.name.equals("get")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
+                                    }
+                                }else if (methodWord.name.equals("remove")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"delete"));
                                     }
                                 }else{
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
                                     }
                                 }
 
@@ -375,15 +388,15 @@ public class CreateBTMFileAgain {
 
                             if (methodWord.name.equals("add")){
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"add"));
                                 }
                             }else if (methodWord.name.equals("delete")){
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"delete"));
                                 }
                             }else {
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
                                 }
                             }
 
@@ -401,13 +414,13 @@ public class CreateBTMFileAgain {
                 keyWordAtom.line = ae.line;
                 switch (operator){
                     case "=":{
-                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(ae.valueObject));
+                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(ae.valueObject,"change"));
                         keyWordAtom.setKeyWordName(ae.targetObject.toString());
                         keyWordAtom.line = ae.line;
                         break;
                     }
                     case "+=": {
-                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(ae.valueObject));
+                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(ae.valueObject,"add"));
                         keyWordAtom.setKeyWordName(ae.targetObject.toString());
                         break;
                     }
@@ -423,14 +436,14 @@ public class CreateBTMFileAgain {
     }
 
 
-    public List<KeyWordAtom> dealWithClassOfExpression(Object object){
+    public List<KeyWordAtom> dealWithClassOfExpression(Object object,String operation){
         String type = object.getClass().getSimpleName();
         List<KeyWordAtom> keyWordAtomList = new ArrayList<>();
         System.out.println("type: "+type);
         switch(type){
             case "CastExpression":{
                 CastExpression ce = (CastExpression)object;
-                keyWordAtomList = (dealWithClassOfExpression(ce.objectList.get(0)));
+                keyWordAtomList = (dealWithClassOfExpression(ce.objectList.get(0),"change"));
                 return keyWordAtomList;
             }
 
@@ -439,6 +452,7 @@ public class CreateBTMFileAgain {
                 keyWordAtom.setKeyWordName("NULL");
                 keyWordAtom.column = String.valueOf(((IntegerLiteralExpression) object).i);
                 keyWordAtom.columnType = "int";
+                keyWordAtom.setOperation(operation);
                 keyWordAtomList.add(keyWordAtom);
                 return keyWordAtomList;
             }
@@ -450,6 +464,7 @@ public class CreateBTMFileAgain {
                 MethodCallExpression mce = (MethodCallExpression)object;
                 String methodName;
                 keyWordAtom.line = mce.line;
+                keyWordAtom.setOperation(operation);
                 while(true){
                     if (mce.objectScope.getClass().getSimpleName().equals("NameExpression")){
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
@@ -460,6 +475,11 @@ public class CreateBTMFileAgain {
                         methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
                         System.out.println("Parameters: "+mce.parameterObjectList);
                         mce = (MethodCallExpression) mce.objectScope;
+                    }else if (mce.objectScope.getClass().getSimpleName().equals("FieldAccessExpression")){
+                        methodWordList.add(new MethodWord(mce.objectName,mce.parameterObjectList));
+                        methodName = ((FieldAccessExpression)(mce.objectScope)).name;
+                        System.out.println("methodName: "+mce.objectScope);
+                        break;
                     }
                 }
 
@@ -497,19 +517,23 @@ public class CreateBTMFileAgain {
 
                                 if (methodWord.name.equals("add")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"add"));
                                     }
                                 }else if (methodWord.name.equals("delete")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"delete"));
                                     }
                                 }else if (methodWord.name.equals("get")){
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
+                                    }
+                                }else if (methodWord.name.equals("remove")){
+                                    for (int k = 0;k<methodWord.parameterList.size();k++){
+                                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"remove"));
                                     }
                                 }else{
                                     for (int k = 0;k<methodWord.parameterList.size();k++){
-                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                        keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
                                     }
                                 }
 
@@ -527,19 +551,19 @@ public class CreateBTMFileAgain {
 
                             if (methodWord.name.equals("add")){
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"add"));
                                 }
                             }else if (methodWord.name.equals("delete")){
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.deleteKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"delete"));
                                 }
                             }else if (methodWord.name.equals("get")){
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
                                 }
                             }else{
                                 for (int k = 0;k<methodWord.parameterList.size();k++){
-                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k)));
+                                    keyWordAtom.changeKeyWordAtom(dealWithClassOfExpression(methodWord.parameterList.get(k),"change"));
                                 }
                             }
 
@@ -551,8 +575,27 @@ public class CreateBTMFileAgain {
                 return keyWordAtomList;
             }
 
+            case"ObjectCreation":{
+                ObjectCreation objectCreation = (ObjectCreation) object;
+                System.out.println("objectCreation: "+objectCreation);
+                List<Object> paramterList = objectCreation.parameterObjectList;
+                for (Object o : paramterList){
+                    KeyWordAtom keyWordAtom = new KeyWordAtom();
+                    System.out.println(dealWithClassOfExpression(o,"add"));
+                    if (dealWithClassOfExpression(o,"add").size()!=0){
+                        keyWordAtom.addKeyWordAtom(dealWithClassOfExpression(o,"add"));
+                    }
+
+                    keyWordAtomList.add(keyWordAtom );
+                }
+                return keyWordAtomList;
+
+            }
+
             default:{
-                return null;
+                System.out.println("output is null");
+
+                return keyWordAtomList;
             }
         }
     }
@@ -568,7 +611,22 @@ public class CreateBTMFileAgain {
         FileWriter file = new FileWriter("ProgramTest/src/main/java/byteman/"+"Test"+".btm");
         BufferedWriter output = new BufferedWriter(file);
 
-        String  str1;
+        String  str1 = "";
+
+        System.out.println("KeyWordsList: "+ KeyWordsList);
+        System.out.println("ForList: "+ forEachStateList);
+
+        for (int j = 0; j<KeyWordsList.size();j++){
+            int line = KeyWordsList.get(j).line;
+            for (int forNum = 0;forNum<forEachStateList.size();forNum++){
+                if (line<=forEachStateList.get(forNum).last&&line>=forEachStateList.get(forNum).line){
+                    str1 = str1 + CreateBTMString(KeyWordsList.get(j),forEachStateList.get(forNum));
+                }else{
+                    str1 = str1 + CreateBTMString(KeyWordsList.get(j),null);
+                }
+            }
+        }
+
 
         for (int i = 0;i<KeyWordsList.size();i++){
             if(KeyWordsList.get(i).getColumn().equals("")&&KeyWordsList.get(i).getRow().equals("")){
@@ -591,6 +649,19 @@ public class CreateBTMFileAgain {
             str1 = str1 + "ENDRULE\n";
             output.write(str1);
         }output.close();
+    }
+
+
+    public String  CreateBTMString(KeyWordAtom keyWordAtom,ForEachState forEachState){
+
+        String str = "";
+        if (forEachState.equals(null)){
+
+        }else{
+
+        }
+
+        return str;
     }
 
 }

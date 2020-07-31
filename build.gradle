@@ -24,7 +24,7 @@ allprojects{
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
         // https://mvnrepository.com/artifact/org.jboss.byteman/byteman
-        testCompile group: 'org.jboss.byteman', name: 'byteman', version: '4.0.10'
+        testCompile group: 'org.jboss.byteman', name: 'byteman', version: '4.0.12'
 
         // https://mvnrepository.com/artifact/dom4j/dom4j
         compile group: 'dom4j', name: 'dom4j', version: '1.6.1'

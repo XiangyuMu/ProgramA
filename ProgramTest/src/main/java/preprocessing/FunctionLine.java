@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class FunctionLine {
+ public class FunctionLine {
 
 	List<FunctionWord> functionName = new ArrayList<>();    //"!6"
 	Boolean isChecked = false;             //"!2"

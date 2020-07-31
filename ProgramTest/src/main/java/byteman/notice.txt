@@ -3,6 +3,10 @@ java -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example06.btm byte
 java -cp .;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f
 9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Example21.btm byteman.BytemanTest
 
+java -cp .;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.12\d59953e2cf849304b40036e84da171dcf865c220\byteman-4.0.12.jar;C:\Users\Administrator\.gradle\caches\modules-2
+\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -javaagent:%BYTEMAN_HOME%\lib\byteman.jar=script:byteman/Test.btm byt
+eman.BytemanTest
+
 bmcheck -cp . -v byteman/TestCase1.btm
 javac -g byteman/BytemanTest.java  编译
 javac -classpath .;E:\gradleStore\caches\module4s-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863ada3a05556c0b\byteman-4.0.10.jar -g byteman/LinkMapsHelper.java
@@ -13,6 +17,10 @@ g byteman/LinkMapsHelper.java
 javac -Xlint:unchecked -classpath .;E:\gradleStore\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.10\5072dc2876c41eed4a779f8f863
 ada3a05556c0b\byteman-4.0.10.jar;E:\gradleStore\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.
 jar;C:\Users\93629\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper.java
+
+javac -Xlint:unchecked -classpath .;C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.jboss.byteman\byteman\4.0.12\d59953e2cf849304b40036e84da171dcf865c220\byteman-4.0.12.jar;C:\Users\Administrator
+\.gradle\caches\modules-2\files-2.1\com.github.javaparser\javaparser-core\3.15.7\4f9b89ea20968369c776000942399e2ee3bd09b0\javaparser-core-3.15.7.jar;C:\Users\Administrator\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar -g byteman/VariableHelper01.java
+
 
 
 Example04存在没有正确分类的问题！
@@ -55,3 +63,8 @@ CastExpression: type,objectList.
 methodCallExpression: objectScope,objectName,parameterObjectList.
 
 在objectScope中是否是keyword中的词，然后读取后面的parameter的变量。
+
+
+
+Practice.java  提取程序中的语句结构输入到xmlTest123.xml中。
+DealWithInfoToFile.java 提取程序中的list输入到KeyWordFile.txt中。

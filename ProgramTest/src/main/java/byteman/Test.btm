@@ -1,8 +1,3 @@
-1、首先在初始化了maplink存储信息
-  （1）mapName:KeyWordMap key:keyWord的名字 value:keyWord的具体值，用来存储keyWord所关联的Atom。
-  (2)mapName:ValueTable key:keyWord的名字 value:
-  (3)mapName:currentValue key:variableName value:value 在运行到此语句是variable的值 在运行下一条语句前需要进行清空。
-
 RULE INIT
 CLASS testList.TestInput
 METHOD createTestCase_Single(String,String,String)
@@ -21,63 +16,72 @@ IF true
 DO addAtomToKeyWord("KeyWordMap","list",$atom);
 ENDRULE
 
-RULE LINE24
-CLASS searchOnInternet.Example02
-METHOD reduce(ElemwntList)
-HELPER byteman.VariableHelper01
-AT LINE 24
-IF true
-DO dealwithKeyWord("list","key","0","0","Int","Int");
-ENDRULE
-
-
 RULE LINE26
-CLASS searchOnInternet.Example02
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 26
 IF true
-DO createCounter("i",0);
+DO dealwithKeyWord("list","1","","Int","","delete");
 ENDRULE
 
-RULE LINE27
-CLASS searchOnInternet.Example02
+
+RULE LINE31
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 27
+AT LINE 31
 IF true
-DO forAtom("list","i");
+DO createCounter("ip",0);
 ENDRULE
 
-RULE LINE28
-CLASS searchOnInternet.Example02
+RULE LINE31_1
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 28
+AT LINE 32
 IF true
-DO dealwithKeyWord("i","sum","0","0","Int","Int");
+DO forAtom("list","ip");
 ENDRULE
 
-RULE LINE29
-CLASS searchOnInternet.Example02
+RULE LINE32
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 29
+AT LINE 32
 IF true
-DO incrementCounter("i");
+DO dealwithKeyWord("ip","ips","0","1","Int","Int","add");
 ENDRULE
 
-RULE LINE30
-CLASS searchOnInternet.Example02
+RULE LINE33
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 30
+AT LINE 33
 IF true
-DO dealwithKeyWord("sum","output");
+DO incrementCounter("ip");
+ENDRULE
+
+RULE LINE34
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 34
+IF true
+DO dealwithKeyWord("ips","count");
+ENDRULE
+
+RULE LINE35
+CLASS searchOnInternet.Example03
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 35
+IF true
+DO dealwithKeyWord("count","output");
 ENDRULE
 
 RULE ENDS
-CLASS searchOnInternet.Example02
+CLASS searchOnInternet.Example03
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT EXIT

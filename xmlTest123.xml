@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<information>
+	<Assign operator="=" line="20">
+		<FieldAccess name="output">
+			<ThisExpressipn>this</ThisExpressipn>
+		</FieldAccess>
+		<Name>output</Name>
+	</Assign>
+	<Method line="26">
+		<scope>
+			<Method line="26">
+				<scope>
+					<Name>list</Name>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getList</Name>
+				</name>
+			</Method>
+		</scope>
+		<Parameter>
+			<Integer>1</Integer>
+		</Parameter>
+		<name>
+			<Name>remove</Name>
+		</name>
+	</Method>
+	<VariableDeclaratorInfo name="key" line="28" type="String">
+		<String>1</String>
+	</VariableDeclaratorInfo>
+	<VariableDeclaratorInfo name="ips" line="29" type="Set&lt;String&gt;">
+		<ObjectCreation line="29" Type="HashSet&lt;String&gt;">
+			<Parameter/>
+		</ObjectCreation>
+	</VariableDeclaratorInfo>
+	<ForEach line="31" last="33">
+		<Iterator>
+			<Method line="31">
+				<scope>
+					<Name>list</Name>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getList</Name>
+				</name>
+			</Method>
+		</Iterator>
+		<VariableDeclaration>
+			<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
+		</VariableDeclaration>
+	</ForEach>
+	<Method line="32">
+		<scope>
+			<Name>ips</Name>
+		</scope>
+		<Parameter>
+			<Method line="32">
+				<scope>
+					<Method line="32">
+						<scope>
+							<Method line="32">
+								<scope>
+									<Name>ip</Name>
+								</scope>
+								<Parameter/>
+								<name>
+									<Name>getList</Name>
+								</name>
+							</Method>
+						</scope>
+						<Parameter>
+							<Integer>1</Integer>
+						</Parameter>
+						<name>
+							<Name>get</Name>
+						</name>
+					</Method>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>toString</Name>
+				</name>
+			</Method>
+		</Parameter>
+		<name>
+			<Name>add</Name>
+		</name>
+	</Method>
+	<Method line="31">
+		<scope>
+			<Name>list</Name>
+		</scope>
+		<Parameter/>
+		<name>
+			<Name>getList</Name>
+		</name>
+	</Method>
+	<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
+	<VariableDeclaratorInfo name="count" line="34" type="int">
+		<Method line="34">
+			<scope>
+				<Name>ips</Name>
+			</scope>
+			<Parameter/>
+			<name>
+				<Name>size</Name>
+			</name>
+		</Method>
+	</VariableDeclaratorInfo>
+	<Method line="34">
+		<scope>
+			<Name>ips</Name>
+		</scope>
+		<Parameter/>
+		<name>
+			<Name>size</Name>
+		</name>
+	</Method>
+	<Method line="35">
+		<scope>
+			<Name>output</Name>
+		</scope>
+		<Parameter>
+			<ObjectCreation line="35" Type="TwoTuple">
+				<Parameter>
+					<Name>key</Name>
+					<Binary operator="PLUS">
+						<String></String>
+						<Name>count</Name>
+					</Binary>
+				</Parameter>
+			</ObjectCreation>
+		</Parameter>
+		<name>
+			<Name>add</Name>
+		</name>
+	</Method>
+</information>

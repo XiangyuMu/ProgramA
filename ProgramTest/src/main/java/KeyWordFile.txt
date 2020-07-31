@@ -1,6 +1,5 @@
 list# ElemwntList# reduce# 
-key# String# reduce# 
-ip# Element# reduce# 
-output# null# reduce# 
-ips# Set<String># reduce# 
-count# int# reduce# 
+ip# Element# reduce#
+ips# Set<String># reduce#
+count# int# reduce#
+output# null# reduce#
