@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <information>
-	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="26">
-		<FunctionWord functionName="remove">
-			<Para>
-				<strPara>1</strPara>
-			</Para>
-		</FunctionWord>
-		<FunctionWord functionName="getList"/>
-	</FunctionLine>
-	<FunctionLine name="ip" isChecked="false" number="0" circumPotion="1" line="32">
+	<FunctionLine name="value" isChecked="false" number="0" circumPotion="1" line="29">
 		<FunctionWord functionName="toString"/>
 		<FunctionWord functionName="get">
 			<Para>
@@ -18,10 +10,10 @@
 		</FunctionWord>
 		<FunctionWord functionName="getList"/>
 	</FunctionLine>
-	<FunctionLine name="ips" isChecked="false" number="0" circumPotion="1" line="32">
+	<FunctionLine name="friends" isChecked="false" number="0" circumPotion="1" line="29">
 		<FunctionWord functionName="add">
 			<Para>
-				<FunctionLine name="ip" isChecked="false" number="0" circumPotion="0" line="0">
+				<FunctionLine name="value" isChecked="false" number="0" circumPotion="0" line="0">
 					<FunctionWord functionName="toString"/>
 					<FunctionWord functionName="get">
 						<Para>
@@ -33,10 +25,21 @@
 			</Para>
 		</FunctionWord>
 	</FunctionLine>
-	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="31">
-		<FunctionWord functionName="getList"/>
+	<FunctionLine name="System.out" isChecked="false" number="0" circumPotion="0" line="31">
+		<FunctionWord functionName="println">
+			<Para>
+				<strPara>friends</strPara>
+			</Para>
+		</FunctionWord>
 	</FunctionLine>
-	<FunctionLine name="ips" isChecked="false" number="0" circumPotion="0" line="34">
+	<FunctionLine name="friends" isChecked="false" number="0" circumPotion="0" line="32">
 		<FunctionWord functionName="size"/>
+	</FunctionLine>
+	<FunctionLine name="f1" isChecked="false" number="0" circumPotion="2.1" line="35">
+		<FunctionWord functionName="equals">
+			<Para>
+				<strPara>f2</strPara>
+			</Para>
+		</FunctionWord>
 	</FunctionLine>
 </information>

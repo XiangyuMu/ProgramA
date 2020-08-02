@@ -180,28 +180,40 @@ public class VariableHelper01 extends Helper {
     }
 
 
-    public void dealwithKeyWord(String sonname, String fathername) {
+    public void dealwithKeyWord(String sonname, String fathername,String operation) {
         KeyWord dadkeyWord = (KeyWord)linked("KeyWordMap", fathername);
         KeyWord sondkeyWord = (KeyWord)linked("KeyWordMap", sonname);
         List<Element> atomList = sondkeyWord.getAtomList();
 
-       for (Element element:atomList){
+        if (operation.equals("change")){
+            dadkeyWord.getAtomList().clear();
+            for (Element element:atomList){
+                dadkeyWord.getAtomList().add(element);
+            }
+        }else if (operation.equals("add")){
+            for (Element element:atomList){
+                dadkeyWord.getAtomList().add(element);
+            }
+        }else if (operation.equals("delete")){
+            for (Element element:atomList){
+                dadkeyWord.getAtomList().remove(element);
+            }
+        }
 
-           dadkeyWord.getAtomList().add(element);
-       }
     }
 
     public void forAtom(String sonname, String fathername) {
         traceln("KeyWordMap: " + linkValues("KeyWordMap"));
         KeyWord dadkeyWord = (KeyWord)linked("KeyWordMap", fathername);
         KeyWord sondkeyWord = (KeyWord)linked("KeyWordMap", sonname);
-        traceln("forAtom: " + readCounter(fathername));
+        traceln("forAtom: " + readCounter(fathername) + " " +fathername);
         int rowNum = readCounter(fathername);
         int columnNum = -1;
         List<Element> atomList = sondkeyWord.getAtomList();
         if (rowNum != -1 && columnNum == -1 && atomList.size() > rowNum) {
             Element element = (Element)atomList.get(rowNum);
             traceln("dadkeyWord.getAtomList: " + dadkeyWord);
+            traceln("ElementWord.getAtomList: " + element);
             dadkeyWord.getAtomList().clear();
             dadkeyWord.getAtomList().add(element);
         }

@@ -592,6 +592,26 @@ public class CreateBTMFileAgain {
 
             }
 
+            case "NameExpression":{
+                KeyWordAtom keyWordAtom = new KeyWordAtom();
+                String name = ((NameExpression) object).name;
+                boolean flag = false;
+                for (KeyWord keyWord : keyWordList){
+                    if (keyWord.name.equals(name)){
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag){
+                    keyWordAtom.setKeyWordName(name);
+                    keyWordAtom.setOperation(operation);
+                    keyWordAtomList.add(keyWordAtom);
+                    return keyWordAtomList;
+                }else {
+                    System.out.println("Name is not in list");
+                    return keyWordAtomList;
+                }
+            }
             default:{
                 System.out.println("output is null");
 

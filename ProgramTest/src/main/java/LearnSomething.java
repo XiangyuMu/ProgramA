@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class LearnSomething {
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example03.java";
+    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example01.java";
 
     public static void main(String[] args) throws IOException, DocumentException {
         CompilationUnit cu = StaticJavaParser.parse(new File(FilePath));

@@ -7,36 +7,14 @@
 		</FieldAccess>
 		<Name>output</Name>
 	</Assign>
-	<Method line="26">
-		<scope>
-			<Method line="26">
-				<scope>
-					<Name>list</Name>
-				</scope>
-				<Parameter/>
-				<name>
-					<Name>getList</Name>
-				</name>
-			</Method>
-		</scope>
-		<Parameter>
-			<Integer>1</Integer>
-		</Parameter>
-		<name>
-			<Name>remove</Name>
-		</name>
-	</Method>
-	<VariableDeclaratorInfo name="key" line="28" type="String">
-		<String>1</String>
-	</VariableDeclaratorInfo>
-	<VariableDeclaratorInfo name="ips" line="29" type="Set&lt;String&gt;">
-		<ObjectCreation line="29" Type="HashSet&lt;String&gt;">
+	<VariableDeclaratorInfo name="friends" line="27" type="Set&lt;String&gt;">
+		<ObjectCreation line="27" Type="HashSet&lt;String&gt;">
 			<Parameter/>
 		</ObjectCreation>
 	</VariableDeclaratorInfo>
-	<ForEach line="31" last="33">
+	<ForEach line="28" last="30">
 		<Iterator>
-			<Method line="31">
+			<Method line="28">
 				<scope>
 					<Name>list</Name>
 				</scope>
@@ -47,21 +25,21 @@
 			</Method>
 		</Iterator>
 		<VariableDeclaration>
-			<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
+			<VariableDeclaratorInfo name="value" line="28" type="Element"/>
 		</VariableDeclaration>
 	</ForEach>
-	<Method line="32">
+	<Method line="29">
 		<scope>
-			<Name>ips</Name>
+			<Name>friends</Name>
 		</scope>
 		<Parameter>
-			<Method line="32">
+			<Method line="29">
 				<scope>
-					<Method line="32">
+					<Method line="29">
 						<scope>
-							<Method line="32">
+							<Method line="29">
 								<scope>
-									<Name>ip</Name>
+									<Name>value</Name>
 								</scope>
 								<Parameter/>
 								<name>
@@ -87,7 +65,7 @@
 			<Name>add</Name>
 		</name>
 	</Method>
-	<Method line="31">
+	<Method line="28">
 		<scope>
 			<Name>list</Name>
 		</scope>
@@ -96,39 +74,73 @@
 			<Name>getList</Name>
 		</name>
 	</Method>
-	<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
-	<VariableDeclaratorInfo name="count" line="34" type="int">
-		<Method line="34">
-			<scope>
-				<Name>ips</Name>
-			</scope>
-			<Parameter/>
-			<name>
-				<Name>size</Name>
-			</name>
-		</Method>
-	</VariableDeclaratorInfo>
-	<Method line="34">
+	<VariableDeclaratorInfo name="value" line="28" type="Element"/>
+	<Method line="31">
 		<scope>
-			<Name>ips</Name>
+			<FieldAccess name="out">
+				<Name>System</Name>
+			</FieldAccess>
+		</scope>
+		<Parameter>
+			<Name>friends</Name>
+		</Parameter>
+		<name>
+			<Name>println</Name>
+		</name>
+	</Method>
+	<Method line="32">
+		<scope>
+			<Name>friends</Name>
 		</scope>
 		<Parameter/>
 		<name>
 			<Name>size</Name>
 		</name>
 	</Method>
+	<ForEach line="33" last="41">
+		<Iterator>
+			<Name>friends</Name>
+		</Iterator>
+		<VariableDeclaration>
+			<VariableDeclaratorInfo name="f1" line="33" type="String"/>
+		</VariableDeclaration>
+	</ForEach>
+	<ForEach line="34" last="40">
+		<Iterator>
+			<Name>friends</Name>
+		</Iterator>
+		<VariableDeclaration>
+			<VariableDeclaratorInfo name="f2" line="34" type="String"/>
+		</VariableDeclaration>
+	</ForEach>
 	<Method line="35">
+		<scope>
+			<Name>f1</Name>
+		</scope>
+		<Parameter>
+			<Name>f2</Name>
+		</Parameter>
+		<name>
+			<Name>equals</Name>
+		</name>
+	</Method>
+	<Assign operator="=" line="36">
+		<Name>k</Name>
+		<Name>f1</Name>
+	</Assign>
+	<Assign operator="=" line="37">
+		<Name>v</Name>
+		<Name>f2</Name>
+	</Assign>
+	<Method line="38">
 		<scope>
 			<Name>output</Name>
 		</scope>
 		<Parameter>
-			<ObjectCreation line="35" Type="TwoTuple">
+			<ObjectCreation line="38" Type="TwoTuple">
 				<Parameter>
-					<Name>key</Name>
-					<Binary operator="PLUS">
-						<String></String>
-						<Name>count</Name>
-					</Binary>
+					<Name>k</Name>
+					<Name>v</Name>
 				</Parameter>
 			</ObjectCreation>
 		</Parameter>
@@ -136,4 +148,6 @@
 			<Name>add</Name>
 		</name>
 	</Method>
+	<VariableDeclaratorInfo name="f2" line="34" type="String"/>
+	<VariableDeclaratorInfo name="f1" line="33" type="String"/>
 </information>
