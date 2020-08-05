@@ -5,8 +5,6 @@ HELPER byteman.VariableHelper01
 AT ENTRY
 IF true
 DO initFunc();
-createLinkMap("count");
-link("count","i",0);
 ENDRULE
 
 RULE InitList
@@ -18,8 +16,9 @@ IF true
 DO addAtomToKeyWord("KeyWordMap","list",$atom);
 ENDRULE
 
+
 RULE LINE20
-CLASS reduceExample.IndexValuePair_1
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 20
@@ -28,91 +27,99 @@ DO dealwithKeyWord("key","list","0","0","Int","Int","add");
 traceln("LINE20");
 ENDRULE
 
-
-RULE LINE26
-CLASS reduceExample.IndexValuePair_1
+RULE LINE25
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
-AT LINE 26
+HELPER byteman.VariableHelper01
+AT LINE 25
 IF true
-DO link("count","i",$i);
-traceln("i: "+$i);
+DO createCounter("el",0);
 traceln("LINE25");
 ENDRULE
 
-RULE LINE26_1
-CLASS reduceExample.IndexValuePair_1
+RULE LINE26
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 26
 IF true
-DO dealwithKeyWord("list","el","i","","Variable","","change");
+DO forAtom("list","el");
+dealwithKeyWord("el","x","-1","1","","Int","add");
+traceln("LINE26");
+ENDRULE
+
+RULE LINE26_1
+CLASS reduceExample.MaxRow
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 26
+IF true
+DO traceln("el: "+ readCounter("el"));
+
+
 traceln("LINE26_1");
 ENDRULE
 
-RULE LINE27
-CLASS reduceExample.IndexValuePair_1
-METHOD reduce(ElemwntList)
-HELPER byteman.VariableHelper01
-AT LINE 27
-IF true
-DO dealwithKeyWord("el","x","","1","","Int","change");
-traceln("LINE27");
-ENDRULE
 
 RULE LINE28
-CLASS reduceExample.IndexValuePair_1
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 28
 IF true
-DO dealwithKeyWord("el","y","","2","","Int","change");
+DO dealwithKeyWord("x","max","add");
 traceln("LINE28");
 ENDRULE
 
 
 RULE LINE29
-CLASS reduceExample.IndexValuePair_1
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 29
 IF true
-DO dealwithKeyWord("x","mp","add");
-traceln("LINE29");
+DO dealwithKeyWord("el","y","","2","","Int","add");
+traceln("LINE28");
 ENDRULE
 
-RULE LINE29_1
-CLASS reduceExample.IndexValuePair_1
+
+RULE LINE31
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 29
+AT LINE 31
 IF true
-DO dealwithKeyWord("y","mp","add");
-traceln("LINE29_1");
+DO incrementCounter("el");
+traceln("LINE31");
 ENDRULE
 
-RULE LINE32
-CLASS reduceExample.IndexValuePair_1
+
+
+
+
+
+RULE LINE36
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 32
+AT LINE 36
 IF true
 DO dealwithKeyWord("key","output","add");
-traceln("LINE32");
+traceln("LINE36");
 ENDRULE
 
-RULE LINE32_1
-CLASS reduceExample.IndexValuePair_1
+RULE LINE36_1
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 32
+AT LINE 36
 IF true
-DO dealwithKeyWord("mp","output","add");
-traceln("LINE32_1");
+DO dealwithKeyWord("y","output","add");
+traceln("LINE36_1");
 ENDRULE
 
-
 RULE ENDS
-CLASS reduceExample.IndexValuePair_1
+CLASS reduceExample.MaxRow
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT EXIT

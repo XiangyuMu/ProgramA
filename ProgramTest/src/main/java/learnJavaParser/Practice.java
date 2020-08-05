@@ -21,7 +21,7 @@ import java.util.List;
 
 public class Practice {
 
-    private static final String FilePath = "ProgramTest/src/main/java/searchOnInternet/Example01.java";
+    private static final String FilePath = "ProgramTest/src/main/java/reduceExample/IndexValuePair_1.java";
 
     public static void main(String[] args) throws IOException, DocumentException {
 

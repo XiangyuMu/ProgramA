@@ -1,6 +1,6 @@
 package byteman;
 
-import reduceExample.ElemwntList;
+import reduceExample.*;
 import searchOnInternet.*;
 import testList.TestInput;
 
@@ -19,7 +19,7 @@ public class BytemanTest {
         List<ElemwntList> list = new ArrayList<>();
         ElemwntList elist ;
         elist = ti.createTestCase_Single("TestCase/case1.txt", "String", "String");
-        Example01 e = new Example01();
+        IndexValuePair_1 e = new IndexValuePair_1();
         System.out.println("elist: "+elist);
         e.reduce(elist);
         List<TwoTuple> tt1  = e.getOutput();

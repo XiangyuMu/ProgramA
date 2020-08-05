@@ -1,8 +1,7 @@
 list# ElemwntList# reduce# 
-value# Element# reduce#
-friends# Set<String># reduce#
-f2# String# reduce#
-f1# String# reduce#
-k# null# reduce#
-v# null# reduce#
+key# String# reduce#
+el# Element# reduce#
+x# Object# reduce#
+y# Object# reduce#
+mp# Map# reduce#
 output# null# reduce#

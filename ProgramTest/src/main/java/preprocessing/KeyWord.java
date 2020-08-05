@@ -13,7 +13,7 @@ public class KeyWord {
     String methodName;
 
     List<Element> atomList = new ArrayList<>();
-
+    List<Element> changedAtomList = new ArrayList<>();
 
     String dataStructure;
 
@@ -21,6 +21,15 @@ public class KeyWord {
         this.name = "";
         this.methodName = "";
     }
+
+    public List<Element> getChangedAtomList() {
+        return changedAtomList;
+    }
+
+    public void setChangedAtomList(List<Element> changedAtomList) {
+        this.changedAtomList = changedAtomList;
+    }
+
     public KeyWord(String name){
         this.name = name;
         this.methodName = null;
@@ -30,7 +39,19 @@ public class KeyWord {
         this.name = node.toString();
         createThisNodeMethodName(node);
     }
-    public KeyWord(String name,String methodName){
+
+    @Override
+    public String toString() {
+        return "KeyWord{" +
+                "name='" + name + '\'' +
+                ", methodName='" + methodName + '\'' +
+                ", atomList=" + atomList +
+                ", changedAtomList=" + changedAtomList +
+                ", dataStructure='" + dataStructure + '\'' +
+                '}';
+    }
+
+    public KeyWord(String name, String methodName){
         this.name = name;
         this.methodName = methodName;
     }
@@ -106,13 +127,4 @@ public class KeyWord {
 
     }
 
-    @Override
-    public String toString() {
-        return "KeyWord{" +
-                "name='" + name + '\'' +
-                ", methodName='" + methodName + '\'' +
-                ", atomList=" + atomList +
-                ", dataStructure='" + dataStructure + '\'' +
-                '}';
-    }
 }

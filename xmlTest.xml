@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <information>
-	<FunctionLine name="value" isChecked="false" number="0" circumPotion="1" line="29">
-		<FunctionWord functionName="toString"/>
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="20">
+		<FunctionWord functionName="getAtom"/>
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>0</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>0</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="1" line="26">
+		<FunctionWord functionName="get">
+			<Para>
+				<strPara>i</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="el" isChecked="false" number="0" circumPotion="1" line="27">
 		<FunctionWord functionName="get">
 			<Para>
 				<strPara>1</strPara>
@@ -10,36 +32,29 @@
 		</FunctionWord>
 		<FunctionWord functionName="getList"/>
 	</FunctionLine>
-	<FunctionLine name="friends" isChecked="false" number="0" circumPotion="1" line="29">
-		<FunctionWord functionName="add">
+	<FunctionLine name="el" isChecked="false" number="0" circumPotion="1" line="28">
+		<FunctionWord functionName="get">
 			<Para>
-				<FunctionLine name="value" isChecked="false" number="0" circumPotion="0" line="0">
-					<FunctionWord functionName="toString"/>
-					<FunctionWord functionName="get">
-						<Para>
-							<strPara>1</strPara>
-						</Para>
-					</FunctionWord>
-					<FunctionWord functionName="getList"/>
-				</FunctionLine>
+				<strPara>2</strPara>
+			</Para>
+		</FunctionWord>
+		<FunctionWord functionName="getList"/>
+	</FunctionLine>
+	<FunctionLine name="mp" isChecked="false" number="0" circumPotion="1" line="29">
+		<FunctionWord functionName="put">
+			<Para>
+				<strPara>x</strPara>
+			</Para>
+			<Para>
+				<strPara>y</strPara>
 			</Para>
 		</FunctionWord>
 	</FunctionLine>
-	<FunctionLine name="System.out" isChecked="false" number="0" circumPotion="0" line="31">
-		<FunctionWord functionName="println">
-			<Para>
-				<strPara>friends</strPara>
-			</Para>
-		</FunctionWord>
-	</FunctionLine>
-	<FunctionLine name="friends" isChecked="false" number="0" circumPotion="0" line="32">
+	<FunctionLine name="list" isChecked="false" number="0" circumPotion="0" line="25">
 		<FunctionWord functionName="size"/>
+		<FunctionWord functionName="getList"/>
 	</FunctionLine>
-	<FunctionLine name="f1" isChecked="false" number="0" circumPotion="2.1" line="35">
-		<FunctionWord functionName="equals">
-			<Para>
-				<strPara>f2</strPara>
-			</Para>
-		</FunctionWord>
+	<FunctionLine name="mp" isChecked="false" number="0" circumPotion="0" line="32">
+		<FunctionWord functionName="toString"/>
 	</FunctionLine>
 </information>
