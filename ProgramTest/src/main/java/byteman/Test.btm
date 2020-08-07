@@ -22,9 +22,9 @@ RULE LINE20
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 20
-IF true
-DO dealwithKeyWord("key","list","0","0","Int","Int","add");
+AT LINE 21
+IF ischanged("key",$key)
+DO dealwithKeyWord("list","key","0","0","Int","Int","add");
 traceln("LINE20");
 ENDRULE
 
@@ -43,8 +43,8 @@ RULE LINE26_1
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 26
-IF true
+AT LINE 27
+IF ischanged("el",$el)
 DO dealwithKeyWord("list","el","i","","Variable","","change");
 traceln("LINE26_1");
 ENDRULE
@@ -53,8 +53,8 @@ RULE LINE27
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 27
-IF true
+AT LINE 28
+IF ischanged("x",$x)
 DO dealwithKeyWord("el","x","","1","","Int","change");
 traceln("LINE27");
 ENDRULE
@@ -63,8 +63,8 @@ RULE LINE28
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 28
-IF true
+AT LINE 29
+IF ischanged("y",$y)
 DO dealwithKeyWord("el","y","","2","","Int","change");
 traceln("LINE28");
 ENDRULE
@@ -74,41 +74,26 @@ RULE LINE29
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 29
-IF true
+AT LINE 30
+IF ischanged("mp",$mp)
 DO dealwithKeyWord("x","mp","add");
+dealwithKeyWord("y","mp","add");
 traceln("LINE29");
 ENDRULE
 
-RULE LINE29_1
-CLASS reduceExample.IndexValuePair_1
-METHOD reduce(ElemwntList)
-HELPER byteman.VariableHelper01
-AT LINE 29
-IF true
-DO dealwithKeyWord("y","mp","add");
-traceln("LINE29_1");
-ENDRULE
+
 
 RULE LINE32
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 32
-IF true
+AT LINE 33
+IF ischanged("output",$output)
 DO dealwithKeyWord("key","output","add");
+dealwithKeyWord("mp","output","add");
 traceln("LINE32");
 ENDRULE
 
-RULE LINE32_1
-CLASS reduceExample.IndexValuePair_1
-METHOD reduce(ElemwntList)
-HELPER byteman.VariableHelper01
-AT LINE 32
-IF true
-DO dealwithKeyWord("mp","output","add");
-traceln("LINE32_1");
-ENDRULE
 
 
 RULE ENDS
@@ -118,5 +103,6 @@ HELPER byteman.VariableHelper01
 AT EXIT
 IF true
 DO traceln("after update: "+linkValues("KeyWordMap"));
+traceln("ChangeMap: "+linkValues("ChangeMap"));
 traceln("ENDS");
 ENDRULE

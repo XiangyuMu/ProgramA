@@ -47,7 +47,8 @@ public class TestInput {
 					Atom atom = new Atom(str[i]);
 					atom.setColumn(row);
 					atom.setRow(column);
-					el.getList().add(atom);
+					el.getAtomlist().add(atom);
+					el.getList().add(str[i]);
 					row = row + 1;
 				}
 				row = 0;

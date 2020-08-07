@@ -68,3 +68,13 @@ methodCallExpression: objectScope,objectName,parameterObjectList.
 
 Practice.java  提取程序中的语句结构输入到xmlTest123.xml中。
 DealWithInfoToFile.java 提取程序中的list输入到KeyWordFile.txt中。
+
+
+
+Object formerValue = linked("ChangeMap",name);
+        traceln("changedValue: "+value);
+        if (formerValue.equals(value)){
+            flag = true;
+        }else {
+            link("ChangeMap",value);
+        }

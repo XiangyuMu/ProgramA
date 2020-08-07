@@ -17,7 +17,7 @@ public class IndexValuePair_1 {
 	}
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 		Object x = null;
 		Object y = null;
 		Element el = new Element();
