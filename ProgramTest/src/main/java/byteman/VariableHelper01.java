@@ -77,7 +77,8 @@ public class VariableHelper01 extends Helper {
                     if (atomList.get(rowNum).getList().size()>columnNum){
                         Atom atom = atomList.get(rowNum).getAtomlist().get(columnNum);
                         Element element = new Element();
-                        element.getList().add(atom);
+                        element.getAtomlist().add(atom);
+                        element.getList().add(atom.getAtom());
                         keyWord.getAtomList().add(element);
                         keyWord.getChangedAtomList().add(element);
                         link("KeyWordMap",dadNode,keyWord);
@@ -102,7 +103,7 @@ public class VariableHelper01 extends Helper {
                 if (atomList.size()>rowNum){
                     if (atomList.get(rowNum).getList().size()>columnNum){
                         keyWord.getAtomList().get(rowNum).getList().remove(columnNum);
-
+                        keyWord.getAtomList().get(rowNum).getAtomlist().remove(columnNum);
                         link("KeyWordMap",dadNode,keyWord);
                     }else {
                         traceln("the column < size! ");
@@ -124,7 +125,8 @@ public class VariableHelper01 extends Helper {
                     if (atomList.get(rowNum).getList().size()>columnNum){
                         Atom atom = atomList.get(rowNum).getAtomlist().get(columnNum);
                         Element element = new Element();
-                        element.getList().add(atom);
+                        element.getList().add(atom.getAtom());
+                        element.getAtomlist().add(atom);
                         keyWord.getAtomList().add(element);
                         keyWord.getChangedAtomList().add(element);
                         link("KeyWordMap",dadNode,keyWord);
@@ -172,10 +174,11 @@ public class VariableHelper01 extends Helper {
         if (rowNum!=-1&&columnNum!=-1){
             if (operation.equals("add")){
                 if (atomList.size()>rowNum){
-                    if (atomList.get(rowNum).getList().size()>columnNum){
+                    if (atomList.get(rowNum).getAtomlist().size()>columnNum){
                         Atom atom = atomList.get(rowNum).getAtomlist().get(columnNum);
                         Element element = new Element();
-                        element.getList().add(atom);
+                        element.getList().add(atom.getAtom());
+                        element.getAtomlist().add(atom);
                         dadkeyWord.getAtomList().add(element);
                         dadkeyWord.getChangedAtomList().add(element);
                         link("KeyWordMap",dadNode,dadkeyWord);
@@ -188,10 +191,11 @@ public class VariableHelper01 extends Helper {
             }else if (operation.equals("change")){
                 {
                     if (atomList.size()>rowNum){
-                        if (atomList.get(rowNum).getList().size()>columnNum){
+                        if (atomList.get(rowNum).getAtomlist().size()>columnNum){
                             Atom atom = atomList.get(rowNum).getAtomlist().get(columnNum);
                             Element element = new Element();
-                            element.getList().add(atom);
+                            element.getList().add(atom.getAtom());
+                            element.getAtomlist().add(atom);
                             dadkeyWord.getAtomList().clear();
                             dadkeyWord.getAtomList().add(element);
                             dadkeyWord.getChangedAtomList().add(element);
@@ -229,10 +233,11 @@ public class VariableHelper01 extends Helper {
 
         }else if (rowNum==-1&&columnNum!=-1){
             if (operation.equals("add")){
-                if (atomList.get(0).getList().size()>columnNum){
+                if (atomList.get(0).getAtomlist().size()>columnNum){
                     Atom atom = atomList.get(0).getAtomlist().get(columnNum);
                     Element element = new Element();
-                    element.getList().add(atom);
+                    element.getList().add(atom.getAtom());
+                    element.getAtomlist().add(atom);
                     dadkeyWord.getChangedAtomList().add(element);
                     dadkeyWord.getAtomList().add(element);
                     link("KeyWordMap",dadNode,dadkeyWord);
@@ -243,7 +248,8 @@ public class VariableHelper01 extends Helper {
                 if (atomList.get(0).getList().size()>columnNum){
                     Atom atom = atomList.get(0).getAtomlist().get(columnNum);
                     Element element = new Element();
-                    element.getList().add(atom);
+                    element.getList().add(atom.getAtom());
+                    element.getAtomlist().add(atom);
                     dadkeyWord.getAtomList().clear();
                     dadkeyWord.getAtomList().add(element);
                     dadkeyWord.getChangedAtomList().add(element);
