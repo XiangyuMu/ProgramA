@@ -23,8 +23,8 @@ CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 21
-IF ischanged("key",$key)
-DO dealwithKeyWord("list","key","0","0","Int","Int","add");
+IF true
+DO dealwithKeyWord("list","key","0","0","Int","Int","add",$key);
 traceln("LINE20");
 ENDRULE
 
@@ -44,8 +44,8 @@ CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 27
-IF ischanged("el",$el)
-DO dealwithKeyWord("list","el","i","","Variable","","change");
+IF true
+DO dealwithKeyWord("list","el","i","","Variable","","change",$el);
 traceln("LINE26_1");
 ENDRULE
 
@@ -54,8 +54,8 @@ CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 28
-IF ischanged("x",$x)
-DO dealwithKeyWord("el","x","","1","","Int","change");
+IF true
+DO dealwithKeyWord("el","x","","1","","Int","change",$x);
 traceln("LINE27");
 ENDRULE
 
@@ -64,8 +64,8 @@ CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 29
-IF ischanged("y",$y)
-DO dealwithKeyWord("el","y","","2","","Int","change");
+IF true
+DO dealwithKeyWord("el","y","","2","","Int","change",$y);
 traceln("LINE28");
 ENDRULE
 
@@ -75,9 +75,9 @@ CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
 AT LINE 30
-IF ischanged("mp",$mp)
-DO dealwithKeyWord("x","mp","add");
-dealwithKeyWord("y","mp","add");
+IF true
+DO dealwithKeyWord("x","mp","add",$mp);
+dealwithKeyWord("y","mp","add",$mp);
 traceln("LINE29");
 ENDRULE
 
@@ -87,10 +87,10 @@ RULE LINE32
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
 HELPER byteman.VariableHelper01
-AT LINE 33
-IF ischanged("output",$output)
-DO dealwithKeyWord("key","output","add");
-dealwithKeyWord("mp","output","add");
+AT LINE 34
+IF true
+DO dealwithKeyWord("key","output","add",$output);
+dealwithKeyWord("mp","output","add",$output);
 traceln("LINE32");
 ENDRULE
 
@@ -104,5 +104,6 @@ AT EXIT
 IF true
 DO traceln("after update: "+linkValues("KeyWordMap"));
 traceln("ChangeMap: "+linkValues("ChangeMap"));
+traceln("Map: "+ printMap($mp));
 traceln("ENDS");
 ENDRULE

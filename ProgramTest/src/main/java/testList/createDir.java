@@ -59,7 +59,7 @@ public class createDir {
 			String str = "";
 			for(int k =0;k<el.size();k++) {
 				
-				List<Atom> ol = el.get(k).getList();
+				List<Atom> ol = el.get(k).getAtomlist();
 				for(int j = 0;j<ol.size();j++) {
 					str = str +ol.get(j).getAtom().toString()+ "# ";
 				}
@@ -82,7 +82,7 @@ public class createDir {
 			List<Element> el = list.get(i).getList();
 			String str = "";
 			for(int k =0;k<el.size();k++) {
-				List<Atom> ol = el.get(k).getList();
+				List<Atom> ol = el.get(k).getAtomlist();
 				for(int j = 0;j<ol.size();j++) {
 					str = str +ol.get(j).getAtom().toString()+ "# ";
 				}

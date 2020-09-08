@@ -15,12 +15,12 @@ public class Example23 {
 	
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
+    	String key = (String)list.getList().get(0).getList().get(0);
 
     	int sumOfTemperatures = 0;
         int nbValues = 0;
         for (Element value : list.getList()) {
-          sumOfTemperatures += (Integer)value.getList().get(1).getAtom();
+          sumOfTemperatures += (Integer)value.getList().get(1);
           nbValues++;
         }
         int average = sumOfTemperatures / nbValues;

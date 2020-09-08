@@ -16,7 +16,7 @@ public class FirstN {
 	List<TwoTuple> output = new ArrayList<TwoTuple>() ;
 	public void reduce(ElemwntList list) {
 		ElemwntList elelist = new ElemwntList();
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 		int count = 0;
 		for(Element el : list.getList()) {
 			count++;

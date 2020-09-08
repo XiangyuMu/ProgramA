@@ -22,7 +22,7 @@ public class Example16 {
 	String v ="";
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
+    	String key = (String)list.getList().get(0).getList().get(0);
     	 Double mx = 0d;
          Double my = 0d;
          int counter = 0;

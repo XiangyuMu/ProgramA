@@ -25,13 +25,13 @@ public class Example09 {
 	String userId = "";
 	String itermScore = "";
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 
 
 		        Double totalScore = 0.0;
 		        for (Element value : list.getList()) {
 //		        	System.out.println(value.getList().get(1));
-		            totalScore +=Integer.parseInt((String) value.getList().get(1).getAtom()) ;
+		            totalScore +=Integer.parseInt((String) value.getList().get(1)) ;
 		        }
 		        String[] strArr = key.toString().split(":");
 //		        System.out.println(strArr[0]);

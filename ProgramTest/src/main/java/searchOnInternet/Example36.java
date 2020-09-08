@@ -17,7 +17,7 @@ public class Example36 {
 	float gradesSum;
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
+    	String key = (String)list.getList().get(0).getList().get(0);
 
     	for (Element val : list.getList()) {
 			String[] strs = val.getList().get(1).toString().split(" ");

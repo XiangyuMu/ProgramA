@@ -14,8 +14,29 @@ public class KeyWord {
 
     List<Element> atomList = new ArrayList<>();
     List<Element> changedAtomList = new ArrayList<>();
+    List<Element> coverAtomList = new ArrayList<>();
 
     String dataStructure;
+
+    @Override
+    public String toString() {
+        return "KeyWord{" +
+                "name='" + name + '\'' +
+                ", methodName='" + methodName + '\'' +
+                ", atomList=" + atomList +
+                ", changedAtomList=" + changedAtomList +
+                ", coverAtomList=" + coverAtomList +
+                ", dataStructure='" + dataStructure + '\'' +
+                '}';
+    }
+
+    public List<Element> getCoverAtomList() {
+        return coverAtomList;
+    }
+
+    public void setCoverAtomList(List<Element> coverAtomList) {
+        this.coverAtomList = coverAtomList;
+    }
 
     public KeyWord(){
         this.name = "";
@@ -38,17 +59,6 @@ public class KeyWord {
     public KeyWord(Node node){
         this.name = node.toString();
         createThisNodeMethodName(node);
-    }
-
-    @Override
-    public String toString() {
-        return "KeyWord{" +
-                "name='" + name + '\'' +
-                ", methodName='" + methodName + '\'' +
-                ", atomList=" + atomList +
-                ", changedAtomList=" + changedAtomList +
-                ", dataStructure='" + dataStructure + '\'' +
-                '}';
     }
 
     public KeyWord(String name, String methodName){

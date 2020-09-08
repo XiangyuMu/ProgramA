@@ -17,9 +17,9 @@ public class StrConcat {
 	List<String> names = new ArrayList<String>();
 	
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 		for(Element el : list.getList()) {
-			names.add((String) el.getList().get(1).getAtom());
+			names.add((String) el.getList().get(1));
 		}
 		String s = String.join("|", names);
 		

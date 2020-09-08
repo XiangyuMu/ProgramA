@@ -22,7 +22,7 @@ public class Example15 {
 	String v ="";
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
+    	String key = (String)list.getList().get(0).getList().get(0);
     	String recordKey = key.toString();
         String authorId = recordKey.substring(0);
 
@@ -31,7 +31,7 @@ public class Example15 {
         // so we get it
         
         //System.out.println(list.getList().iterator().next().getList().get(1));
-        Integer reputation = Integer.parseInt((String) list.getList().iterator().next().getList().get(1).getAtom()) ;
+        Integer reputation = Integer.parseInt((String) list.getList().iterator().next().getList().get(1)) ;
 
         int postsNumber = 0;
         for (Element value : list.getList()) {

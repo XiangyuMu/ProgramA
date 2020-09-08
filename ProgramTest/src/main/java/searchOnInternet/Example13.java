@@ -23,7 +23,7 @@ public class Example13 {
 	}
 	int v =0;
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 
         int max = 0;
         int min = Integer.MAX_VALUE;
@@ -31,13 +31,13 @@ public class Example13 {
         int count = 0;
         for (Element value : list.getList()) {
         	//System.out.println(value.getList().get(1));
-            if (max < Integer.parseInt((String) value.getList().get(1).getAtom())) {
-                max = Integer.parseInt((String) value.getList().get(1).getAtom());
+            if (max < Integer.parseInt((String) value.getList().get(1))) {
+                max = Integer.parseInt((String) value.getList().get(1));
             }
-            if (min > Integer.parseInt((String) value.getList().get(1).getAtom())) {
-                min = Integer.parseInt((String) value.getList().get(1).getAtom());
+            if (min > Integer.parseInt((String) value.getList().get(1))) {
+                min = Integer.parseInt((String) value.getList().get(1));
             }
-            sum += Integer.parseInt((String) value.getList().get(1).getAtom());
+            sum += Integer.parseInt((String) value.getList().get(1));
             count++;
         }
         v=sum / count;

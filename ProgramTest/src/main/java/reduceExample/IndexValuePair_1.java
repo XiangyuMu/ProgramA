@@ -27,9 +27,11 @@ public class IndexValuePair_1 {
 			x = el.getList().get(1);
 			y = el.getList().get(2);
 			mp.put(x, y);
+			int temp1 = 1;
 		}
 		doSomething(mp);
 		output.add(new TwoTuple(key, mp.toString()));
+        int temp2 = 2;
 	}
 	
 	public void doSomething(Map mp) {

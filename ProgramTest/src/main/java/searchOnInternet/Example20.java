@@ -21,11 +21,11 @@ public class Example20 {
 	String v ="";
     public void reduce(ElemwntList list)  {
 
-    	String key = (String)list.getList().get(0).getList().get(0).getAtom();
+    	String key = (String)list.getList().get(0).getList().get(0);
 
     	int i = 0;
     	while (i<list.getList().size()) {
-            String inputDoc = (String) list.getList().get(i).getList().get(1).getAtom();
+            String inputDoc = (String) list.getList().get(i).getList().get(1);
             System.out.println(inputDoc);
             boolean keep = inputDoc.isEmpty();
             i++;
