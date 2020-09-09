@@ -1,11 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <information>
-	<Assign operator="=" line="20">
+	<Assign operator="=" line="16">
 		<FieldAccess name="output">
 			<ThisExpressipn>this</ThisExpressipn>
 		</FieldAccess>
 		<Name>output</Name>
+	</Assign>
+	<VariableDeclaratorInfo name="key" line="20" type="String">
+		<Cast type="String">
+			<Method line="20">
+				<scope>
+					<Method line="20">
+						<scope>
+							<Method line="20">
+								<scope>
+									<Method line="20">
+										<scope>
+											<Method line="20">
+												<scope>
+													<Name>list</Name>
+												</scope>
+												<Parameter/>
+												<name>
+													<Name>getList</Name>
+												</name>
+											</Method>
+										</scope>
+										<Parameter>
+											<Integer>0</Integer>
+										</Parameter>
+										<name>
+											<Name>get</Name>
+										</name>
+									</Method>
+								</scope>
+								<Parameter/>
+								<name>
+									<Name>getList</Name>
+								</name>
+							</Method>
+						</scope>
+						<Parameter>
+							<Integer>0</Integer>
+						</Parameter>
+						<name>
+							<Name>get</Name>
+						</name>
+					</Method>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getAtom</Name>
+				</name>
+			</Method>
+		</Cast>
+	</VariableDeclaratorInfo>
+	<Method line="20">
+		<scope>
+			<Method line="20">
+				<scope>
+					<Method line="20">
+						<scope>
+							<Method line="20">
+								<scope>
+									<Method line="20">
+										<scope>
+											<Name>list</Name>
+										</scope>
+										<Parameter/>
+										<name>
+											<Name>getList</Name>
+										</name>
+									</Method>
+								</scope>
+								<Parameter>
+									<Integer>0</Integer>
+								</Parameter>
+								<name>
+									<Name>get</Name>
+								</name>
+							</Method>
+						</scope>
+						<Parameter/>
+						<name>
+							<Name>getList</Name>
+						</name>
+					</Method>
+				</scope>
+				<Parameter>
+					<Integer>0</Integer>
+				</Parameter>
+				<name>
+					<Name>get</Name>
+				</name>
+			</Method>
+		</scope>
+		<Parameter/>
+		<name>
+			<Name>getAtom</Name>
+		</name>
+	</Method>
+	<VariableDeclaratorInfo name="x" line="21" type="Object"/>
+	<VariableDeclaratorInfo name="y" line="22" type="Object"/>
+	<VariableDeclaratorInfo name="el" line="23" type="Element">
+		<ObjectCreation line="23" Type="Element">
+			<Parameter/>
+		</ObjectCreation>
+	</VariableDeclaratorInfo>
+	<VariableDeclaratorInfo name="mp" line="24" type="Map">
+		<ObjectCreation line="24" Type="HashMap">
+			<Parameter/>
+		</ObjectCreation>
+	</VariableDeclaratorInfo>
+	<Assign operator="=" line="26">
+		<Name>el</Name>
+		<Method line="26">
+			<scope>
+				<Method line="26">
+					<scope>
+						<Name>list</Name>
+					</scope>
+					<Parameter/>
+					<name>
+						<Name>getList</Name>
+					</name>
+				</Method>
+			</scope>
+			<Parameter>
+				<Name>i</Name>
+			</Parameter>
+			<name>
+				<Name>get</Name>
+			</name>
+		</Method>
 	</Assign>
 	<Method line="26">
 		<scope>
@@ -20,23 +148,109 @@
 			</Method>
 		</scope>
 		<Parameter>
+			<Name>i</Name>
+		</Parameter>
+		<name>
+			<Name>get</Name>
+		</name>
+	</Method>
+	<Assign operator="=" line="27">
+		<Name>x</Name>
+		<Method line="27">
+			<scope>
+				<Method line="27">
+					<scope>
+						<Name>el</Name>
+					</scope>
+					<Parameter/>
+					<name>
+						<Name>getList</Name>
+					</name>
+				</Method>
+			</scope>
+			<Parameter>
+				<Integer>1</Integer>
+			</Parameter>
+			<name>
+				<Name>get</Name>
+			</name>
+		</Method>
+	</Assign>
+	<Method line="27">
+		<scope>
+			<Method line="27">
+				<scope>
+					<Name>el</Name>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getList</Name>
+				</name>
+			</Method>
+		</scope>
+		<Parameter>
 			<Integer>1</Integer>
 		</Parameter>
 		<name>
-			<Name>remove</Name>
+			<Name>get</Name>
 		</name>
 	</Method>
-	<VariableDeclaratorInfo name="key" line="28" type="String">
-		<String>1</String>
-	</VariableDeclaratorInfo>
-	<VariableDeclaratorInfo name="ips" line="29" type="Set&lt;String&gt;">
-		<ObjectCreation line="29" Type="HashSet&lt;String&gt;">
-			<Parameter/>
-		</ObjectCreation>
-	</VariableDeclaratorInfo>
-	<ForEach line="31" last="33">
-		<Iterator>
-			<Method line="31">
+	<Assign operator="=" line="28">
+		<Name>y</Name>
+		<Method line="28">
+			<scope>
+				<Method line="28">
+					<scope>
+						<Name>el</Name>
+					</scope>
+					<Parameter/>
+					<name>
+						<Name>getList</Name>
+					</name>
+				</Method>
+			</scope>
+			<Parameter>
+				<Integer>2</Integer>
+			</Parameter>
+			<name>
+				<Name>get</Name>
+			</name>
+		</Method>
+	</Assign>
+	<Method line="28">
+		<scope>
+			<Method line="28">
+				<scope>
+					<Name>el</Name>
+				</scope>
+				<Parameter/>
+				<name>
+					<Name>getList</Name>
+				</name>
+			</Method>
+		</scope>
+		<Parameter>
+			<Integer>2</Integer>
+		</Parameter>
+		<name>
+			<Name>get</Name>
+		</name>
+	</Method>
+	<Method line="29">
+		<scope>
+			<Name>mp</Name>
+		</scope>
+		<Parameter>
+			<Name>x</Name>
+			<Name>y</Name>
+		</Parameter>
+		<name>
+			<Name>put</Name>
+		</name>
+	</Method>
+	<Method line="25">
+		<scope>
+			<Method line="25">
 				<scope>
 					<Name>list</Name>
 				</scope>
@@ -45,90 +259,40 @@
 					<Name>getList</Name>
 				</name>
 			</Method>
-		</Iterator>
-		<VariableDeclaration>
-			<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
-		</VariableDeclaration>
-	</ForEach>
-	<Method line="32">
-		<scope>
-			<Name>ips</Name>
-		</scope>
-		<Parameter>
-			<Method line="32">
-				<scope>
-					<Method line="32">
-						<scope>
-							<Method line="32">
-								<scope>
-									<Name>ip</Name>
-								</scope>
-								<Parameter/>
-								<name>
-									<Name>getList</Name>
-								</name>
-							</Method>
-						</scope>
-						<Parameter>
-							<Integer>1</Integer>
-						</Parameter>
-						<name>
-							<Name>get</Name>
-						</name>
-					</Method>
-				</scope>
-				<Parameter/>
-				<name>
-					<Name>toString</Name>
-				</name>
-			</Method>
-		</Parameter>
-		<name>
-			<Name>add</Name>
-		</name>
-	</Method>
-	<Method line="31">
-		<scope>
-			<Name>list</Name>
-		</scope>
-		<Parameter/>
-		<name>
-			<Name>getList</Name>
-		</name>
-	</Method>
-	<VariableDeclaratorInfo name="ip" line="31" type="Element"/>
-	<VariableDeclaratorInfo name="count" line="34" type="int">
-		<Method line="34">
-			<scope>
-				<Name>ips</Name>
-			</scope>
-			<Parameter/>
-			<name>
-				<Name>size</Name>
-			</name>
-		</Method>
-	</VariableDeclaratorInfo>
-	<Method line="34">
-		<scope>
-			<Name>ips</Name>
 		</scope>
 		<Parameter/>
 		<name>
 			<Name>size</Name>
 		</name>
 	</Method>
-	<Method line="35">
+	<VariableDeclaratorInfo name="i" line="25" type="int">
+		<Integer>0</Integer>
+	</VariableDeclaratorInfo>
+	<Method line="31">
+		<Parameter>
+			<Name>mp</Name>
+		</Parameter>
+		<name>
+			<Name>doSomething</Name>
+		</name>
+	</Method>
+	<Method line="32">
 		<scope>
 			<Name>output</Name>
 		</scope>
 		<Parameter>
-			<ObjectCreation line="35" Type="TwoTuple">
+			<ObjectCreation line="32" Type="TwoTuple">
 				<Parameter>
 					<Name>key</Name>
-					<Binary operator="PLUS">
-						<String></String>
-						<Name>count</Name>
-					</Binary>
+					<Method line="32">
+						<scope>
+							<Name>mp</Name>
+						</scope>
+						<Parameter/>
+						<name>
+							<Name>toString</Name>
+						</name>
+					</Method>
 				</Parameter>
 			</ObjectCreation>
 		</Parameter>

@@ -23,7 +23,7 @@ public class Example11 {
 	String v = "";
 	
 	public void reduce(ElemwntList list) {
-		String key = (String)list.getList().get(0).getList().get(0).getAtom();
+		String key = (String)list.getList().get(0).getList().get(0);
 
 
 

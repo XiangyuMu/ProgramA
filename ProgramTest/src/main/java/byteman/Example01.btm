@@ -1,0 +1,176 @@
+RULE INIT
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AT ENTRY
+IF true
+DO initFunc();
+ENDRULE
+
+RULE InitList
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AFTER INVOKE setRow
+IF true
+DO addAtomToKeyWord("KeyWordMap","list",$atom);
+ENDRULE
+
+
+
+
+RULE LINE28
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 28
+IF true
+DO createCounter("value",0);
+traceln("LINE28");
+ENDRULE
+
+RULE LINE29_1
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 29
+IF true
+DO forAtom("list","value");
+traceln("LINE29_1");
+ENDRULE
+
+RULE LINE29_2
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 29
+IF true
+DO dealwithKeyWord("value","friends","0","1","Int","Int","add");
+traceln("LINE29_2");
+ENDRULE
+
+RULE LINE30
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 30
+IF true
+DO incrementCounter("value");
+traceln("LINE30");
+ENDRULE
+
+
+
+RULE LINE33
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 33
+IF true
+DO createCounter("f1",0);
+traceln("LINE33");
+ENDRULE
+
+RULE LINE34_1
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 34
+IF true
+DO forAtom("friends","f1");
+traceln("LINE34_1");
+ENDRULE
+
+
+RULE LINE41
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 41
+IF true
+DO incrementCounter("f1");
+traceln("LINE41");
+ENDRULE
+
+
+RULE LINE34_2
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 34
+IF true
+DO createCounter("f2",0);
+traceln("LINE34_2");
+ENDRULE
+
+RULE LINE35
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 35
+IF true
+DO forAtom("friends","f2");
+traceln("LINE35");
+ENDRULE
+
+
+RULE LINE40
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 40
+IF true
+DO incrementCounter("f2");
+traceln("LINE40");
+ENDRULE
+
+RULE LINE36
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 36
+IF true
+DO dealwithKeyWord("f1","k","change");
+traceln("LINE46");
+ENDRULE
+
+RULE LINE37
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 37
+IF true
+DO dealwithKeyWord("f2","v","change");
+traceln("LINE47");
+ENDRULE
+
+
+RULE LINE38
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 38
+IF true
+DO dealwithKeyWord("k","output","add");
+traceln("LINE48");
+ENDRULE
+
+RULE LINE38_1
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 38
+IF true
+DO dealwithKeyWord("v","output","add");
+traceln("LINE48_1");
+ENDRULE
+
+RULE ENDS
+CLASS searchOnInternet.Example01
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT EXIT
+IF true
+DO traceln("after update: "+linkValues("KeyWordMap"));
+traceln("ENDS");
+ENDRULE

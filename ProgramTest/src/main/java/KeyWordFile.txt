@@ -1,5 +1,7 @@
 list# ElemwntList# reduce# 
-ip# Element# reduce#
-ips# Set<String># reduce#
-count# int# reduce#
+key# String# reduce#
+el# Element# reduce#
+x# Object# reduce#
+y# Object# reduce#
+mp# Map# reduce#
 output# null# reduce#

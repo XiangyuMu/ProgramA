@@ -1,0 +1,120 @@
+RULE INIT
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AT ENTRY
+IF true
+DO initFunc();
+ENDRULE
+
+RULE InitList
+CLASS testList.TestInput
+METHOD createTestCase_Single(String,String,String)
+HELPER byteman.VariableHelper01
+AFTER INVOKE setRow
+IF true
+DO addAtomToKeyWord("KeyWordMap","list",$atom);
+ENDRULE
+
+
+RULE LINE20
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 20
+IF true
+DO dealwithKeyWord("key","list","0","0","Int","Int","add");
+traceln("LINE20");
+ENDRULE
+
+RULE LINE21
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 21
+IF true
+DO createCounter("el",0);
+traceln("LINE25");
+ENDRULE
+
+RULE LINE22
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 22
+IF true
+DO forAtom("list","el");
+dealwithKeyWord("el","names","-1","1","","Int","add");
+traceln("LINE26");
+ENDRULE
+
+RULE LINE22_1
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 22
+IF true
+DO traceln("el: "+ readCounter("el"));
+
+
+traceln("LINE22_1");
+ENDRULE
+
+
+
+
+
+
+
+RULE LINE23
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 23
+IF true
+DO incrementCounter("el");
+traceln("LINE23");
+ENDRULE
+
+
+RULE LINE24
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 24
+IF true
+DO dealwithKeyWord("names","s","add");
+traceln("LINE36");
+ENDRULE
+
+
+
+RULE LINE27
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 27
+IF true
+DO dealwithKeyWord("key","output","add");
+traceln("LINE36");
+ENDRULE
+
+RULE LINE27_1
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 27
+IF true
+DO dealwithKeyWord("s","output","add");
+traceln("LINE36_1");
+ENDRULE
+
+RULE ENDS
+CLASS reduceExample.StrConcat
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT EXIT
+IF true
+DO traceln("after update: "+linkValues("KeyWordMap"));
+traceln("ENDS");
+ENDRULE
