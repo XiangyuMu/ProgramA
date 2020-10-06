@@ -84,7 +84,10 @@ public class createDir {
 			for(int k =0;k<el.size();k++) {
 				List<Atom> ol = el.get(k).getAtomlist();
 				for(int j = 0;j<ol.size();j++) {
-					str = str +ol.get(j).getAtom().toString()+ "# ";
+					if(!str.equals(" ")){
+						str = str +ol.get(j).getAtom().toString()+ "# ";
+					}
+
 				}
 				output.write(str);
 				output.write("\n");

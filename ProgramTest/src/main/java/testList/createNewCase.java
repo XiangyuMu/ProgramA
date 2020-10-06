@@ -130,7 +130,7 @@ public class createNewCase {
 		
 		TestInput ti = new TestInput();
 		ti.setPath("case");
-		ElemwntList el = ti.createTestCase_Single("case"+num+".txt", "String", "String");
+		ElemwntList el = ti.createTestCase_Single("ProgramTest/src/main/java/TestCase/case"+num+".txt", "String", "String");
 		createNewCase cnc = new createNewCase();
 		cnc.setElementList(el);
 		cnc.createAllCases();
@@ -141,7 +141,7 @@ public class createNewCase {
 		 createDir cd = new createDir();
 		// cd.createFileDir(new File("case4.txt"));
 		 try {
-			cd.createAllCasesInOneFile(cnc.getElementListList(),"case"+num);
+			cd.createAllCasesInOneFile(cnc.getElementListList(),"ProgramTest/src/main/java/TestCase/case"+num);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -40,7 +40,7 @@ public class TestInput {
 			int row = 0;
 			int column = 0;
 			while ((tempString = reader.readLine()) != null) {
-				String str[] = tempString.split("#");
+				String str[] = tempString.split("# ");
 				System.out.println("str "+str.length);
 				Element el = new Element();
 				for(int i = 0;i<str.length;i++) {
@@ -80,7 +80,7 @@ public class TestInput {
 					column = 0;
 					row = 0;
 				}else {
-					String str[] = tempString.split("#");
+					String str[] = tempString.split("# ");
 //					System.out.println("str "+str.length);
 					Element el = new Element();
 					for(int i = 0;i<str.length;i++) {
@@ -115,7 +115,7 @@ public class TestInput {
 	}
 	
 	public static void main(String[] args) {
-		List<ElemwntList> lel = new TestInput().createTestCase_multi("case5mix.txt", "String", "String");
+		List<ElemwntList> lel = new TestInput().createTestCase_multi("ProgramTest/src/main/java/TestCase/case5mix.txt", "String", "String");
 		System.out.println("长度为："+lel.size());
 		System.out.println("请输入想查看的序号");
 		Scanner scan = new Scanner(System.in);

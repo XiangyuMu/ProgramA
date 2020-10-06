@@ -1,61 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8da19463-2a7b-44db-8b6b-34afaf2a5451" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/CopyObjectDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/CopyObjectTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/TestCase/ToolBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/Test1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/TestCase/case5mix.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/Test.btm" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/Test.btm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/byteman/VariableHelper01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/KeyWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/preprocessing/KeyWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/FirstN.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/FirstN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/IndexValuePair_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/IndexValuePair_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/MaxRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/MaxRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/StrConcat.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/StrConcat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example04.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example04.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example05.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example05.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example06.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example06.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example07.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example07.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example08.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example08.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example09.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example09.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example10.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example11.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example12.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example13.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example14.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example14.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example15.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example15.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example16.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example17.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example17.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example18.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example18.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example20.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example20.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example21.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example21.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example22.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example22.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example23.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example23.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example24.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example24.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example25.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example25.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example26.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example26.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example27.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example27.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example28.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example28.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example29.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example29.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example30.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example30.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example31.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example31.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example32.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example32.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example33.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example33.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example34.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example34.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example36.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example36.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example37.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example37.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example38.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example38.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example39.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example39.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/Element.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/Element.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/ElemwntList.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/reduceExample/ElemwntList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example03.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example03.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example04.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example04.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example05.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example05.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example06.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example06.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example07.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example07.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example08.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example08.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example09.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example09.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example10.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example11.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example12.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example13.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example14.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example15.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example16.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example17.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example18.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example19.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example20.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example20.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example21.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example21.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example22.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example22.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example23.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example23.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example24.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example24.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example25.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example25.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example26.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example26.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example27.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example27.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example28.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example28.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example29.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example29.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example30.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example30.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example31.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example31.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example32.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example32.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example33.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example33.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example34.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example34.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example36.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example36.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example37.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example37.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example38.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example38.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example39.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/searchOnInternet/Example39.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/TestInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/TestInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/createDir.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/createDir.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/createNewCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramTest/src/main/java/testList/createNewCase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,9 +92,6 @@
       </state>
     </system>
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="ProgramA" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -115,7 +119,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ProgramTest/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.16936672" />
@@ -138,7 +142,7 @@
       <command value="？" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.CopyObjectDemo">
+  <component name="RunManager" selected="Application.createNewCase">
     <configuration name="CopyObjectDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="byteman.CopyObjectDemo" />
       <module name="ProgramA.ProgramTest.main" />
@@ -152,12 +156,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="preprocessing.Demo" />
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testList.Demo" />
       <module name="ProgramA.ProgramTest.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="preprocessing.*" />
+          <option name="PATTERN" value="testList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,19 +169,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LearnSomething" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="LearnSomething" />
-      <module name="ProgramA.ProgramTest.main" />
-      <method v="2">
-        <option name="MakeNoErrorCheck" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Practice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="learnJavaParser.Practice" />
+    <configuration name="TestInput" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testList.TestInput" />
       <module name="ProgramA.ProgramTest.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="learnJavaParser.*" />
+          <option name="PATTERN" value="testList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="createNewCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testList.createNewCase" />
+      <module name="ProgramA.ProgramTest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testList.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,34 +209,23 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.LearnSomething" />
-      <item itemvalue="Application.Practice" />
-      <item itemvalue="Application.Demo (1)" />
       <item itemvalue="Application.kaifang" />
       <item itemvalue="Application.CopyObjectDemo" />
+      <item itemvalue="Application.Demo" />
+      <item itemvalue="Application.TestInput" />
+      <item itemvalue="Application.createNewCase" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.createNewCase" />
+        <item itemvalue="Application.TestInput" />
+        <item itemvalue="Application.Demo" />
         <item itemvalue="Application.CopyObjectDemo" />
         <item itemvalue="Application.kaifang" />
-        <item itemvalue="Application.Demo (1)" />
-        <item itemvalue="Application.Practice" />
-        <item itemvalue="Application.LearnSomething" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -448,8 +447,8 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
       <path value="$PROJECT_DIR$/ProgramA" />
-      <path value="E:/" />
-      <path value="E:/gitRe" />
+      <path value="$PROJECT_DIR$/../../" />
+      <path value="$PROJECT_DIR$/../../gitRe" />
     </ignored-roots>
     <MESSAGE value="first" />
     <MESSAGE value="firstChange" />
@@ -469,26 +468,23 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="604" y="0" key="#Project_Structure/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1595753721196" />
-    <state x="773" y="109" key="#com.intellij.ide.util.MemberChooser" timestamp="1597147352054">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser" timestamp="1601982344536">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595141966203" />
+    <state x="618" y="86" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1601982344536" />
     <state x="773" y="109" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597147352054" />
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1594797758352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="806" y="409" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1594797758352" />
-    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591234828936">
+    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601443569140">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1591234828936" />
-    <state x="544" y="305" width="448" height="220" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1592986316932">
+    <state x="449" y="147" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1601443569140" />
+    <state x="564" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601982547081">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="544" y="305" width="448" height="220" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1592986316932" />
-    <state x="949" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1597149014278">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
+    <state x="564" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1601982547081" />
     <state x="949" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597149014278" />
     <state x="499" y="162" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1594715492003">
       <screen x="0" y="0" width="1536" height="824" />
@@ -499,25 +495,25 @@
     </state>
     <state x="297" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1594881681690" />
     <state x="371" y="0" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596808328955" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1597153483688">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1601978266441">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595215125985" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1601978266441" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597153483688" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1597153483688">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1601978266441">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595215125985" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1601978266441" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597153483688" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1597153483688">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1601978266441">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595215125985" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1601978266441" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597153483688" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1597153483688">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1601978266441">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595215125985" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1601978266441" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597153483688" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1596203592551">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -561,15 +557,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="752" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596981054696" />
-    <state x="2644" y="25" width="750" height="1015" key="find.popup" timestamp="1599561185065">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="468" y="10" width="600" height="804" key="find.popup" timestamp="1601975469991">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="468" y="10" width="600" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594360097009" />
+    <state x="468" y="10" width="600" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1601975469991" />
     <state x="724" y="25" width="750" height="1015" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1596358076662" />
     <state x="2644" y="25" width="750" height="1015" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599561185065" />
-    <state x="2254" y="121" key="new project wizard" timestamp="1599568248379">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="267" y="45" key="new project wizard" timestamp="1600690395861">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="267" y="45" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1600690395861" />
     <state x="2254" y="121" key="new project wizard/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599568248379" />
     <state x="702" y="147" key="refactoring.ChangeSignatureDialog" timestamp="1596439169762">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -579,10 +576,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594106143073" />
-    <state x="623" y="225" width="840" height="680" key="search.everywhere.popup" timestamp="1597153518565">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup" timestamp="1601985043641">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594823086519" />
+    <state x="498" y="178" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601985043641" />
     <state x="623" y="225" width="840" height="680" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1597153518565" />
   </component>
   <component name="XDebuggerManager">

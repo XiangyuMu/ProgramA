@@ -70,6 +70,17 @@ traceln("LINE28");
 ENDRULE
 
 
+RULE LINE29_1
+CLASS reduceExample.IndexValuePair_1
+METHOD reduce(ElemwntList)
+HELPER byteman.VariableHelper01
+AT LINE 30
+IF true
+DO traceln("!!!!!!!!!!!!!!!!!!!!!!!!!");
+traceln("LINE29");
+ENDRULE
+
+
 RULE LINE29
 CLASS reduceExample.IndexValuePair_1
 METHOD reduce(ElemwntList)
